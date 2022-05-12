@@ -1,10 +1,87 @@
-@use "sass/base";
+@use "base";
+@use "components";
 
 * {
   margin: 0;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .animation {
+    .circles {
+    }
+  }
+
+  .text {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 }
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circle {
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  margin: 5px 10px;
+  border-radius: 50%;
+  transform-origin: top center;
+  animation: spin 1s linear infinite; /* 일정하게 무제한 */
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0) scale(1.1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.2);
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+  }
+}
+.row {
+  display: flex;
+  flex: 0 1 100%;
+}
+.row:nth-child(1) .circle {
+  animation-delay: 100ms;
+} /* = 0.1s */
+.row:nth-child(2) .circle {
+  animation-delay: 200ms;
+} /* = 0.1s */
+.row:nth-child(3) .circle {
+  animation-delay: 300ms;
+} /* = 0.1s */
+.row:nth-child(4) .circle {
+  animation-delay: 400ms;
+} /* = 0.1s */
+.row:nth-child(5) .circle {
+  animation-delay: 500ms;
+} /* = 0.1s */
+.row:nth-child(6) .circle {
+  animation-delay: 600ms;
+} /* = 0.1s */
+.row:nth-child(7) .circle {
+  animation-delay: 700ms;
+} /* = 0.1s */
+.row:nth-child(8) .circle {
+  animation-delay: 800ms;
+} /* = 0.1s */
+.row:nth-child(9) .circle {
+  animation-delay: 900ms;
+} /* = 0.1s */
+.row:nth-child(10) .circle {
+  animation-delay: 1000ms;
+} /* = 0.1s */
+.row:nth-child(11) .circle {
+  animation-delay: 1100ms;
+} /* = 0.1s */

@@ -1,9 +1,17 @@
-$red: #ff221f;
+$black: #000000;
 $blue: #3048f8;
 $peach: #fe5f5f;
 $pink: #fceaee;
 $white: #fcf9f9;
 
+h1 {
+  color: $black;
+}
+
 h2 {
-  color: #ff221f;
+  color: $black;
+}
+
+.animation {
+  background-color: $black;
 }
