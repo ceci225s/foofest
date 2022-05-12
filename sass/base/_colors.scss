@@ -1,17 +1,22 @@
 $black: #000000;
 $blue: #3048f8;
-$peach: #fe5f5f;
+$peach: #ef1df2;
 $pink: #fceaee;
 $white: #fcf9f9;
 
+body {
+  background-color: $black;
+}
+
 h1 {
-  color: $black;
+  color: $white;
 }
 
 h2 {
-  color: $black;
+  color: transparent;
+  -webkit-text-stroke: 1px $peach;
 }
 
-.animation {
-  background-color: $black;
+h3 {
+  color: $white;
 }

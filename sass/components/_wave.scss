@@ -1,0 +1,74 @@
+.circle {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ef1df2;
+  box-shadow: 0px 0px 10px 4px #ef1df2;
+  margin: 24px 10px;
+  border-radius: 50%;
+  transform-origin: top center;
+  animation: spin 2s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0) scale(1.1);
+    background-color: #1bf2f2;
+    box-shadow: 0px 0px 10px 4px #1bf2f2;
+  }
+  50% {
+    transform: rotate(180deg) scale(0.2);
+    background-color: #ef1df2;
+    box-shadow: 0px 0px 10px 4px #ef1df2;
+  }
+  100% {
+    transform: rotate(360deg) scale(1.1);
+    background-color: #1bf2f2;
+    box-shadow: 0px 0px 10px 4px #1bf2f2;
+  }
+}
+.row {
+  display: flex;
+  flex: 0 1 100%;
+}
+.row:nth-child(1) .circle {
+  animation-delay: 100ms;
+} /* = 0.1s */
+.row:nth-child(2) .circle {
+  animation-delay: 200ms;
+} /* = 0.1s */
+.row:nth-child(3) .circle {
+  animation-delay: 300ms;
+} /* = 0.1s */
+.row:nth-child(4) .circle {
+  animation-delay: 400ms;
+} /* = 0.1s */
+.row:nth-child(5) .circle {
+  animation-delay: 500ms;
+} /* = 0.1s */
+.row:nth-child(6) .circle {
+  animation-delay: 600ms;
+} /* = 0.1s */
+.row:nth-child(7) .circle {
+  animation-delay: 700ms;
+} /* = 0.1s */
+.row:nth-child(8) .circle {
+  animation-delay: 800ms;
+} /* = 0.1s */
+.row:nth-child(9) .circle {
+  animation-delay: 900ms;
+} /* = 0.1s */
+.row:nth-child(10) .circle {
+  animation-delay: 1000ms;
+} /* = 0.1s */
+.row:nth-child(11) .circle {
+  animation-delay: 1100ms;
+} /* = 0.1s */
+.row:nth-child(12) .circle {
+  animation-delay: 1200ms;
+}
+.row:nth-child(13) .circle {
+  animation-delay: 1300ms;
+}
+.row:nth-child(14) .circle {
+  animation-delay: 1400ms;
+}
