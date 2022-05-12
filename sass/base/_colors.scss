@@ -12,6 +12,10 @@ h1 {
   color: $white;
 }
 
+a {
+  color: $peach;
+}
+
 #index {
   a {
     color: black;
@@ -28,6 +32,10 @@ h1 {
   }
 
   h3 {
+    color: $white;
+  }
+
+  a {
     color: $white;
   }
 }

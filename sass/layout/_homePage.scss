@@ -1,0 +1,20 @@
+#index {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .animation {
+    .foofest {
+      position: absolute;
+      z-index: 10;
+      top: 20rem;
+      left: 8rem;
+    }
+  }
+
+  .text {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
