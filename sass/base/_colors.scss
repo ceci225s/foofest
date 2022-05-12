@@ -1,5 +1,5 @@
 $black: #000000;
-$blue: #3048f8;
+$blue: #1bf2f2;
 $peach: #ef1df2;
 $pink: #fceaee;
 $white: #fcf9f9;
@@ -12,11 +12,30 @@ h1 {
   color: $white;
 }
 
-h2 {
-  color: transparent;
-  -webkit-text-stroke: 1px $peach;
+#index {
+  a {
+    color: black;
+    -webkit-text-stroke: 1px $peach;
+    text-shadow: 0px 0px 7px $peach;
+  }
 }
 
-h3 {
-  color: $white;
+#lineup {
+  h2 {
+    color: black;
+    -webkit-text-stroke: 1px $peach;
+    text-shadow: 0px 0px 7px $peach;
+  }
+
+  h3 {
+    color: $white;
+  }
+}
+
+#ticket {
+  h2 {
+    color: black;
+    -webkit-text-stroke: 1px $blue;
+    text-shadow: 0px 0px 7px $blue;
+  }
 }
