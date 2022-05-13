@@ -6,11 +6,25 @@ h1 {
   margin-bottom: 3rem;
 }
 
+h2 {
+  font-family: azo-sans-web, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 6rem;
+}
+
 h3 {
   font-family: azo-sans-web, sans-serif;
   font-weight: 900;
   font-style: normal;
   font-size: 3rem;
+}
+
+p {
+  font-family: azo-sans-web, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1rem;
 }
 
 a {
@@ -33,27 +47,11 @@ a {
 }
 
 #lineup {
-  h2 {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 6rem;
-  }
-
   a {
     font-family: azo-sans-web, sans-serif;
     font-weight: 900;
     font-style: normal;
     text-decoration: none;
     font-size: 2rem;
-  }
-}
-
-#ticket {
-  h2 {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    font-size: 6rem;
   }
 }
