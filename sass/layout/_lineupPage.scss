@@ -19,10 +19,27 @@
   .acts {
     display: flex;
     flex-direction: column;
+    overflow: scroll;
 
     .artist {
+      padding-top: 60rem;
       padding-left: 4rem;
       padding-right: 4rem;
     }
+  }
+
+  #info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .card {
+    width: 50vw;
+    height: 50vh;
+    line-height: 30vw;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 2rem;
   }
 }
