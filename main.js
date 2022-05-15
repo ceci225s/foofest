@@ -19,7 +19,7 @@ async function loadBandJson() {
     method: "GET",
   });
   bandJson = await bands.json();
-
+  console.log(bandJson);
   displayLineup();
 }
 
@@ -54,7 +54,10 @@ function displayLineup() {
   bandJson.forEach((artist) => {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
-    console.log(artist.name);
+    // console.log(artist.name);
+    clone
+      .querySelector(".open_artist")
+      .addEventListener("click", () => openPopup(artist));
     cont.appendChild(clone);
   });
 }
@@ -65,4 +68,23 @@ function displayLineup() {
 
 //------------------------ SHOW SCHEDULE
 
-//------------------------
+//------------------------ POP UP
+
+function openPopup(artist) {
+  document.querySelector("#lineup").classList.add("active");
+  document
+    .querySelector("#close_artist")
+    .addEventListener("click", closeArtist);
+  // const popup = document.querySelector(".info");
+  // popup.style.display = "block";
+
+  console.log("se mig");
+  document.querySelector("#info .name").textContent = artist.name;
+  document.querySelector("#info .members").textContent = artist.name;
+  document.querySelector("#info .genre").textContent = artist.genre;
+  console.log(artist.genre);
+}
+
+function closeArtist() {
+  document.querySelector("#lineup").classList.remove("active");
+}
