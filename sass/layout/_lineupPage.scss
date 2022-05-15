@@ -1,6 +1,6 @@
 #lineup {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -19,6 +19,10 @@
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    top: 100%;
+    left: 50%;
+    position: absolute;
+    transition: translate 250ms;
 
     .artist {
       padding-top: 60rem;
@@ -38,8 +42,8 @@
 
   .card {
     width: 50vw;
-    height: 50vh;
-    line-height: 30vw;
+    height: 100vh;
+    line-height: 3vw;
     text-align: center;
     background-color: white;
     margin-bottom: 2rem;
@@ -56,6 +60,18 @@
   color: white;
 }
 
-.active {
-  transform: translateX(-50%);
+.active_right {
+  transform: translateX(-50vw);
+}
+
+.active_up {
+  transform: translateY(-100vh);
+}
+
+.main_menu {
+  display: block;
+}
+
+#info img {
+  width: 60%;
 }

@@ -8,7 +8,7 @@
     <title>LINEUP</title>
   </head>
   <body id="the_lineup_page">
-    <header>
+    <!-- <header>
       <nav>
         <a href="index.html">LOGO</a>
         <a href="lineup.html">LINEUP</a>
@@ -16,7 +16,8 @@
         <a href="schedule.html">SCHEDULE</a>
         <a href="">INFO</a>
       </nav>
-    </header>
+    </header> -->
+
     <main id="lineup">
       <section class="marquee-wrapper">
         <div class="container">
@@ -112,27 +113,64 @@
           </div>
         </div>
       </section>
+      <div class="main_menu">
+        <ul class="menu">
+          <li>
+            <a id="lineup">
+              LINEUP
+              <span class="outer" aria-hidden="true">
+                <span class="inner">LINEUP</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="ticket.html">
+              TICKETS
+              <span class="outer" aria-hidden="true">
+                <span class="inner">TICKETS</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="schedule.html">
+              SCHEDULE
+              <span class="outer" aria-hidden="true">
+                <span class="inner">SCHEDULE</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a href="lineup.html">
+              INFO
+              <span class="outer" aria-hidden="true">
+                <span class="inner">INFO</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <section class="acts">
-        HEAD
-        <p>MENU</p>
-
         <template id="artist">
           <a class="open_artist"><p id="artist_name"></p></a>
-
           <p>/</p>
         </template>
 
+        <p class="return_menu">↓</p>
         <section class="elementcontainer"></section>
       </section>
 
       <!-- fjern style  -->
       <section id="info">
-        <p id="">X</p>
+        <p id="close_artist">X</p>
         <div class="card">
+          <figure>
+            <img src="" alt="" />
+          </figure>
           <p class="name" style="color: black"></p>
           <p class="members" style="color: black"></p>
           <p class="genre" style="color: black"></p>
+          <p class="bio" style="color: black"></p>
         </div>
       </section>
     </main>

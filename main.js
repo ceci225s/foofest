@@ -57,34 +57,35 @@ function displayLineup() {
     // console.log(artist.name);
     clone
       .querySelector(".open_artist")
-      .addEventListener("click", () => openPopup(artist));
+      .addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
   });
 }
 
-//------------------------ SORT
-
-//------------------------ FILTER
-
-//------------------------ SHOW SCHEDULE
-
 //------------------------ POP UP
 
-function openPopup(artist) {
-  document.querySelector("#lineup").classList.add("active");
+function openArtist(artist) {
+  document.querySelector("#lineup").classList.remove("active_up");
+  document.querySelector("#lineup").classList.add("active_right");
   document
     .querySelector("#close_artist")
     .addEventListener("click", closeArtist);
-  // const popup = document.querySelector(".info");
-  // popup.style.display = "block";
-
-  console.log("se mig");
   document.querySelector("#info .name").textContent = artist.name;
-  document.querySelector("#info .members").textContent = artist.name;
+  document.querySelector("#info .members").textContent = artist.members;
   document.querySelector("#info .genre").textContent = artist.genre;
+  document.querySelector("#info img").src = artist.logo;
+  document.querySelector("#info .bio").textContent = artist.bio;
   console.log(artist.genre);
 }
 
 function closeArtist() {
-  document.querySelector("#lineup").classList.remove("active");
+  document
+    .querySelector("#close_artist")
+    .removeEventListener("click", closeArtist);
+  document.querySelector("#lineup").classList.remove("active_right");
+}
+document.querySelector("#lineup").addEventListener("click", openLineup);
+
+function openLineup() {
+  document.querySelector("#lineup").classList.add("active_up");
 }
