@@ -62,30 +62,38 @@ function displayLineup() {
   });
 }
 
-//------------------------ POP UP
+//------------------------ SHOW SINGLE ARTIST
 
 function openArtist(artist) {
-  document.querySelector("#lineup").classList.remove("active_up");
-  document.querySelector("#lineup").classList.add("active_right");
+  // document.querySelector("#lineup").classList.remove("active_up");
+
+  // MOVE LINEUP SECTION TO THE RIGHT
+  document.querySelector(".total_lineup").classList.add("active_right");
+
+  // ACTIVATE CLOSE BUTTON
   document
     .querySelector("#close_artist")
     .addEventListener("click", closeArtist);
+
+  // SHOW ARTIST INFO
   document.querySelector("#info .name").textContent = artist.name;
   document.querySelector("#info .members").textContent = artist.members;
   document.querySelector("#info .genre").textContent = artist.genre;
   document.querySelector("#info img").src = artist.logo;
   document.querySelector("#info .bio").textContent = artist.bio;
-  console.log(artist.genre);
 }
 
 function closeArtist() {
   document
     .querySelector("#close_artist")
     .removeEventListener("click", closeArtist);
-  document.querySelector("#lineup").classList.remove("active_right");
 }
-document.querySelector("#lineup").addEventListener("click", openLineup);
+
+// VIS LINEUP START
+
+document.querySelector("#lineup_artists").addEventListener("click", openLineup);
 
 function openLineup() {
+  // MOVE LINEUP SECTION UP
   document.querySelector("#lineup").classList.add("active_up");
 }
