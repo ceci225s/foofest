@@ -1,9 +1,16 @@
+#the_lineup_page {
+  overflow: hidden;
+}
+
 #lineup {
   width: 100vw;
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   overflow: hidden;
+  top: 100%;
+  position: absolute;
+  transition: translate 350ms;
 
   section {
     width: 50%;
@@ -55,4 +62,7 @@
 
 p {
   color: white;
+}
+.active_up {
+  transform: translateY(-100vh);
 }

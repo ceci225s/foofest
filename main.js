@@ -79,3 +79,23 @@ function openArtist(artist) {
   document.querySelector("#info img").src = artist.logo;
   document.querySelector("#info .bio").textContent = artist.bio;
 }
+
+// VIS LINEUP START
+
+document.querySelector("#lineup_menu").addEventListener("click", openLineup);
+
+function openLineup() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#the_lineup_page").classList.add("active_up");
+}
+
+// BACK TO MAIN MENU
+
+document
+  .querySelector(".elementcontainer button")
+  .addEventListener("click", showMainMenu);
+
+function showMainMenu() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#the_lineup_page").classList.remove("active_up");
+}
