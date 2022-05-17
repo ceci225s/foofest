@@ -48,21 +48,54 @@ console.log(availableSpotsJson);
 
 //------------------------ SHOW BANDS
 function displayLineup() {
-  let temp = document.querySelector("#artist");
+  let temp = document.querySelector(".artist");
   let cont = document.querySelector(".elementcontainer");
 
   bandJson.forEach((artist) => {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
-    console.log(artist.name);
+
+    clone
+      .querySelector(".open_artist")
+      .addEventListener("click", () => openArtist(artist));
+    cont.appendChild(clone);
+
     cont.appendChild(clone);
   });
 }
 
-//------------------------ SORT
+//------------------------ SHOW SINGLE ARTIST
 
-//------------------------ FILTER
+function openArtist(artist) {
+  // document.querySelector("#lineup").classList.remove("active_up");
 
-//------------------------ SHOW SCHEDULE
+  // MOVE LINEUP SECTION TO THE RIGHT
+  // document.querySelector(".total_lineup").classList.add("active_right");
 
-//------------------------
+  // SHOW ARTIST INFO
+  document.querySelector("#info .name").textContent = artist.name;
+  document.querySelector("#info .members").textContent = artist.members;
+  document.querySelector("#info .genre").textContent = artist.genre;
+  document.querySelector("#info img").src = artist.logo;
+  document.querySelector("#info .bio").textContent = artist.bio;
+}
+
+// VIS LINEUP START
+
+document.querySelector("#lineup_menu").addEventListener("click", openLineup);
+
+function openLineup() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#the_lineup_page").classList.add("active_up");
+}
+
+// BACK TO MAIN MENU
+
+document
+  .querySelector(".elementcontainer button")
+  .addEventListener("click", showMainMenu);
+
+function showMainMenu() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#the_lineup_page").classList.remove("active_up");
+}
