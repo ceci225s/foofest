@@ -7,24 +7,17 @@
   flex-wrap: nowrap;
   overflow: hidden;
 
-  section {
-    width: 50%;
-    height: 100vh;
-    flex: 0 0 auto;
+  .days {
     display: flex;
     align-items: center;
-    justify-content: center;
-  }
 
-  .scenes {
-    display: flex;
-    flex-direction: column;
-  }
-
-  #program {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    overflow: scroll;
+    div {
+      background-color: aqua;
+      width: 100%;
+      height: 7.1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
