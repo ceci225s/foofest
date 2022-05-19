@@ -46,6 +46,8 @@ const availableSpots = await fetch(
 const availableSpotsJson = await availableSpots.json();
 console.log(availableSpotsJson);
 
+//------------------------ FRONT PAGE
+
 //------------------------ SHOW BANDS
 function displayLineup() {
   let temp = document.querySelector(".artist");
@@ -55,9 +57,9 @@ function displayLineup() {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
 
-    clone
-      .querySelector(".open_artist")
-      .addEventListener("click", () => openArtist(artist));
+    // clone
+    //   .querySelector(".open_artist")
+    //   .addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
 
     cont.appendChild(clone);

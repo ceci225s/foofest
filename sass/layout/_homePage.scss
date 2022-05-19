@@ -1,20 +1,50 @@
-#index {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.big_box {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  margin: 2rem;
+}
 
-  .animation {
-    .foofest {
-      position: absolute;
-      z-index: 10;
-      top: 20rem;
-      left: 8rem;
-    }
-  }
+.box_left,
+.box_right,
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  height: 100%;
+  overflow: auto;
+  padding: 2rem;
+}
 
-  .text {
-    width: 50vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.box_left {
+  border-bottom-left-radius: 2rem;
+  border-top-left-radius: 2rem;
+  background-color: rgba(36, 36, 36, 0.4);
+  align-items: center;
+}
+
+.box_right {
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  background-color: rgba(128, 128, 128, 0.4);
+  align-items: center;
+}
+
+.front_buttons {
+  display: flex;
+}
+
+.elementcontainer {
+  flex-flow: wrap;
+  overflow-y: scroll;
+}
+
+#frontpage p {
+  letter-spacing: 8px;
+}
+
+#ticket button {
+  margin-bottom: 2rem;
+  background-image: linear-gradient(to right, #0608bc, #e062a7);
 }

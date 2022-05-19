@@ -9,21 +9,3 @@
 html {
   scroll-behavior: smooth;
 }
-
-.midgard,
-.vanaheim,
-.jotunheim {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50vw;
-  height: 35vh;
-}
-
-.midgard {
-  background-color: pink;
-}
-
-.vanaheim {
-  background-color: blue;
-}

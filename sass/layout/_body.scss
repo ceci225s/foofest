@@ -1,7 +1,5 @@
 body {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  //   overflow: hidden;
+  background-image: url("background.png");
+
+  background-size: contain;
 }
