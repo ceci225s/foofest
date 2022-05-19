@@ -89,8 +89,17 @@ function openLineup() {
   document.querySelector("#the_lineup_page").classList.add("active_up");
 }
 
-// BACK TO MAIN MENU
+// VIS SCHEDULE START
+document
+  .querySelector("#schedule_menu")
+  .addEventListener("click", openSchedule);
 
+function openSchedule() {
+  // MOVE SCHEDULE SECTION UP
+  document.querySelector("#the_lineup_page").classList.add("active_up1");
+}
+
+// BACK TO MAIN MENU
 document
   .querySelector(".elementcontainer button")
   .addEventListener("click", showMainMenu);
@@ -98,4 +107,13 @@ document
 function showMainMenu() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#the_lineup_page").classList.remove("active_up");
+}
+
+// VIS LINEUP START
+
+document.querySelector("#program").addEventListener("click", expandSchedule);
+
+function expandSchedule() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#program").classList.add("expand");
 }
