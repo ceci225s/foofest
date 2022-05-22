@@ -11,7 +11,7 @@
     <main id="index">
       <!-- FRONT PAGE -->
 
-      <section class="big_box" id="frontpage">
+      <section class="wrapper" id="frontpage">
         <section class="box">
           <div class="front_text">
             <h1>FOOFEST</h1>
@@ -22,43 +22,46 @@
             <a href="#program">PROGRAM</a>
           </div>
         </section>
+        <a href="app.html">GO TO APP</a>
       </section>
 
       <!-- PROGRAM -->
-      <section class="big_box" id="program">
-        <section class="box_left" id="program">
-          <div>
-            <h2>
-              PROGRAM <br />
-              2022
-            </h2>
-          </div>
-        </section>
+      <section class="wrapper" id="program">
+        <div class="wrapper">
+          <section class="box_left">
+            <div>
+              <h2>
+                PROGRAM <br />
+                2022
+              </h2>
+            </div>
+          </section>
 
-        <section class="box_right">
-          <div class="lineup">
-            <template class="artist">
-              <a href=""><p id="artist_name"></p></a>
-            </template>
+          <section class="box_right">
+            <div class="lineup">
+              <template class="artist">
+                <a><p id="artist_name"></p></a>
+              </template>
+            </div>
+
             <section class="elementcontainer"></section>
+          </section>
+        </div>
+        <section class="box" id="info">
+          <div class="card">
+            <figure>
+              <img src="" alt="" />
+            </figure>
+            <p class="name"></p>
+            <p class="members"></p>
+            <p class="genre"></p>
+            <p class="bio"></p>
           </div>
         </section>
-      </section>
-
-      <section class="box" id="info">
-        <div class="card">
-          <figure>
-            <img src="" alt="" />
-          </figure>
-          <p class="name"></p>
-          <p class="members"></p>
-          <p class="genre"></p>
-          <p class="bio"></p>
-        </div>
       </section>
 
       <!-- TICKET -->
-      <section class="big_box" id="ticket">
+      <section class="wrapper" id="ticket">
         <section class="box_left">
           <h2>CHOOSE YOUR TICKETS</h2>
         </section>
