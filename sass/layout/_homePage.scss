@@ -19,6 +19,7 @@ main {
   width: 50vw;
   height: 100vh;
   overflow: hidden;
+  background-color: rgba(36, 36, 36, 0.4);
 }
 
 // .box_left {
@@ -53,27 +54,32 @@ main {
   background-image: linear-gradient(to right, #0608bc, #e062a7);
 }
 
-// #info {
-//   position: absolute;
-//   left: 100%;
-// }
+#info {
+  position: absolute;
+  left: 100%;
+}
 
 .active_left {
   transform: translateX(-50vw);
   transition: all 1s ease-in;
 }
 
-#program,
-#ticket {
-  left: 50%;
-  position: absolute;
-}
+// #ticket {
+//   top: 0;
+//   left: 100%;
+//   position: absolute;
+// }
 .active_up {
-  transform: translateY(-90vh);
+  transform: translateY(-100vh);
   transition: all 1s ease-in;
 }
 
 .active {
-  transform: translate(-50vw, -90vh);
+  transform: translate(-50vw, -100vh);
+  transition: all 1s ease-in;
+}
+
+.ticket_up {
+  transform: translateY(-200vh);
   transition: all 1s ease-in;
 }
