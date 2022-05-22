@@ -72,7 +72,8 @@ function openArtist(artist) {
   // document.querySelector("#lineup").classList.remove("active_up");
 
   // MOVE LINEUP SECTION TO THE RIGHT
-  document.querySelector("#program").classList.add("active_left");
+  document.querySelector(".wrapper").classList.add("active_left");
+  document.querySelector("#program").classList.add("active");
   console.log("hej");
   // SHOW ARTIST INFO
   document.querySelector("#info .name").textContent = artist.name;
@@ -84,12 +85,19 @@ function openArtist(artist) {
 
 // VIS LINEUP START
 
-// document.querySelector("#lineup_menu").addEventListener("click", openLineup);
+document.querySelector("#menu_program").addEventListener("click", openLineup);
 
-// function openLineup() {
-//   // MOVE LINEUP SECTION UP
-//   document.querySelector("#the_lineup_page").classList.add("active_up");
-// }
+document.querySelector("#menu_ticket").addEventListener("click", openTicket);
+
+function openLineup() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#program").classList.add("active_up");
+}
+
+function openTicket() {
+  // MOVE LINEUP SECTION UP
+  document.querySelector("#ticket").classList.add("active_up");
+}
 
 // BACK TO MAIN MENU
 
