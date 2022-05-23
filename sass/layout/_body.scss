@@ -1,7 +1,8 @@
 body {
-  height: 100vh;
+  background-color: black;
   display: flex;
-  align-items: center;
   justify-content: center;
-  //   overflow: hidden;
+  overflow: hidden;
+  height: 50vh;
+  background-attachment: fixed;
 }

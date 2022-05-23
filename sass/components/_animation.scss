@@ -1,0 +1,187 @@
+#app_animation_background {
+  #front_wrapper {
+    .one {
+      // animation-name: movementUp;
+      // animation-duration: $animation-time;
+      // animation-iteration-count: infinite;
+      // animation-timing-function: linear;
+
+      // animation: transformBubbleOne 5s ease-in-out infinite both alternate;
+
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 18s linear infinite, movementSide 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 18s linear infinite, movementSide 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 18s linear infinite, movementSide 10s ease-in-out infinite alternate;
+    }
+
+    .two {
+      animation: transformBubble 15s ease-in-out infinite both alternate,
+        movementUp 10s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 15s ease-in-out infinite both alternate,
+        movementUp 10s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 15s ease-in-out infinite both alternate,
+        movementUp 10s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .three {
+      animation: transformBubbleOne 16s ease-in-out infinite both alternate,
+        movementUp 16s linear infinite, movementSide 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubbleOne 16s ease-in-out infinite both alternate,
+        movementUp 16s linear infinite, movementSide 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubbleOne 16s ease-in-out infinite both alternate,
+        movementUp 16s linear infinite, movementSide 10s ease-in-out infinite alternate;
+    }
+
+    .four {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .five {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+  }
+
+  #middle_wrapper {
+    .six {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 12s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 12s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 12s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .seven {
+      animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 17s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 17s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 17s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .eight {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .nine {
+      animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubbleOne 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+  }
+
+  #back_wrapper {
+    .eleven {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 13s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .twelve {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 15s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+
+    .thirteen {
+      animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -webkit-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+      -moz-animation: transformBubble 5s ease-in-out infinite both alternate,
+        movementUp 11s linear infinite, movementSideOne 10s ease-in-out infinite alternate;
+    }
+  }
+
+  @keyframes transformBubble {
+    0%,
+    100% {
+      border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    }
+    14% {
+      border-radius: 40% 60% 54% 46% / 49% 60% 40% 51%;
+    }
+    28% {
+      border-radius: 54% 46% 38% 62% / 49% 70% 30% 51%;
+    }
+    42% {
+      border-radius: 61% 39% 55% 45% / 61% 38% 62% 39%;
+    }
+    56% {
+      border-radius: 61% 39% 67% 33% / 70% 50% 50% 30%;
+    }
+    70% {
+      border-radius: 50% 50% 34% 66% / 56% 68% 32% 44%;
+    }
+    84% {
+      border-radius: 46% 54% 50% 50% / 35% 61% 39% 65%;
+    }
+  }
+
+  @keyframes transformBubbleOne {
+    0%,
+    100% {
+      border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+    }
+    34% {
+      border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+    }
+    67% {
+      border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+    }
+  }
+
+  @keyframes movementUp {
+    0% {
+      transform: translateY(100vh);
+    }
+    100% {
+      transform: translateY(-100vh);
+    }
+  }
+
+  @keyframes movementSide {
+    0% {
+      margin-left: 0rem;
+    }
+    100% {
+      margin-left: 12rem;
+    }
+  }
+
+  @keyframes movementSideOne {
+    0% {
+      margin-left: 12rem;
+    }
+    100% {
+      margin-left: 0rem;
+    }
+  }
+}
