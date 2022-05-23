@@ -70,6 +70,39 @@
           <button>REGULAR</button>
           <button>VIP</button>
         </section>
+
+        <section class="box" id="ticket_flow">
+          <form action="">
+            <div>
+              <h3>TICKET TYPE</h3>
+              <input
+                type="radio"
+                id="vip_ticket"
+                name="vip_ticket"
+                value="vip_ticket"
+              />
+              <label for="vip_ticket">VIP</label>
+              <input
+                type="radio"
+                id="regular_ticket"
+                name="regular_ticket"
+                value="regular_ticket"
+              />
+              <label for="regular_ticket">REGULAR</label>
+            </div>
+            <hr />
+            <div>
+              <label for="quantity">AMOUNT</label>
+              <input
+                type="number"
+                id="quantity"
+                name="quantity"
+                min="1"
+                max="5"
+              />
+            </div>
+          </form>
+        </section>
       </section>
     </main>
     <div id="app"></div>

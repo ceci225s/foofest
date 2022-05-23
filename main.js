@@ -3,6 +3,7 @@ import "./sass/style.scss";
 
 let lineup = [];
 let bandJson;
+let scheduleJson;
 
 window.addEventListener("DOMContentLoaded", start);
 
@@ -31,8 +32,9 @@ async function loadScheduleJson() {
       method: "GET",
     }
   );
-  const scheduleJson = await schedule.json();
+  scheduleJson = await schedule.json();
   console.log(scheduleJson);
+  renderSchedule("mon");
 }
 
 //------------------------ APP
@@ -109,3 +111,19 @@ function openTicket() {
 //   // MOVE LINEUP SECTION UP
 //   document.querySelector("#the_lineup_page").classList.remove("active_up");
 // }
+
+function renderSchedule(day) {
+  for (i = 0; i < 24; i++) {
+    let timeString = "";
+    if (i < 10) {
+      timeString = `0${i}:00`;
+    } else {
+      timeString = `${i}:00`;
+    }
+    if (scheduleJson.Jotunheim[day].find((s) => s.start == timeString)) {
+      document.querySelector(".jotunheim").innerHTML = scheduleJson.Jotunheim[
+        day
+      ].find((s) => s.start == timeString).act;
+    }
+  }
+}
