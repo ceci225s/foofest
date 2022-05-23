@@ -1,0 +1,190 @@
+#app_animation_background {
+  #front_wrapper,
+  #middle_wrapper,
+  #back_wrapper {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  #front_wrapper div,
+  #middle_wrapper div,
+  #back_wrapper div {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  #front_wrapper {
+    z-index: -10;
+
+    .one {
+      height: 28rem;
+      width: 20rem;
+    }
+
+    .two {
+      height: 28rem;
+      width: 20rem;
+      left: 25%;
+    }
+
+    .three {
+      height: 25rem;
+      width: 25rem;
+      left: 50%;
+    }
+
+    .four {
+      height: 15rem;
+      width: 17rem;
+      left: 80%;
+    }
+
+    .five {
+      height: 15rem;
+      width: 17rem;
+      left: 60%;
+    }
+  }
+
+  #middle_wrapper {
+    z-index: -20;
+    filter: blur(0.5rem);
+    opacity: 60%;
+
+    .six {
+      height: 24rem;
+      width: 16rem;
+      left: 20%;
+    }
+
+    .seven {
+      height: 17rem;
+      width: 10rem;
+      left: 80%;
+    }
+
+    .eight {
+      height: 30rem;
+      width: 21rem;
+      left: -20%;
+    }
+
+    .nine {
+      height: 26rem;
+      width: 22rem;
+      left: 50%;
+    }
+  }
+
+  #back_wrapper {
+    z-index: -30;
+    filter: blur(1rem);
+    opacity: 30%;
+
+    .eleven {
+      height: 21rem;
+      width: 19rem;
+      left: 2%;
+    }
+
+    .twelve {
+      height: 18rem;
+      width: 13rem;
+      left: 44%;
+    }
+
+    .thirteen {
+      height: 25rem;
+      width: 25rem;
+      right: 13%;
+    }
+  }
+
+  #app {
+    .background {
+      position: relative;
+      width: 90vw;
+      height: 90vh;
+      overflow: hidden;
+      margin-top: 2rem;
+      z-index: 50;
+
+      #blur {
+        width: 110vw;
+        height: 110vh;
+        overflow: hidden;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: saturate(180%) blur(10px);
+      }
+    }
+
+    .schedule-wrapper {
+      position: absolute;
+      top: 5rem;
+      left: 4.5rem;
+      width: 90vw;
+      height: 90vh;
+      display: grid;
+      grid-template-columns: 23vw 23vw 23vw 20vw;
+      grid-template-rows: 10vh 65vh;
+
+      z-index: 100;
+
+      .scenes {
+        width: 70vw;
+        height: 10vh;
+        grid-column: 1/4;
+        grid-row: 1/2;
+        display: flex;
+        justify-content: space-around;
+      }
+
+      .schedule {
+        position: relative;
+        grid-column: 1/4;
+        grid-row: 2/3;
+        width: 70vw;
+        height: 73vh;
+        overflow: scroll;
+
+        .lines {
+          position: relative;
+          top: 0%;
+          left: 0%;
+          width: 70vw;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          .line {
+            width: 68vw;
+            border-top: 1px solid rgba(255, 255, 255, 0.456);
+          }
+        }
+
+        .acts {
+          position: relative;
+          top: -155vh;
+          left: 0%;
+          width: 70vw;
+          display: grid;
+          grid-template-columns: 10vw 20vw 20vw 20vw;
+        }
+      }
+
+      .menu {
+        grid-column: 4/5;
+        grid-row: 2/3;
+        width: 20vw;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
