@@ -50,7 +50,7 @@ function renderSchedule(day) {
   document.querySelector(".midgard").innerHTML = "";
 
   // forLoop 0-23
-  for (let i = 0; i < 24; i + 2) {
+  for (let i = 0; i < 24; i += 2) {
     let timeString;
     if (i < 10) {
       timeString = `0${i}:00`;
