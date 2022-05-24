@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
   await loadBandJson();
-  await loadScheduleJson();
 }
 
 //------------------------ FETCH ALL DATA
@@ -22,19 +21,6 @@ async function loadBandJson() {
   bandJson = await bands.json();
 
   displayLineup();
-}
-
-//Fetch schedule
-async function loadScheduleJson() {
-  const schedule = await fetch(
-    "https://foo-techno-fest.herokuapp.com/schedule",
-    {
-      method: "GET",
-    }
-  );
-  scheduleJson = await schedule.json();
-  console.log(scheduleJson);
-  renderSchedule("mon");
 }
 
 //------------------------ APP
@@ -98,32 +84,19 @@ function showLineup() {
 
 function openTicket() {
   // MOVE LINEUP SECTION UP
-  document.querySelector("#ticket").classList.add("active_up");
+  document.querySelector("#ticket_flow1").classList.add("ticket_left");
+  document.querySelector(".wrapper").classList.add("active_left");
 }
 
-// BACK TO MAIN MENU
+// TICKET QUANTITY
+let minus_A = document.querySelector("#product_A_form .btn-subtract");
+let add_A = document.querySelector("#product_A_form .btn-add");
+let quantity_A = document.querySelector("#product_A_form .item-quantity");
 
-// document
-//   .querySelector(".elementcontainer button")
-//   .addEventListener("click", showMainMenu);
+minus_A.addEventListener("click", function () {
+  quantity_A.value--;
+});
 
-// function showMainMenu() {
-//   // MOVE LINEUP SECTION UP
-//   document.querySelector("#the_lineup_page").classList.remove("active_up");
-// }
-
-function renderSchedule(day) {
-  for (i = 0; i < 24; i++) {
-    let timeString = "";
-    if (i < 10) {
-      timeString = `0${i}:00`;
-    } else {
-      timeString = `${i}:00`;
-    }
-    if (scheduleJson.Jotunheim[day].find((s) => s.start == timeString)) {
-      document.querySelector(".jotunheim").innerHTML = scheduleJson.Jotunheim[
-        day
-      ].find((s) => s.start == timeString).act;
-    }
-  }
-}
+add_A.addEventListener("click", function () {
+  quantity_A.value++;
+});

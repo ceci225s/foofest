@@ -1,0 +1,31 @@
+#ticket_flow1 {
+  background-color: hotpink;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-gap: 5rem;
+  height: 100%;
+}
+
+.summery {
+  margin: 2rem;
+}
+
+.summery_overview {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem;
+}
+
+.areas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}

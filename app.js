@@ -83,5 +83,3 @@ function renderSchedule(day) {
     }
   }
 }
-
-function marqueePlayNow() {}

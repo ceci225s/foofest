@@ -21,8 +21,8 @@
             <p>AN ELECTRIC MUSIC FESTIVAL</p>
           </div>
           <div class="front_buttons">
-            <a id="menu_ticket">TICKETS</a>
             <a id="menu_program">PROGRAM</a>
+            <a id="menu_ticket">BUY TICKETS</a>
           </div>
         </section>
       </section>
@@ -62,47 +62,128 @@
       </section>
 
       <!-- TICKET -->
-      <section class="wrapper" id="ticket">
-        <!-- <section class="box_left">
-          <h2>CHOOSE YOUR TICKETS</h2>
-        </section> -->
+      <!-- <section class="wrapper" id="ticket">
         <section class="box_right">
-          <button>REGULAR</button>
-          <button>VIP</button>
+          <button class="buy_tickets">BUY TICKETS</button>
         </section>
+      </section> -->
+      <!-- Here starts the payment flow -->
+      <section id="ticket_flow1">
+        <form action="">
+          <h3>TICKET TYPE</h3>
+          <div>
+            <input
+              type="radio"
+              id="vip_ticket"
+              name="ticket_choice"
+              value="vip_ticket"
+              required
+            />
 
-        <section class="box" id="ticket_flow">
-          <form action="">
-            <div>
-              <h3>TICKET TYPE</h3>
-              <input
-                type="radio"
-                id="vip_ticket"
-                name="vip_ticket"
-                value="vip_ticket"
-              />
-              <label for="vip_ticket">VIP</label>
-              <input
-                type="radio"
-                id="regular_ticket"
-                name="regular_ticket"
-                value="regular_ticket"
-              />
-              <label for="regular_ticket">REGULAR</label>
+            <label for="vip_ticket">VIP</label>
+            <input
+              type="radio"
+              id="regular_ticket"
+              name="ticket_choice"
+              value="regular_ticket"
+            />
+
+            <label for="regular_ticket">REGULAR</label>
+          </div>
+          <hr />
+          <!-- Her skal der være en plus/minus funtion til billetter -->
+          <div>
+            <label for=""> AMOUNT </label>
+          </div>
+          <div id="product_A_form" class="input-group">
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-subtract" type="button">
+                -
+              </button>
+            </span>
+
+            <input
+              id="product_A_qty"
+              type="number"
+              class="form-control text-center item-quantity"
+              value="1"
+              min="0"
+            />
+
+            <span class="input-group-btn">
+              <button class="btn btn-default btn-add" type="button">+</button>
+            </span>
+          </div>
+          <hr />
+          <div>
+            <p>AVAILABLE CAMPING SPOT</p>
+            <div class="areas">
+              <div>
+                <input
+                  type="radio"
+                  id="svarteheim"
+                  name="area"
+                  value="Svarteheim"
+                />
+                <label for="svarteheim">Svarteheim</label>
+                <span class="availability"></span>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="nilfheim"
+                  name="area"
+                  value="Nilfheim"
+                />
+                <label for="nilfheim">Nilfheim</label>
+                <span class="availability"></span>
+              </div>
+              <div>
+                <input type="radio" id="helheim" name="area" value="Helheim" />
+                <label for="helheim">Helheim</label>
+                <span class="availability"></span>
+              </div>
+              <div>
+                <input
+                  type="radio"
+                  id="muspelheim"
+                  name="area"
+                  value="Muspelheim"
+                />
+                <label for="muspelheim">Muspelheim</label>
+                <span class="availability"></span>
+              </div>
+              <div>
+                <input type="radio" id="alfheim" name="area" value="Alfheim" />
+                <label for="alfheim">Alfheim</label>
+                <span class="availability"></span>
+              </div>
+            </div>
+          </div>
+          <button>NEXT</button>
+        </form>
+        <div class="summery">
+          <h3>SUMMERY</h3>
+          <div>
+            <div class="summery_overview">
+              <p class="purchase">3xVIP</p>
+              <p class="price">3897DKK</p>
+            </div>
+            <div class="summery_overview">
+              <p><strong> FIXED BOOKING FEE</strong></p>
+              <p>99DKK</p>
             </div>
             <hr />
-            <div>
-              <label for="quantity">AMOUNT</label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="5"
-              />
+            <div class="summery_overview">
+              <p class="total">TOTAL</p>
+              <p class="total_price">3897DKK</p>
             </div>
-          </form>
-        </section>
+          </div>
+        </div>
+      </section>
+
+      <section id="ticket_flow2">
+        <form action=""></form>
       </section>
     </main>
     <div id="app"></div>
