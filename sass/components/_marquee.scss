@@ -1,55 +1,28 @@
-.marquee-wrapper {
-  text-align: center;
-  width: 50vw;
-}
-.marquee-wrapper .container {
-  overflow: hidden;
-}
-.marquee-inner span {
-  float: left;
-}
-.marquee-wrapper .marquee-block {
-  --total-marquee-items: 5;
-  height: 150px;
-  width: calc(250px * (var(--total-marquee-items)));
-  overflow: hidden;
-  box-sizing: border-box;
-  position: relative;
-  margin: 0.5rem auto;
-  padding: 30px 0;
-}
-.marquee-inner {
-  display: block;
-  width: 200%;
+.marquee {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.524);
   position: absolute;
-}
-.marquee-inner.to-left {
-  animation: marqueeLeft 25s linear infinite;
-}
-.marquee-inner.to-right {
-  animation: marqueeRight 25s linear infinite;
-}
-.marquee-item {
-  width: 230px;
-  height: auto;
-  display: inline-block;
-  margin-right: 9rem;
-  float: left;
-  transition: all 0.2s ease-out;
-}
-@keyframes marqueeLeft {
-  0% {
-    left: 0;
-  }
-  100% {
-    left: -100%;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  max-width: 100%;
+  height: 7rem;
+  overflow-x: hidden;
+
+  .track {
+    position: absolute;
+    white-space: nowrap;
+    will-change: transform;
+    animation: marquee 32s linear infinite;
   }
 }
-@keyframes marqueeRight {
-  0% {
-    left: -100%;
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  100% {
-    left: 0;
+  to {
+    transform: translateX(-50%);
   }
 }

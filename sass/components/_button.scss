@@ -1,10 +1,10 @@
-button {
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 30rem;
-  height: 5rem;
-  border: none;
-  border-radius: 50px;
+  height: 7rem;
+
   color: white;
   background-color: black;
-  font-size: 2rem;
-  letter-spacing: 0.8rem;
 }
