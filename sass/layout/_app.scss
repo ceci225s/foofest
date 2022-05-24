@@ -139,14 +139,14 @@
         grid-column: 1/2;
         grid-row: 2/3;
         height: auto;
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: space-between;
+        display: grid;
         overflow: hidden;
+        margin-top: 2.2rem;
+        gap: 11.5rem;
 
-        h1 {
-          transform: rotate(-90deg);
-        }
+        // h1 {
+        //   transform: rotate(-90deg);
+        // }
       }
 
       .schedule {
@@ -165,23 +165,82 @@
           gap: 1rem;
 
           .line {
-            width: 68rem;
+            width: 2000vw;
             border-top: 1px solid rgba(255, 255, 255, 0.456);
           }
         }
 
         .acts {
           position: relative;
-          top: -154vh;
+          top: -206vh;
           left: 0%;
-          width: 70vw;
-          gap: 1rem;
+          width: auto;
+          gap: 2rem;
           display: grid;
-          grid-template-rows: 20px 230px 230px 230px;
+          grid-template-rows: 0px 200px 200px 200px;
 
           div {
             display: flex;
-            gap: 10rem;
+          }
+
+          .time {
+            gap: 2rem;
+
+            div {
+              width: 16rem;
+            }
+          }
+
+          .time_slot {
+            font-family: azo-sans-web, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 1rem;
+          }
+
+          .jotunheim {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 5rem;
+              width: 16rem;
+              background-color: #2104d980;
+            }
+          }
+
+          .midgard {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 5rem;
+              width: 16rem;
+              background-color: #7c038c80;
+            }
+          }
+
+          .vanaheim {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            div {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              height: 5rem;
+              width: 16rem;
+              background-color: #ff006a80;
+            }
           }
         }
       }
@@ -306,85 +365,96 @@
 
     #app_front {
       .background {
-        position: relative;
         width: 90vw;
         height: 90vh;
-        overflow: hidden;
         margin-top: 2rem;
-        z-index: 50;
-
-        #blur {
-          width: 110vw;
-          height: 110vh;
-          overflow: hidden;
-          background: rgba(0, 0, 0, 0.8);
-          backdrop-filter: saturate(180%) blur(10px);
-        }
       }
 
       .schedule-wrapper {
-        position: absolute;
         top: 2rem;
         left: 4.5rem;
         width: 90vw;
         height: 90vh;
         display: grid;
-        grid-template-columns: 23vw 23vw 23vw 20vw;
-        grid-template-rows: 16vh 65vh;
+        grid-template-columns: 25vw 25vw 25vw 14vw;
+        grid-template-rows: 16vh 74vh;
         overflow: hidden;
-
-        z-index: 100;
 
         .scenes {
           background-color: transparent;
           width: 70vw;
-          height: 10vh;
+          height: auto;
           grid-column: 1/4;
           grid-row: 1/2;
           display: flex;
-          justify-content: space-around;
           flex-direction: unset;
+          align-items: center;
 
           h1 {
             transform: rotate(0deg);
-            color: white;
+          }
+
+          .emma {
+            margin-left: 9.5rem;
+          }
+
+          .dolly {
+            margin-right: 6rem;
           }
         }
 
         .schedule {
-          position: relative;
           grid-column: 1/4;
           grid-row: 2/3;
-          width: 70vw;
-          height: 73vh;
           overflow-y: scroll;
           overflow-x: hidden;
 
           .lines {
-            position: relative;
             top: 0%;
-            left: 0%;
-            width: 70vw;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            width: auto;
+            height: 210vh;
+            gap: 1.8rem;
 
             .line {
-              width: 68vw;
-              border-top: 0.5px solid rgba(255, 255, 255, 0.456);
+              width: auto;
             }
           }
 
           .acts {
-            position: relative;
-            top: -160vh;
-            left: 0%;
-            width: 70vw;
+            // top: -48.5vh;
             display: grid;
-            grid-template-columns: 10vw 20vw 20vw 20vw;
+            grid-template-columns: 4vw 22vw 22vw 22vw;
 
             div {
-              display: grid;
+              flex-direction: column;
+            }
+
+            .time {
+              gap: 5rem;
+
+              div {
+                width: 3rem;
+                display: flex;
+                align-items: center;
+              }
+            }
+
+            .jotunheim {
+              gap: 5rem;
+              div {
+              }
+            }
+
+            .midgard {
+              gap: 5rem;
+              div {
+              }
+            }
+
+            .vanaheim {
+              gap: 5rem;
+              div {
+              }
             }
           }
         }
@@ -395,14 +465,12 @@
           width: 20vw;
           display: flex;
           flex-direction: column;
+          padding-top: 7.5rem;
           padding-left: 2rem;
-          background-color: black;
+
+          gap: 1rem;
         }
       }
     }
   }
-}
-
-.time_slot {
-  height: 2rem;
 }
