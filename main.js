@@ -26,12 +26,9 @@ async function loadBandJson() {
 
 //Fetch schedule
 async function loadScheduleJson() {
-  const schedule = await fetch(
-    "https://foo-techno-fest.herokuapp.com/schedule",
-    {
-      method: "GET",
-    }
-  );
+  const schedule = await fetch("https://foo-techno-fest.herokuapp.com/schedule", {
+    method: "GET",
+  });
   scheduleJson = await schedule.json();
   console.log(scheduleJson);
   renderSchedule("mon");
@@ -39,12 +36,9 @@ async function loadScheduleJson() {
 
 //------------------------ APP
 //Camping spots
-const availableSpots = await fetch(
-  "https://foo-techno-fest.herokuapp.com/available-spots",
-  {
-    method: "GET",
-  }
-);
+const availableSpots = await fetch("https://foo-techno-fest.herokuapp.com/available-spots", {
+  method: "GET",
+});
 const availableSpotsJson = await availableSpots.json();
 console.log(availableSpotsJson);
 
@@ -59,9 +53,7 @@ function displayLineup() {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
 
-    clone
-      .querySelector("#artist_name")
-      .addEventListener("click", () => openArtist(artist));
+    clone.querySelector("#artist_name").addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
 
     cont.appendChild(clone);
@@ -94,11 +86,13 @@ document.querySelector("#menu_ticket").addEventListener("click", openTicket);
 function showLineup() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#program").classList.add("active_up");
+  document.querySelector(".wrapper").classList.add("active_up");
 }
 
 function openTicket() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#ticket").classList.add("active_up");
+  document.querySelector(".wrapper").classList.add("active_up");
 }
 
 // BACK TO MAIN MENU
@@ -121,9 +115,9 @@ function renderSchedule(day) {
       timeString = `${i}:00`;
     }
     if (scheduleJson.Jotunheim[day].find((s) => s.start == timeString)) {
-      document.querySelector(".jotunheim").innerHTML = scheduleJson.Jotunheim[
-        day
-      ].find((s) => s.start == timeString).act;
+      document.querySelector(".jotunheim").innerHTML = scheduleJson.Jotunheim[day].find(
+        (s) => s.start == timeString
+      ).act;
     }
   }
 }
