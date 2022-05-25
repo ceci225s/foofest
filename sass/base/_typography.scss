@@ -1,27 +1,20 @@
 h1 {
   font-family: azo-sans-web, sans-serif;
-  font-weight: 200;
+  font-weight: 100;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 h2 {
   font-family: azo-sans-web, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 4rem;
-}
-
-h3 {
-  font-family: azo-sans-web, sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 4rem;
+  font-size: 2rem;
 }
 
 p {
   font-family: azo-sans-web, sans-serif;
-  font-weight: 900;
+  font-weight: 100;
   font-style: normal;
   font-size: 1rem;
 }
@@ -30,70 +23,17 @@ a {
   font-family: azo-sans-web, sans-serif;
   font-weight: 100;
   font-style: normal;
+  font-size: 2rem;
+
+  letter-spacing: 0.5rem;
   text-decoration: none;
-  font-size: 1rem;
   cursor: pointer;
-  letter-spacing: 0.3rem;
 }
 
-#index {
-  a {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 2rem;
-    text-decoration: none;
-    margin-right: 1rem;
-  }
+#app_schedule a {
+  font-size: 1rem;
 }
 
-@media (min-width: 1000px) {
-  h1 {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 200;
-    font-style: normal;
-    font-size: 3rem;
-  }
-
-  h2 {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 4rem;
-  }
-
-  h3 {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 4rem;
-  }
-
-  p {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    font-size: 1rem;
-  }
-
-  a {
-    font-family: azo-sans-web, sans-serif;
-    font-weight: 100;
-    font-style: normal;
-    text-decoration: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    letter-spacing: 0.3rem;
-  }
-
-  #index {
-    a {
-      font-family: azo-sans-web, sans-serif;
-      font-weight: 200;
-      font-style: normal;
-      font-size: 2rem;
-      text-decoration: none;
-      margin-right: 1rem;
-    }
-  }
+#app_frontpage h1 {
+  letter-spacing: 0.5rem;
 }

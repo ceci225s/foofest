@@ -8,30 +8,27 @@ let scheduleJson;
 window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
-  // await loadBandJson();
+  await loadBandJson();
   await loadScheduleJson();
 }
 
 //------------------------ FETCH ALL DATA
 
 //Fetch bands
-// async function loadBandJson() {
-//   const bands = await fetch("https://foo-techno-fest.herokuapp.com/bands", {
-//     method: "GET",
-//   });
-//   bandJson = await bands.json();
+async function loadBandJson() {
+  const bands = await fetch("https://foo-techno-fest.herokuapp.com/bands", {
+    method: "GET",
+  });
+  bandJson = await bands.json();
 
-//   displayLineup();
-// }
+  displayLineup();
+}
 
 //Fetch schedule
 async function loadScheduleJson() {
-  const schedule = await fetch(
-    "https://foo-techno-fest.herokuapp.com/schedule",
-    {
-      method: "GET",
-    }
-  );
+  const schedule = await fetch("https://foo-techno-fest.herokuapp.com/schedule", {
+    method: "GET",
+  });
   scheduleJson = await schedule.json();
   console.log(scheduleJson);
 
@@ -62,26 +59,38 @@ function renderSchedule(day) {
           ${scheduleJson.Jotunheim[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".jotunheim").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".jotunheim").innerHTML += '<div class="time_slot"></div>';
     }
     if (scheduleJson.Vanaheim[day].find((s) => s.start == timeString)) {
       document.querySelector(".vanaheim").innerHTML += `<div class="time_slot">
           ${scheduleJson.Vanaheim[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".vanaheim").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".vanaheim").innerHTML += '<div class="time_slot"></div>';
     }
     if (scheduleJson.Midgard[day].find((s) => s.start == timeString)) {
       document.querySelector(".midgard").innerHTML += `<div class="time_slot">
           ${scheduleJson.Midgard[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".midgard").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".midgard").innerHTML += '<div class="time_slot"></div>';
     }
   }
 }
 
 function marqueePlayNow() {}
+
+function displayLineup() {
+  let temp = document.querySelector(".artist");
+  let cont = document.querySelector(".elementcontainer");
+
+  bandJson.forEach((artist) => {
+    let clone = temp.cloneNode(true).content;
+    clone.querySelector("#artist_name").innerHTML = artist.name;
+
+    clone.querySelector("#artist_name").addEventListener("click", () => openArtist(artist));
+    cont.appendChild(clone);
+
+    cont.appendChild(clone);
+  });
+}
