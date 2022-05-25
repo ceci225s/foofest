@@ -62,73 +62,70 @@
       </section>
 
       <!-- TICKET -->
-      <!-- <section class="wrapper" id="ticket">
+      <section class="wrapper" id="ticket">
         <section class="box_right">
-          <button class="buy_tickets">BUY TICKETS</button>
+          <h3>TICKETS</h3>
+          <div class="ticket_buttons">
+            <button class="ticket" data-price="799">REGULAR TICKET</button>
+            <button class="ticket" data-price="1299">VIP TICKETS</button>
+          </div>
         </section>
-      </section> -->
+      </section>
       <!-- Here starts the payment flow -->
       <section id="ticket_flow1">
         <form action="">
-          <h3>TICKET TYPE</h3>
-          <div>
-            <input
-              type="radio"
-              id="vip_ticket"
-              name="ticket_choice"
-              value="vip_ticket"
-              required
-            />
+          <div class="ticket_section">
+            <h3>TICKET TYPE:</h3>
+            <div class="amount">
+              <p class="ticket_type"></p>
 
-            <label for="vip_ticket">VIP</label>
-            <input
-              type="radio"
-              id="regular_ticket"
-              name="ticket_choice"
-              value="regular_ticket"
-            />
+              <div class="v-counter">
+                <input type="button" class="minusBtn" value="-" />
+                <input type="text" size="25" value="1" class="count" />
+                <span>kg</span>
+                <input type="button" class="plusBtn" value="+" />
+              </div>
 
-            <label for="regular_ticket">REGULAR</label>
+              <!-- <div id="product_form" class="input-group">
+                <span class="input-group-btn">
+                  <button class="btn btn-default btn-subtract" type="button">
+                    -
+                  </button>
+                </span>
+
+                <input
+                  id="product_qty"
+                  type="number"
+                  class="form-control text-center item-quantity"
+                  value="1"
+                  min="0"
+                />
+
+                <span class="input-group-btn">
+                  <button class="btn btn-default btn-add" type="button">
+                    +
+                  </button>
+                </span>
+              </div> -->
+            </div>
           </div>
+
           <hr />
-          <!-- Her skal der være en plus/minus funtion til billetter -->
-          <div>
-            <label for=""> AMOUNT </label>
-          </div>
-          <div id="product_A_form" class="input-group">
-            <span class="input-group-btn">
-              <button class="btn btn-default btn-subtract" type="button">
-                -
-              </button>
-            </span>
 
-            <input
-              id="product_A_qty"
-              type="number"
-              class="form-control text-center item-quantity"
-              value="1"
-              min="0"
-            />
-
-            <span class="input-group-btn">
-              <button class="btn btn-default btn-add" type="button">+</button>
-            </span>
-          </div>
-          <hr />
-          <div>
+          <div class="camping_section">
             <p>AVAILABLE CAMPING SPOT</p>
             <div class="areas">
-              <div>
+              <div class="camp_svartheim">
                 <input
                   type="radio"
-                  id="svarteheim"
+                  id="svartheim"
                   name="area"
-                  value="Svarteheim"
+                  value="Svartheim"
                 />
                 <label for="svarteheim">Svarteheim</label>
-                <span class="availability"></span>
+                <p>Available spots:<span class="availability"></span></p>
               </div>
-              <div>
+              <div class="camp_nilfheim">
                 <input
                   type="radio"
                   id="nilfheim"
@@ -136,14 +133,14 @@
                   value="Nilfheim"
                 />
                 <label for="nilfheim">Nilfheim</label>
-                <span class="availability"></span>
+                <p>Available spots:<span class="availability"></span></p>
               </div>
-              <div>
+              <div class="camp_helheim">
                 <input type="radio" id="helheim" name="area" value="Helheim" />
                 <label for="helheim">Helheim</label>
-                <span class="availability"></span>
+                <p>Available spots:<span class="availability"></span></p>
               </div>
-              <div>
+              <div class="camp_muspelheim">
                 <input
                   type="radio"
                   id="muspelheim"
@@ -151,12 +148,12 @@
                   value="Muspelheim"
                 />
                 <label for="muspelheim">Muspelheim</label>
-                <span class="availability"></span>
+                <p>Available spots:<span class="availability"></span></p>
               </div>
-              <div>
+              <div class="camp_alfheim">
                 <input type="radio" id="alfheim" name="area" value="Alfheim" />
                 <label for="alfheim">Alfheim</label>
-                <span class="availability"></span>
+                <p>Available spots:<span class="availability"></span></p>
               </div>
             </div>
           </div>
@@ -166,8 +163,10 @@
           <h3>SUMMERY</h3>
           <div>
             <div class="summery_overview">
-              <p class="purchase">3xVIP</p>
-              <p class="price">3897DKK</p>
+              <p class="purchase">
+                <span class="quantity"></span>X<span class="price"></span>
+              </p>
+              <p class="price_add_up"></p>
             </div>
             <div class="summery_overview">
               <p><strong> FIXED BOOKING FEE</strong></p>
@@ -176,7 +175,7 @@
             <hr />
             <div class="summery_overview">
               <p class="total">TOTAL</p>
-              <p class="total_price">3897DKK</p>
+              <p class="total_price"></p>
             </div>
           </div>
         </div>
