@@ -1,0 +1,215 @@
+#animation_background {
+  #front_wrapper,
+  #middle_wrapper,
+  #back_wrapper {
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  }
+
+  #front_wrapper div,
+  #middle_wrapper div,
+  #back_wrapper div {
+    position: absolute;
+    transform-style: preserve-3d;
+  }
+
+  #front_wrapper {
+    z-index: -10;
+
+    .one {
+      height: 28rem;
+      width: 20rem;
+    }
+
+    .two {
+      height: 28rem;
+      width: 20rem;
+      left: 25%;
+    }
+
+    .three {
+      height: 25rem;
+      width: 25rem;
+      left: 50%;
+    }
+
+    .four {
+      height: 15rem;
+      width: 17rem;
+      left: 80%;
+    }
+
+    .five {
+      height: 15rem;
+      width: 17rem;
+      left: 60%;
+    }
+  }
+
+  #middle_wrapper {
+    z-index: -20;
+    filter: blur(0.5rem);
+    opacity: 60%;
+
+    .six {
+      height: 24rem;
+      width: 16rem;
+      left: 20%;
+    }
+
+    .seven {
+      height: 17rem;
+      width: 10rem;
+      left: 80%;
+    }
+
+    .eight {
+      height: 30rem;
+      width: 21rem;
+      left: -20%;
+    }
+
+    .nine {
+      height: 26rem;
+      width: 22rem;
+      left: 50%;
+    }
+  }
+
+  #back_wrapper {
+    z-index: -30;
+    filter: blur(1rem);
+    opacity: 30%;
+
+    .eleven {
+      height: 21rem;
+      width: 19rem;
+      left: 2%;
+    }
+
+    .twelve {
+      height: 18rem;
+      width: 13rem;
+      left: 44%;
+    }
+
+    .thirteen {
+      height: 25rem;
+      width: 25rem;
+      right: 13%;
+    }
+  }
+}
+
+@media (min-width: 1000px) {
+  #animation_background {
+    #front_wrapper,
+    #middle_wrapper,
+    #back_wrapper {
+      position: fixed;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+    }
+
+    #front_wrapper div,
+    #middle_wrapper div,
+    #back_wrapper div {
+      position: absolute;
+      transform-style: preserve-3d;
+    }
+
+    #front_wrapper {
+      z-index: -10;
+
+      .one {
+        height: 28rem;
+        width: 20rem;
+      }
+
+      .two {
+        height: 28rem;
+        width: 20rem;
+        left: 25%;
+      }
+
+      .three {
+        height: 25rem;
+        width: 25rem;
+        left: 50%;
+      }
+
+      .four {
+        height: 15rem;
+        width: 17rem;
+        left: 80%;
+      }
+
+      .five {
+        height: 15rem;
+        width: 17rem;
+        left: 60%;
+      }
+    }
+
+    #middle_wrapper {
+      z-index: -20;
+      filter: blur(0.5rem);
+      opacity: 60%;
+
+      .six {
+        height: 24rem;
+        width: 16rem;
+        left: 20%;
+      }
+
+      .seven {
+        height: 17rem;
+        width: 10rem;
+        left: 80%;
+      }
+
+      .eight {
+        height: 30rem;
+        width: 21rem;
+        left: -20%;
+      }
+
+      .nine {
+        height: 26rem;
+        width: 22rem;
+        left: 50%;
+      }
+    }
+
+    #back_wrapper {
+      z-index: -30;
+      filter: blur(1rem);
+      opacity: 30%;
+
+      .eleven {
+        height: 21rem;
+        width: 19rem;
+        left: 2%;
+      }
+
+      .twelve {
+        height: 18rem;
+        width: 13rem;
+        left: 44%;
+      }
+
+      .thirteen {
+        height: 25rem;
+        width: 25rem;
+        right: 13%;
+      }
+    }
+  }
+}

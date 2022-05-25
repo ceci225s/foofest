@@ -1,85 +1,221 @@
-main {
-  overflow: hidden;
+#animation_background {
+  #index {
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #frontpage {
+      left: 0%;
+      top: 0%;
+      position: absolute;
+      flex-direction: column;
+
+      .front_buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+        margin-top: 3rem;
+      }
+    }
+
+    #program {
+      left: 0%;
+      top: 100%;
+      position: absolute;
+
+      .background {
+        position: relative;
+        width: 100%;
+        height: 884px;
+        overflow: hidden;
+
+        #blur {
+          width: 150vw;
+          height: 110vh;
+          overflow: hidden;
+          background: rgba(0, 0, 0, 0.8);
+          backdrop-filter: saturate(180%) blur(10px);
+        }
+
+        .section_wrapper {
+          position: absolute;
+          top: 0rem;
+          left: 0rem;
+          width: 100vw;
+          height: 100vh;
+          display: grid;
+          grid-template-columns: 100vw 100vw 100vw;
+
+          .heading_wrapper {
+            display: none;
+          }
+
+          .artist_wrapper {
+            overflow-y: scroll;
+          }
+
+          .box.right {
+          }
+        }
+      }
+    }
+
+    #ticket {
+      left: 0%;
+      top: 100%;
+      position: absolute;
+    }
+
+    // .box_left,
+    // .box_right,
+    // .box {
+    //   display: flex;
+    //   flex-direction: column;
+    //   justify-content: center;
+    //   width: 100vw;
+    //   height: 100vh;
+    //   overflow: hidden;
+    //   background-color: transparent;
+    // }
+
+    // .box_left {
+    //   //   border-bottom-left-radius: 2rem;
+    //   //   border-top-left-radius: 2rem;
+    //   background-color: rgba(36, 36, 36, 0.4);
+    //   align-items: center;
+    // }
+
+    // .box_right {
+    //   //   border-top-right-radius: 2rem;
+    //   //   border-bottom-right-radius: 2rem;
+    //   background-color: rgba(128, 128, 128, 0.4);
+    //   align-items: center;
+    // }
+
+    // .front_buttons {
+    //   display: flex;
+    // }
+
+    // .elementcontainer {
+    //   flex-flow: wrap;
+    //   overflow-y: scroll;
+    // }
+
+    .active_left {
+      transform: translateX(-100vw);
+      transition: all 1s ease-in;
+    }
+
+    .active_up {
+      transform: translateY(-100vh);
+      transition: all 1s ease-in;
+    }
+
+    .active {
+      transform: translate(-50vw, -100vh);
+      transition: all 1s ease-in;
+    }
+
+    .ticket_up {
+      transform: translateY(-200vh);
+      transition: all 1s ease-in;
+    }
+  }
 }
 
-#index {
-  .wrapper {
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-  }
+@media (min-width: 1000px) {
+  #animation_background {
+    #index {
+      .wrapper {
+        width: 100vw;
+        height: 100vh;
+      }
 
-  .box_left,
-  .box_right,
-  .box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50vw;
-    height: 100vh;
-    overflow: hidden;
-    background-color: rgba(36, 36, 36, 0.4);
-  }
+      #frontpage {
+        margin-left: 4rem;
 
-  // .box_left {
-  //   //   border-bottom-left-radius: 2rem;
-  //   //   border-top-left-radius: 2rem;
-  //   background-color: rgba(36, 36, 36, 0.4);
-  //   align-items: center;
-  // }
+        .front_buttons {
+          flex-direction: row;
+          gap: 5rem;
+        }
+      }
 
-  // .box_right {
-  //   //   border-top-right-radius: 2rem;
-  //   //   border-bottom-right-radius: 2rem;
-  //   background-color: rgba(128, 128, 128, 0.4);
-  //   align-items: center;
-  // }
+      #program {
+        left: 0;
+        width: 150vw;
 
-  .front_buttons {
-    display: flex;
-  }
+        .background {
+          width: 150vw;
+          height: 100vh;
 
-  .elementcontainer {
-    flex-flow: wrap;
-    overflow-y: scroll;
-  }
+          .section_wrapper {
+            display: grid;
+            grid-template-columns: 50vw 50vw 50vw;
+            height: 100vh;
 
-  #frontpage p {
-    letter-spacing: 8px;
-  }
+            .heading_wrapper {
+              background-color: black;
+              grid-column: 1/2;
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+            }
 
-  #ticket button {
-    margin-bottom: 2rem;
-    background-image: linear-gradient(to right, #0608bc, #e062a7);
-  }
+            .artist_wrapper {
+              grid-column: 2/3;
+              display: grid;
+              grid-template-rows: 20vh 80vh;
+              overflow: hidden;
 
-  #info {
-    position: absolute;
-    left: 50%;
-  }
+              .filter_buttons {
+                grid-row: 1/2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+              }
 
-  .active_left {
-    transform: translateX(-50vw);
-    transition: all 1s ease-in;
-  }
+              .elementcontainer {
+                grid-row: 2/3;
+                display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                gap: 1.5rem;
+              }
+            }
 
-  #program,
-  #ticket {
-    left: 50%;
-    position: absolute;
-  }
-  .active_up {
-    transform: translateY(-100vh);
-    transition: all 1s ease-in;
-  }
+            .box_right {
+              grid-column: 3/4;
 
-  .active {
-    transform: translate(-50vw, -100vh);
-    transition: all 1s ease-in;
-  }
+              .card {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
 
-  .ticket_up {
-    transform: translateY(-200vh);
-    transition: all 1s ease-in;
+                figure {
+                  background: linear-gradient(#2104d9, #ff006a);
+
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    opacity: 50%;
+                  }
+                }
+
+                .name {
+                  font-size: 2rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

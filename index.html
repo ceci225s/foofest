@@ -7,57 +7,94 @@
     <link rel="stylesheet" href="https://use.typekit.net/rgp6dib.css" />
     <title>FooFest</title>
   </head>
-  <body>
-    <header>
+  <body id="animation_background">
+    <section>
+      <div id="front_wrapper">
+        <div class="one"></div>
+        <div class="two"></div>
+        <div class="three"></div>
+        <!-- <div class="four"></div>
+          <div class="five"></div> -->
+      </div>
+    </section>
+
+    <section>
+      <div id="middle_wrapper">
+        <div class="six"></div>
+        <div class="seven"></div>
+        <div class="eight"></div>
+        <div class="nine"></div>
+        <div class="ten"></div>
+      </div>
+    </section>
+
+    <section>
+      <div id="back_wrapper">
+        <div class="eleven"></div>
+        <div class="twelve"></div>
+        <div class="thirteen"></div>
+        <div class="fourteen"></div>
+        <div class="fifteen"></div>
+      </div>
+    </section>
+
+    <!-- <header>
       <a href="app.html">GO TO APP</a>
-    </header>
+    </header> -->
+
     <main id="index">
       <!-- FRONT PAGE -->
-
       <section class="wrapper" id="frontpage">
-        <section class="box">
-          <div class="front_text">
-            <h1>FOOFEST</h1>
-            <p>AN ELECTRIC MUSIC FESTIVAL</p>
-          </div>
-          <div class="front_buttons">
-            <a id="menu_ticket">TICKETS</a>
-            <a id="menu_program">PROGRAM</a>
-          </div>
-        </section>
+        <div class="front_text">
+          <h1>FOOFEST</h1>
+          <h2>AN ELECTRIC MUSIC FESTIVAL</h2>
+        </div>
+        <div class="front_buttons">
+          <div class="button"><a id="menu_ticket">TICKETS</a></div>
+          <div class="button"><a id="menu_program">PROGRAM</a></div>
+        </div>
       </section>
 
       <!-- PROGRAM -->
       <section class="wrapper" id="program">
-        <!-- <section class="box_left">
-          <div>
-            <h2>
-              PROGRAM <br />
-              2022
-            </h2>
-          </div>
-        </section> -->
+        <section class="background">
+          <div id="blur"></div>
 
-        <section class="box_right">
-          <div class="lineup">
-            <template class="artist">
-              <a><p id="artist_name"></p></a>
-            </template>
-          </div>
+          <section class="section_wrapper">
+            <section class="heading_wrapper">
+              <h1>
+                PROGRAM <br />
+                2022
+              </h1>
+            </section>
 
-          <section class="elementcontainer"></section>
-        </section>
+            <section class="artist_wrapper">
+              <div class="filter_buttons">
+                <div class="button">hej</div>
+                <div class="button">hej</div>
+              </div>
+              <div class="elementcontainer"></div>
+              <div class="lineup">
+                <template class="artist">
+                  <h2 id="artist_name"></h2>
+                </template>
+              </div>
+            </section>
 
-        <section class="box" id="info">
-          <div class="card">
-            <figure>
-              <img src="" alt="" />
-            </figure>
-            <p class="name"></p>
-            <p class="members"></p>
-            <p class="genre"></p>
-            <p class="bio"></p>
-          </div>
+            <section class="box_right">
+              <section class="box" id="info">
+                <div class="card">
+                  <figure>
+                    <img src="" alt="" />
+                  </figure>
+                  <p class="name"></p>
+                  <p class="members"></p>
+                  <p class="genre"></p>
+                  <p class="bio"></p>
+                </div>
+              </section>
+            </section>
+          </section>
         </section>
       </section>
 
@@ -75,12 +112,7 @@
           <form action="">
             <div>
               <h3>TICKET TYPE</h3>
-              <input
-                type="radio"
-                id="vip_ticket"
-                name="vip_ticket"
-                value="vip_ticket"
-              />
+              <input type="radio" id="vip_ticket" name="vip_ticket" value="vip_ticket" />
               <label for="vip_ticket">VIP</label>
               <input
                 type="radio"
@@ -93,19 +125,13 @@
             <hr />
             <div>
               <label for="quantity">AMOUNT</label>
-              <input
-                type="number"
-                id="quantity"
-                name="quantity"
-                min="1"
-                max="5"
-              />
+              <input type="number" id="quantity" name="quantity" min="1" max="5" />
             </div>
           </form>
         </section>
       </section>
     </main>
-    <div id="app"></div>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>
