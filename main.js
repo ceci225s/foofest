@@ -4,6 +4,7 @@ import "./sass/style.scss";
 let lineup = [];
 let bandJson;
 let availableSpotsJson;
+let qty = document.querySelector(".v-counter .count");
 
 window.addEventListener("DOMContentLoaded", start);
 
@@ -108,7 +109,7 @@ function openForm(price) {
   }
   renderSummery(price);
   // renderQty();
-  checkAvalibility();
+  showAvalibility();
 }
 
 function renderSummery(price) {
@@ -126,30 +127,57 @@ function renderSummery(price) {
     qty.value * price + 99 + ",-";
 }
 
-function checkAvalibility() {
+// show availability for each camp site
+// function showAvalibility() {
+//   for (let obj of availableSpotsJson) {
+//     if (obj.area === "Svartheim") {
+//       document.querySelector(".camp_svartheim span").textContent =
+//         obj.available;
+//     } else if (obj.area === "Nilfheim") {
+//       document.querySelector(".camp_nilfheim span").textContent = obj.available;
+//     } else if (obj.area === "Muspelheim") {
+//       document.querySelector(".camp_muspelheim span").textContent =
+//         obj.available;
+//     } else if (obj.area === "Alfheim") {
+//       document.querySelector(".camp_alfheim span").textContent = obj.available;
+//     } else if (obj.area === "Helheim") {
+//       document.querySelector(".camp_helheim span").textContent = obj.available;
+//     }
+//   }
+// }
+
+// check for availability - if not enough spots, hide camp
+function showAvalibility() {
+  // update summery qty field
+  document.querySelector(".quantity").textContent = qty.value;
+  // for each camp, if availability is below ticket qty then hide option
   for (let obj of availableSpotsJson) {
-    if (obj.area === "Svartheim") {
-      document.querySelector(".camp_svartheim span").textContent =
-        obj.available;
-    } else if (obj.area === "Nilfheim") {
-      document.querySelector(".camp_nilfheim span").textContent = obj.available;
-    } else if (obj.area === "Muspelheim") {
-      document.querySelector(".camp_muspelheim span").textContent =
-        obj.available;
-    } else if (obj.area === "Alfheim") {
-      document.querySelector(".camp_alfheim span").textContent = obj.available;
-    } else if (obj.area === "Helheim") {
-      document.querySelector(".camp_helheim span").textContent = obj.available;
+    if (obj.available < qty.value) {
+      document
+        .querySelector(`.camp_${obj.area.toLowerCase()}`)
+        .classList.add("hide");
     }
   }
 }
+// when camp site is chosen, check if there is enough spots compared to ticket qty
+let radios = document.querySelectorAll(".areas input");
 
-// Store references that all functions can use.
-var resultEl = document.querySelector(".resultSet"),
+// for (let i = 0, max = radios.length; i < max; i++) {
+//   radios[i].onclick = function () {
+//     if (qty > this.value) {
+//       alert("not enough available camp spots. Please choose another area");
+//     }
+//   };
+// }
+
+// quantity input field
+// _________________ Following code is from : https://codepen.io/vijaywaskrishna/pen/poRmdgB
+
+let resultEl = document.querySelector(".quantity"),
   plusMinusWidgets = document.querySelectorAll(".v-counter");
 
 // Attach the handlers to each plus-minus thing
-for (var i = 0; i < plusMinusWidgets.length; i++) {
+for (let i = 0; i < plusMinusWidgets.length; i++) {
   plusMinusWidgets[i]
     .querySelector(".minusBtn")
     .addEventListener("click", clickHandler);
@@ -158,16 +186,13 @@ for (var i = 0; i < plusMinusWidgets.length; i++) {
     .addEventListener("click", clickHandler);
   plusMinusWidgets[i]
     .querySelector(".count")
-    .addEventListener("change", changeHandler);
+    .addEventListener("change", showAvalibility);
 }
 
-/*****
- * both plus and minus use the same function, but value is set by the class of the
- *  button
- *****/
+// both plus and minus use the same function, but value is set by the class of the button
 function clickHandler(event) {
   // reference to the count input field
-  var countEl = event.target.parentNode.querySelector(".count");
+  let countEl = event.target.parentNode.querySelector(".count");
   if (event.target.className.match(/\bminusBtn\b/)) {
     countEl.value = Number(countEl.value) - 1;
   } else if (event.target.className.match(/\bplusBtn\b/)) {
@@ -178,35 +203,7 @@ function clickHandler(event) {
   triggerEvent(countEl, "change");
 }
 
-/*****
- * changeHandler() processes whenever a plusMinusWidget's count el is changed.
- *  It iterates over all plusMinusWidgets, gets their count, and outputs that
- *  to the given resultEl input field.
- *****/
-function changeHandler(event) {
-  // remove all value from the result el.
-  resultEl.value = 0;
-  /******
-   * Here is the only functional change, per your comment. Rather
-   *  concatenating a string, you want to sum values of the
-   *  plusMinusWidget. To do this, we need to cast the value of each
-   *  plusMinusWidget to a Number value, and add that to the Number
-   *  value of the resultEl.
-   *****/
-  for (var i = 0; i < plusMinusWidgets.length; i++) {
-    // Add the current plusMinusWidget value to the resultEl value.
-    resultEl.value =
-      Number(resultEl.value) +
-      Number(plusMinusWidgets[i].querySelector(".count").value);
-  }
-}
-
-/*****
- * triggerEvent() -- function to trigger an HTMLEvent on a given element.
- *  similar to jquery's trigger(), simply a convenience function. Not the
- *  point of this exercise.
- *****/
-
+// triggerEvent() -- function to trigger an HTMLEvent on a given element. similar to jquery's trigger(), simply a convenience function. Not the point of this exercise.
 function triggerEvent(el, type) {
   if ("createEvent" in document) {
     // modern browsers, IE9+
