@@ -43,7 +43,25 @@ async function loadSpots() {
   availableSpotsJson = await availableSpots.json();
   console.log(availableSpotsJson);
 }
-//------------------------ FRONT PAGE
+//------------------------ TICKET RESERVATION
+
+function reserveTickets(value) {
+  let reservedTickets = fetch(
+    "https://foo-techno-fest.herokuapp.com/reserve-spot",
+    {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: {
+        area: "Alfheim",
+        amount: 3,
+      },
+    }
+  )
+    .then((response) => console.log(response))
+    .catch((err) => console.error(err));
+}
 
 //------------------------ SHOW BANDS
 function displayLineup() {
@@ -107,49 +125,26 @@ function openForm(price) {
   } else {
     document.querySelector(".ticket_type").textContent = "VIP ticket";
   }
-  renderSummery(price);
-  // renderQty();
-  showAvalibility();
+  qtyChange(price);
+  showAvalibility(price);
 }
 
 function renderSummery(price) {
-  let qty = document.querySelector(".v-counter .count");
-
   // SHOW HOW MANY TICKETS
   document.querySelector(".quantity").textContent = qty.value;
   // SHOW THE PRICE
   document.querySelector(".price").textContent = price + ",-";
   // SHOW PRICE X QUANTITY
-  document.querySelector(".price_add_up").textContent =
-    qty.value * price + ",-";
+  document.querySelector(".total_price").textContent = qty.value * price + ",-";
   // SHOW TOTAL PRICE INCL FEE
-  document.querySelector(".total_price").textContent =
-    qty.value * price + 99 + ",-";
+  document.querySelector(".sum").textContent = qty.value * price + 99 + ",-";
 }
 
-// show availability for each camp site
-// function showAvalibility() {
-//   for (let obj of availableSpotsJson) {
-//     if (obj.area === "Svartheim") {
-//       document.querySelector(".camp_svartheim span").textContent =
-//         obj.available;
-//     } else if (obj.area === "Nilfheim") {
-//       document.querySelector(".camp_nilfheim span").textContent = obj.available;
-//     } else if (obj.area === "Muspelheim") {
-//       document.querySelector(".camp_muspelheim span").textContent =
-//         obj.available;
-//     } else if (obj.area === "Alfheim") {
-//       document.querySelector(".camp_alfheim span").textContent = obj.available;
-//     } else if (obj.area === "Helheim") {
-//       document.querySelector(".camp_helheim span").textContent = obj.available;
-//     }
-//   }
-// }
-
 // check for availability - if not enough spots, hide camp
-function showAvalibility() {
-  // update summery qty field
-  document.querySelector(".quantity").textContent = qty.value;
+function showAvalibility(price) {
+  // update summery
+  renderSummery(price);
+
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of availableSpotsJson) {
     if (obj.available < qty.value) {
@@ -158,35 +153,37 @@ function showAvalibility() {
         .classList.add("hide");
     }
   }
+  let radios = document.forms["payment_form"].elements["area"];
+  let value;
+  for (let i = 0, max = radios.length; i < max; i++) {
+    // when area is chosen then enable Next button and call function nextForm
+    radios[i].onclick = function () {
+      value = radios[i].value;
+      document.querySelector("#flow1_next").disabled = false;
+      document
+        .querySelector("#flow1_next")
+        .addEventListener("click", () => reserveTickets(value));
+    };
+  }
 }
-// when camp site is chosen, check if there is enough spots compared to ticket qty
-let radios = document.querySelectorAll(".areas input");
-
-// for (let i = 0, max = radios.length; i < max; i++) {
-//   radios[i].onclick = function () {
-//     if (qty > this.value) {
-//       alert("not enough available camp spots. Please choose another area");
-//     }
-//   };
-// }
-
 // quantity input field
 // _________________ Following code is from : https://codepen.io/vijaywaskrishna/pen/poRmdgB
 
-let resultEl = document.querySelector(".quantity"),
-  plusMinusWidgets = document.querySelectorAll(".v-counter");
+function qtyChange(price) {
+  let plusMinusWidgets = document.querySelectorAll(".v-counter");
 
-// Attach the handlers to each plus-minus thing
-for (let i = 0; i < plusMinusWidgets.length; i++) {
-  plusMinusWidgets[i]
-    .querySelector(".minusBtn")
-    .addEventListener("click", clickHandler);
-  plusMinusWidgets[i]
-    .querySelector(".plusBtn")
-    .addEventListener("click", clickHandler);
-  plusMinusWidgets[i]
-    .querySelector(".count")
-    .addEventListener("change", showAvalibility);
+  // Attach the handlers to each plus-minus thing
+  for (let i = 0; i < plusMinusWidgets.length; i++) {
+    plusMinusWidgets[i]
+      .querySelector(".minusBtn")
+      .addEventListener("click", clickHandler);
+    plusMinusWidgets[i]
+      .querySelector(".plusBtn")
+      .addEventListener("click", clickHandler);
+    plusMinusWidgets[i]
+      .querySelector(".count")
+      .addEventListener("change", () => showAvalibility(price));
+  }
 }
 
 // both plus and minus use the same function, but value is set by the class of the button
@@ -217,3 +214,9 @@ function triggerEvent(el, type) {
     el.fireEvent("on" + e.eventType, e);
   }
 }
+
+// function nextForm(value) {
+//   reserveTickets(value);
+
+//   console.log("hej");
+// }
