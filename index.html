@@ -83,7 +83,9 @@
               <div class="searchbar">
                 <form method="get" action="">
                   <div class="tb">
-                    <div class="td"><input type="text" placeholder="Search" required /></div>
+                    <div class="td">
+                      <input type="text" placeholder="Search" required />
+                    </div>
                     <div class="td" id="s-cover">
                       <button type="submit">
                         <div id="s-circle"></div>
@@ -158,34 +160,64 @@
                   <p>AVAILABLE CAMPING SPOT</p>
                   <div class="areas">
                     <div class="camp_svartheim">
-                      <input type="radio" id="svartheim" name="area" value="Svartheim" />
+                      <input
+                        type="radio"
+                        id="svartheim"
+                        name="area"
+                        value="Svartheim"
+                      />
                       <label for="svarteheim">Svarteheim</label>
                       <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_nilfheim">
-                      <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
+                      <input
+                        type="radio"
+                        id="nilfheim"
+                        name="area"
+                        value="Nilfheim"
+                      />
                       <label for="nilfheim">Nilfheim</label>
                       <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_helheim">
-                      <input type="radio" id="helheim" name="area" value="Helheim" />
+                      <input
+                        type="radio"
+                        id="helheim"
+                        name="area"
+                        value="Helheim"
+                      />
                       <label for="helheim">Helheim</label>
                       <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_muspelheim">
-                      <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
+                      <input
+                        type="radio"
+                        id="muspelheim"
+                        name="area"
+                        value="Muspelheim"
+                      />
                       <label for="muspelheim">Muspelheim</label>
                       <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_alfheim">
-                      <input type="radio" id="alfheim" name="area" value="Alfheim" />
+                      <input
+                        type="radio"
+                        id="alfheim"
+                        name="area"
+                        value="Alfheim"
+                      />
                       <label for="alfheim">Alfheim</label>
                       <p>Available spots:<span class="availability"></span></p>
                     </div>
                   </div>
                 </div>
 
-                <input type="button" id="flow1_next" value="NEXT" disabled="disabled" />
+                <input
+                  type="button"
+                  id="flow1_next"
+                  value="NEXT"
+                  disabled="disabled"
+                />
               </form>
             </section>
 
@@ -193,7 +225,9 @@
               <h3>SUMMERY</h3>
               <div>
                 <div class="summery_overview">
-                  <p class="purchase"><span class="quantity"></span>X<span class="price"></span></p>
+                  <p class="purchase">
+                    <span class="quantity"></span>X<span class="price"></span>
+                  </p>
                   <p class="total_price"></p>
                 </div>
                 <div class="summery_overview">
@@ -206,6 +240,7 @@
                   <p class="sum"></p>
                 </div>
               </div>
+              <div>Time left = <span id="timer"></span></div>
             </div>
 
             <section id="ticket_flow2">
