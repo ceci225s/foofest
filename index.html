@@ -120,16 +120,103 @@
 
       <!-- TICKET -->
       <section class="wrapper" id="ticket">
-        <section class="box_right">
-          <h3>TICKETS</h3>
-          <div class="ticket_buttons">
-            <button class="ticket" data-price="799">REGULAR TICKET</button>
-            <button class="ticket" data-price="1299">VIP TICKETS</button>
-          </div>
+        <section class="background">
+          <div id="blur"></div>
+
+          <section class="tsection_wrapper">
+            <section class="theading_wrapper">
+              <h1>TICKETS</h1>
+            </section>
+
+            <section class="tickets_wrapper">
+              <h3>TICKETS</h3>
+              <div class="ticket_buttons">
+                <button class="ticket" data-price="799">REGULAR TICKET</button>
+                <button class="ticket" data-price="1299">VIP TICKETS</button>
+              </div>
+            </section>
+
+            <section id="ticket_flow1">
+              <form name="payment_form">
+                <div class="ticket_section">
+                  <h3>TICKET TYPE:</h3>
+                  <div class="amount">
+                    <p class="ticket_type"></p>
+
+                    <div class="v-counter">
+                      <input type="button" class="minusBtn" value="-" />
+                      <input type="text" size="25" value="1" class="count" />
+                      <span></span>
+                      <input type="button" class="plusBtn" value="+" />
+                    </div>
+                  </div>
+                </div>
+
+                <hr />
+
+                <div class="camping_section">
+                  <p>AVAILABLE CAMPING SPOT</p>
+                  <div class="areas">
+                    <div class="camp_svartheim">
+                      <input type="radio" id="svartheim" name="area" value="Svartheim" />
+                      <label for="svarteheim">Svarteheim</label>
+                      <p>Available spots:<span class="availability"></span></p>
+                    </div>
+                    <div class="camp_nilfheim">
+                      <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
+                      <label for="nilfheim">Nilfheim</label>
+                      <p>Available spots:<span class="availability"></span></p>
+                    </div>
+                    <div class="camp_helheim">
+                      <input type="radio" id="helheim" name="area" value="Helheim" />
+                      <label for="helheim">Helheim</label>
+                      <p>Available spots:<span class="availability"></span></p>
+                    </div>
+                    <div class="camp_muspelheim">
+                      <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
+                      <label for="muspelheim">Muspelheim</label>
+                      <p>Available spots:<span class="availability"></span></p>
+                    </div>
+                    <div class="camp_alfheim">
+                      <input type="radio" id="alfheim" name="area" value="Alfheim" />
+                      <label for="alfheim">Alfheim</label>
+                      <p>Available spots:<span class="availability"></span></p>
+                    </div>
+                  </div>
+                </div>
+
+                <input type="button" id="flow1_next" value="NEXT" disabled="disabled" />
+              </form>
+            </section>
+
+            <div class="summery">
+              <h3>SUMMERY</h3>
+              <div>
+                <div class="summery_overview">
+                  <p class="purchase"><span class="quantity"></span>X<span class="price"></span></p>
+                  <p class="total_price"></p>
+                </div>
+                <div class="summery_overview">
+                  <p><strong> FIXED BOOKING FEE</strong></p>
+                  <p>99DKK</p>
+                </div>
+                <hr />
+                <div class="summery_overview">
+                  <p class="total">TOTAL</p>
+                  <p class="sum"></p>
+                </div>
+              </div>
+            </div>
+
+            <section id="ticket_flow2">
+              <form action=""></form>
+            </section>
+          </section>
         </section>
       </section>
+
       <!-- Here starts the payment flow -->
-      <div class="payment_flow">
+      <!-- <div class="payment_flow">
         <section id="ticket_flow1">
           <form name="payment_form">
             <div class="ticket_section">
@@ -200,11 +287,7 @@
             </div>
           </div>
         </section>
-
-        <section id="ticket_flow2">
-          <form action=""></form>
-        </section>
-      </div>
+      </div> -->
     </main>
 
     <script type="module" src="/main.js"></script>

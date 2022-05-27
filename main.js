@@ -97,7 +97,7 @@ function openArtist(artist) {
 
   // MOVE LINEUP SECTION TO THE RIGHT
   document.querySelector(".wrapper").classList.add("active_left");
-  document.querySelector("#program").classList.add("active");
+  document.querySelector("#program").classList.add("active_program");
   console.log("hej");
   // SHOW ARTIST INFO
   document.querySelector("#info .name").textContent = artist.name;
@@ -110,12 +110,13 @@ function openArtist(artist) {
 function showLineup() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#program").classList.add("active_up");
-  document.querySelector(".wrapper").classList.add("active_up");
+  document.querySelector("#frontpage").classList.add("active_up");
 }
 
 function showTicket() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#ticket").classList.add("active_up");
+  document.querySelector("#frontpage").classList.add("active_up");
 
   document.querySelector(".ticket_buttons").addEventListener("click", (event) => {
     openForm(event.target.dataset.price);
@@ -126,9 +127,10 @@ function showTicket() {
 
 // SHOW PURCHASE
 function openForm(price) {
-  document.querySelector("#ticket_flow1").classList.add("ticket_left");
-  document.querySelector(".wrapper").classList.add("active_left");
-  document.querySelector("#ticket").classList.add("active2");
+  // document.querySelector("#ticket_flow1").classList.add("ticket_left");
+  // document.querySelector(".wrapper").classList.add("active_left");
+  document.querySelector("#ticket").classList.remove("active_up");
+  document.querySelector("#ticket").classList.add("active_ticket");
 
   if (price == "799") {
     document.querySelector(".ticket_type").textContent = "REGULAR ticket";
@@ -219,4 +221,7 @@ function triggerEvent(el, type) {
 
 function nextForm(value) {
   reserveTickets(value);
+
+  document.querySelector("#ticket").classList.add("ticket_up_2");
+  document.querySelector("#ticket").classList.remove("active_ticket");
 }
