@@ -1,4 +1,5 @@
 #animation_background {
+  background-attachment: fixed;
   #app {
     .wrapper {
       display: flex;
@@ -190,6 +191,8 @@
         width: 100%;
         height: 884px;
         overflow: hidden;
+
+        background: inherit;
 
         #blur {
           width: 110vw;

@@ -1,17 +1,19 @@
 #animation_background {
   #index {
     .wrapper {
+      position: absolute;
       display: flex;
       justify-content: center;
       width: 100vw;
       height: 100vh;
       overflow: hidden;
+      left: 0;
+      margin-bottom: 10vh;
     }
 
     #frontpage {
-      left: 0%;
-      top: 0%;
-      position: absolute;
+      top: 0vh;
+
       flex-direction: column;
 
       .front_buttons {
@@ -24,18 +26,17 @@
     }
 
     #program {
-      left: 0%;
-      top: 100%;
-      position: absolute;
+      top: 100vh;
+      width: 200vw;
 
       .background {
         position: relative;
-        width: 100%;
-        height: 884px;
+        width: 200vw;
+        height: 100vh;
         overflow: hidden;
 
         #blur {
-          width: 150vw;
+          width: 200vw;
           height: 110vh;
           overflow: hidden;
           background: rgba(0, 0, 0, 0.8);
@@ -44,69 +45,54 @@
 
         .section_wrapper {
           position: absolute;
-          top: 0rem;
-          left: 0rem;
-          width: 100vw;
+          top: 0;
+          left: 0;
           height: 100vh;
+
           display: grid;
-          grid-template-columns: 100vw 100vw 100vw;
+          grid-template-columns: 100vw 100vw;
+          grid-template-rows: 10vh 90vh;
 
           .heading_wrapper {
             display: none;
           }
 
           .artist_wrapper {
+            grid-column: 1/2;
+            grid-row: 2/3;
+            display: grid;
+            grid-template-rows: 10% 90%;
+            overflow: hidden;
             overflow-y: scroll;
+
+            .searchbar {
+              grid-row: 1/2;
+            }
+
+            .elementcontainer {
+              grid-row: 2/3;
+              overflow-y: scroll;
+            }
           }
 
-          .box.right {
+          .box_right {
+            grid-column: 3/4;
+            grid-row: 2/3;
           }
         }
       }
     }
 
     #ticket {
-      left: 0%;
       top: 100%;
-      position: absolute;
     }
 
-    // .box_left,
-    // .box_right,
-    // .box {
-    //   display: flex;
-    //   flex-direction: column;
-    //   justify-content: center;
-    //   width: 100vw;
-    //   height: 100vh;
-    //   overflow: hidden;
-    //   background-color: transparent;
-    // }
-
-    // .box_left {
-    //   //   border-bottom-left-radius: 2rem;
-    //   //   border-top-left-radius: 2rem;
-    //   background-color: rgba(36, 36, 36, 0.4);
-    //   align-items: center;
-    // }
-
-    // .box_right {
-    //   //   border-top-right-radius: 2rem;
-    //   //   border-bottom-right-radius: 2rem;
-    //   background-color: rgba(128, 128, 128, 0.4);
-    //   align-items: center;
-    // }
-
-    // .front_buttons {
-    //   display: flex;
-    // }
-
-    // .elementcontainer {
-    //   flex-flow: wrap;
-    //   overflow-y: scroll;
-    // }
-
     .active_left {
+      transform: translateX(-100vw);
+      transition: all 1s ease-in;
+    }
+
+    .active_left_desktop {
       transform: translateX(-100vw);
       transition: all 1s ease-in;
     }
@@ -117,7 +103,7 @@
     }
 
     .active {
-      transform: translate(-50vw, -100vh);
+      transform: translate(-100vw, -100vh);
       transition: all 1s ease-in;
     }
 
@@ -156,11 +142,12 @@
           .section_wrapper {
             display: grid;
             grid-template-columns: 50vw 50vw 50vw;
-            height: 100vh;
+            grid-template-rows: 10vh 90vh;
 
             .heading_wrapper {
               background-color: black;
               grid-column: 1/2;
+              grid-row: 2/3;
               justify-content: center;
               align-items: center;
               display: flex;
@@ -169,17 +156,10 @@
 
             .artist_wrapper {
               grid-column: 2/3;
+              grid-row: 2/3;
               display: grid;
-              grid-template-rows: 20vh 80vh;
+              grid-template-rows: 10vh 80vh;
               overflow: hidden;
-
-              .filter_buttons {
-                grid-row: 1/2;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 2rem;
-              }
 
               .elementcontainer {
                 grid-row: 2/3;
@@ -192,6 +172,7 @@
 
             .box_right {
               grid-column: 3/4;
+              grid-row: 2/3;
 
               .card {
                 display: flex;
@@ -215,6 +196,11 @@
             }
           }
         }
+      }
+
+      .active {
+        transform: translate(-50vw, -100vh);
+        transition: all 1s ease-in;
       }
     }
   }
