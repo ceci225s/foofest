@@ -134,7 +134,7 @@ function showTicket() {
 function openForm(price) {
   document.querySelector("#ticket_flow1").classList.add("ticket_left");
   document.querySelector(".wrapper").classList.add("active_left");
-  document.querySelector("#ticket").classList.add("active");
+  document.querySelector("#ticket").classList.add("active2");
 
   if (price == "799") {
     document.querySelector(".ticket_type").textContent = "REGULAR ticket";
@@ -233,7 +233,4 @@ function triggerEvent(el, type) {
 
 function nextForm(value) {
   reserveTickets(value);
-  document.querySelector("#ticket_flow1").classList.remove("ticket_left");
-  document.querySelector("#ticket_flow1").classList.add("active");
-  document.querySelector("#ticket_flow2").classList.add("active.up");
 }

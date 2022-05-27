@@ -63,11 +63,16 @@ main {
   transition: all 1s ease-in;
 }
 
+.active2 {
+  transform: translate(-100vw, -100vh);
+  transition: all 1s ease-in;
+}
+
 .ticket_left {
   transform: translatex(-100vw);
   transition: all 1s ease-in;
 }
 .ticket_up {
-  transform: translatex(-200vw);
+  transform: translate(-100vw, -100vh);
   transition: all 1s ease-in;
 }
