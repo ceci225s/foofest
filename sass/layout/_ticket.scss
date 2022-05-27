@@ -1,4 +1,5 @@
-#ticket_flow1 {
+#ticket_flow1,
+#ticket_flow2 {
   background-color: hotpink;
   position: absolute;
   top: 0;
@@ -8,6 +9,9 @@
   grid-template-columns: 70% auto;
   grid-gap: 5rem;
   height: 100%;
+}
+#ticket_flow2 {
+  top: 100%;
 }
 
 .summery {

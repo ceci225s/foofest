@@ -46,19 +46,35 @@ async function loadSpots() {
 //------------------------ TICKET RESERVATION
 
 function reserveTickets(value) {
-  let reservedTickets = fetch(
-    "https://foo-techno-fest.herokuapp.com/reserve-spot",
-    {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: {
-        area: "Alfheim",
-        amount: 3,
-      },
-    }
-  )
+  const payload = {
+    area: value,
+    amount: qty.value,
+  };
+
+  fetch("https://foo-techno-fest.herokuapp.com/reserve-spot", {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(payload),
+  })
+    .then((response) => response.json())
+    .then((data) => finalizeTickets(data))
+    .catch((err) => console.error(err));
+}
+
+function finalizeTickets(data) {
+  let reservationId = {
+    id: data.id,
+  };
+  console.log(data.id);
+  fetch("https://foo-techno-fest.herokuapp.com/fullfill-reservation", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reservationId),
+  })
     .then((response) => console.log(response))
     .catch((err) => console.error(err));
 }
@@ -162,7 +178,7 @@ function showAvalibility(price) {
       document.querySelector("#flow1_next").disabled = false;
       document
         .querySelector("#flow1_next")
-        .addEventListener("click", () => reserveTickets(value));
+        .addEventListener("click", () => nextForm(value));
     };
   }
 }
@@ -215,8 +231,9 @@ function triggerEvent(el, type) {
   }
 }
 
-// function nextForm(value) {
-//   reserveTickets(value);
-
-//   console.log("hej");
-// }
+function nextForm(value) {
+  reserveTickets(value);
+  document.querySelector("#ticket_flow1").classList.remove("ticket_left");
+  document.querySelector("#ticket_flow1").classList.add("active");
+  document.querySelector("#ticket_flow2").classList.add("active.up");
+}
