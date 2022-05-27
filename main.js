@@ -34,12 +34,9 @@ async function loadBandJson() {
 //------------------------ APP
 //Camping spots
 async function loadSpots() {
-  let availableSpots = await fetch(
-    "https://foo-techno-fest.herokuapp.com/available-spots",
-    {
-      method: "GET",
-    }
-  );
+  let availableSpots = await fetch("https://foo-techno-fest.herokuapp.com/available-spots", {
+    method: "GET",
+  });
   availableSpotsJson = await availableSpots.json();
   console.log(availableSpotsJson);
 }
@@ -88,9 +85,7 @@ function displayLineup() {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
 
-    clone
-      .querySelector("#artist_name")
-      .addEventListener("click", () => openArtist(artist));
+    clone.querySelector("#artist_name").addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
   });
 }
@@ -115,17 +110,16 @@ function openArtist(artist) {
 function showLineup() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#program").classList.add("active_up");
+  document.querySelector(".wrapper").classList.add("active_up");
 }
 
 function showTicket() {
   // MOVE LINEUP SECTION UP
   document.querySelector("#ticket").classList.add("active_up");
 
-  document
-    .querySelector(".ticket_buttons")
-    .addEventListener("click", (event) => {
-      openForm(event.target.dataset.price);
-    });
+  document.querySelector(".ticket_buttons").addEventListener("click", (event) => {
+    openForm(event.target.dataset.price);
+  });
 }
 
 // _______________________________ FORM ________________________________//
@@ -164,9 +158,7 @@ function showAvalibility(price) {
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of availableSpotsJson) {
     if (obj.available < qty.value) {
-      document
-        .querySelector(`.camp_${obj.area.toLowerCase()}`)
-        .classList.add("hide");
+      document.querySelector(`.camp_${obj.area.toLowerCase()}`).classList.add("hide");
     }
   }
   let radios = document.forms["payment_form"].elements["area"];
@@ -176,9 +168,7 @@ function showAvalibility(price) {
     radios[i].onclick = function () {
       value = radios[i].value;
       document.querySelector("#flow1_next").disabled = false;
-      document
-        .querySelector("#flow1_next")
-        .addEventListener("click", () => nextForm(value));
+      document.querySelector("#flow1_next").addEventListener("click", () => nextForm(value));
     };
   }
 }
@@ -190,12 +180,8 @@ function qtyChange(price) {
 
   // Attach the handlers to each plus-minus thing
   for (let i = 0; i < plusMinusWidgets.length; i++) {
-    plusMinusWidgets[i]
-      .querySelector(".minusBtn")
-      .addEventListener("click", clickHandler);
-    plusMinusWidgets[i]
-      .querySelector(".plusBtn")
-      .addEventListener("click", clickHandler);
+    plusMinusWidgets[i].querySelector(".minusBtn").addEventListener("click", clickHandler);
+    plusMinusWidgets[i].querySelector(".plusBtn").addEventListener("click", clickHandler);
     plusMinusWidgets[i]
       .querySelector(".count")
       .addEventListener("change", () => showAvalibility(price));

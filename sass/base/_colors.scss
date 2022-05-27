@@ -1,4 +1,4 @@
-$black: #000000;
+$black: #06005a;
 $blue: #1bf2f2;
 $pink: #ef1df2;
 $white: #fcf9f9;
@@ -22,15 +22,7 @@ p {
 }
 
 a {
-  color: $pink;
-}
-
-#index {
-  a {
-    color: black;
-    -webkit-text-stroke: 1px $pink;
-    text-shadow: 0px 0px 7px $pink;
-  }
+  color: $white;
 }
 
 #lineup {
@@ -73,7 +65,7 @@ a {
   }
 }
 
-#app_animation_background {
+#animation_background {
   #front_wrapper div,
   #middle_wrapper div,
   #back_wrapper div {
