@@ -1,5 +1,6 @@
 #ticket_flow1,
-#ticket_flow2 {
+#ticket_flow2,
+#ticket_flow3 {
   background-color: hotpink;
   // position: absolute;
   // top: 0;
@@ -80,4 +81,8 @@ input[type="text"] {
 
 .hide {
   display: none;
+}
+
+.ticket_flow2 form label {
+  border: solid;
 }

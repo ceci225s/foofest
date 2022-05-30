@@ -1,7 +1,12 @@
 "use strict";
 import "./sass/style.scss";
 
-let lineup = [];
+let bookingInfo = {
+  personalInfo: [],
+  id: "",
+  ticketType: "",
+  campingArea: "",
+};
 let bandJson;
 let availableSpotsJson;
 let qty = document.querySelector(".v-counter .count");
@@ -15,7 +20,6 @@ async function start() {
   // VIS LINEUP START
 
   document.querySelector("#menu_program").addEventListener("click", showLineup);
-
   document.querySelector("#menu_ticket").addEventListener("click", showTicket);
 }
 
@@ -45,9 +49,9 @@ async function loadSpots() {
 }
 //------------------------ TICKET RESERVATION
 
-function reserveTickets(value) {
+function reserveTickets(campName) {
   const payload = {
-    area: value,
+    area: campName,
     amount: qty.value,
   };
 
@@ -59,15 +63,21 @@ function reserveTickets(value) {
     body: JSON.stringify(payload),
   })
     .then((response) => response.json())
-    .then((data) => finalizeTickets(data))
+    .then((data) => {
+      bookingInfo.id = data.id;
+      console.log(data.id);
+    })
     .catch((err) => console.error(err));
 }
 
-function finalizeTickets(data) {
+//------------------------ TICKET RESERVATION final
+
+function finalizeTickets() {
   let reservationId = {
-    id: data.id,
+    id: bookingInfo.id,
   };
   console.log(data.id);
+
   fetch("https://foo-techno-fest.herokuapp.com/fullfill-reservation", {
     method: "POST",
     headers: {
@@ -79,6 +89,30 @@ function finalizeTickets(data) {
     .catch((err) => console.error(err));
 }
 
+//------------------------ save to database
+function postToDatabase(form_value) {
+  const url = "https://frontend-0eac.restdb.io/rest/foofest-booking";
+  const apiKey = "6245615567937c128d7c9395";
+
+  let customerInfo = {
+    name: form_value.name,
+    lastname: form_value.last_name,
+    email: form_value.email,
+  };
+  POST(customerInfo, url, apiKey);
+
+  async function POST(customerInfo, url, apiKey) {
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(customerInfo),
+    })
+      .then((response) => console.log(response))
+      .catch((err) => console.error(err));
+  }
+}
 //------------------------ SHOW BANDS
 function displayLineup() {
   let temp = document.querySelector(".artist");
@@ -108,8 +142,15 @@ function openArtist(artist) {
   document.querySelector("#info .name").textContent = artist.name;
   document.querySelector("#info .members").textContent = artist.members;
   document.querySelector("#info .genre").textContent = artist.genre;
-  document.querySelector("#info img").src = artist.logo;
   document.querySelector("#info .bio").textContent = artist.bio;
+  if (artist.logo.startsWith("http")) {
+    document.querySelector("#info img").src = artist.logo;
+  } else {
+    document.querySelector(
+      "#info img"
+    ).src = `https://foo-techno-fest.herokuapp.com/logos/${artist.logo}`;
+  }
+  document.querySelector("figcaption").textContent = artist.logoCredits;
 }
 
 function showLineup() {
@@ -127,6 +168,7 @@ function showTicket() {
     .querySelector(".ticket_buttons")
     .addEventListener("click", (event) => {
       openForm(event.target.dataset.price);
+      bookingInfo.ticketType = event.target.dataset.type;
     });
 }
 
@@ -173,15 +215,18 @@ function showAvalibility(price) {
     }
   }
   let radios = document.forms["payment_form"].elements["area"];
-  let value;
+  let campName;
   for (let i = 0, max = radios.length; i < max; i++) {
     // when area is chosen then enable Next button and call function nextForm
     radios[i].onclick = function () {
-      value = radios[i].value;
+      campName = radios[i].value;
       document.querySelector("#flow1_next").disabled = false;
       document
         .querySelector("#flow1_next")
-        .addEventListener("click", () => nextForm(value));
+        .addEventListener("click", () => nextForm(campName));
+
+      bookingInfo.campingArea = campName;
+      console.log(bookingInfo.campingArea);
     };
   }
 }
@@ -234,11 +279,22 @@ function triggerEvent(el, type) {
   }
 }
 
-function nextForm(value) {
-  reserveTickets(value);
+function nextForm(campName) {
+  reserveTickets(campName);
   startCountdown();
-  document.querySelector("#ticket").classList.add("ticket_up_2");
-  document.querySelector("#ticket").classList.remove("active_ticket");
+  document.querySelector("#ticket_flow1").classList.add("ticket_up");
+  document.querySelector("#ticket_flow2").classList.add("active_up");
+
+  let cardTemplate = document.querySelector("#cardTemplate");
+  let cardContainer = document.querySelector("#cardContainer");
+  // let cloneCard = card.cloneNode(true);
+  let ticketqty = qty.value;
+  console.log(ticketqty);
+  for (let i = 0; i < ticketqty; i++) {
+    console.log(i);
+    let klon = cardTemplate.cloneNode(true).content;
+    cardContainer.appendChild(klon);
+  }
 }
 
 function startCountdown() {
@@ -256,7 +312,7 @@ function startCountdown() {
   }
 
   document.getElementById("timer").innerHTML = m + ":" + s;
-  console.log(m);
+  // console.log(m);
   setTimeout(startCountdown, 1000);
 }
 
@@ -268,4 +324,36 @@ function checkSecond(sec) {
     sec = "59";
   }
   return sec;
+}
+function handleSubmit(e) {
+  console.log("hej");
+
+  const formFields = document.querySelectorAll("#booking_info");
+  let nameArr = [];
+  formFields.forEach((e) => {
+    const names = e.querySelector("#name").value;
+    const lastname = e.querySelector("#last_name").value;
+    const email = e.querySelector("#email").value;
+
+    nameArr.push({ names, lastname, email });
+    bookingInfo.personalInfo = nameArr;
+  });
+
+  console.log(nameArr);
+
+  lastForm();
+}
+const form = document.querySelector("#ticket_flow2 button");
+form.addEventListener("submit", handleSubmit);
+
+function lastForm() {
+  console.log("hej");
+  console.log(bookingInfo);
+  document.querySelector("#ticket_flow2").classList.add("ticket_up");
+  document.querySelector(".summery").classList.add("active_up");
+
+  document
+    .querySelector("#ticket_flow3")
+    .scrollIntoView({ behavior: "smooth" });
+  // document.querySelector("#ticket_flow3").classList.add("active_up");
 }
