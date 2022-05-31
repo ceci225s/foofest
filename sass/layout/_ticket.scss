@@ -1,15 +1,16 @@
-// #ticket_flow1,
-// #ticket_flow2 {
-//   background-color: hotpink;
-//   // position: absolute;
-//   // top: 0;
-//   left: 100%;
-//   width: 100%;
-//   display: grid;
-//   grid-template-columns: 70% auto;
-//   grid-gap: 5rem;
-//   height: 100%;
-// }
+#ticket_flow1,
+#ticket_flow2,
+#ticket_flow3 {
+  background-color: hotpink;
+  // position: absolute;
+  // top: 0;
+  left: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 70% auto;
+  grid-gap: 5rem;
+  height: 100%;
+}
 
 // #ticket_flow2 {
 //   top: 100%;
@@ -78,6 +79,10 @@
 //   font-family: "Open Sans";
 // }
 
-// .hide {
-//   display: none;
-// }
+.hide {
+  display: none;
+}
+
+.ticket_flow2 form label {
+  border: solid;
+}

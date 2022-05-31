@@ -273,7 +273,7 @@
 
             display: grid;
             grid-template-columns: 50vw 50vw 100vw;
-            grid-template-rows: 10vh 90vh 10vh 90vh;
+            grid-template-rows: 10vh 90vh 10vh 90vh 100vh;
 
             .theading_wrapper {
               grid-column: 1/2;
@@ -302,11 +302,13 @@
               right: 0;
               height: 90vh;
               z-index: 100;
+            #ticket_flow3 {
+              grid-column: 3/4;
+              grid-row: 5/6;
             }
           }
         }
       }
-
       .active_program {
         transform: translate(-50vw, -100vh);
         transition: all 1s ease-in;
