@@ -344,7 +344,7 @@ function handleSubmit(e) {
   lastForm();
 }
 const form = document.querySelector("#ticket_flow2 button");
-form.addEventListener("submit", handleSubmit);
+form.addEventListener("click", handleSubmit);
 
 function lastForm() {
   console.log("hej");
@@ -355,5 +355,5 @@ function lastForm() {
   document
     .querySelector("#ticket_flow3")
     .scrollIntoView({ behavior: "smooth" });
-  // document.querySelector("#ticket_flow3").classList.add("active_up");
+  document.querySelector("#ticket_flow3").classList.add("active_up");
 }

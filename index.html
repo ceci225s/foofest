@@ -250,13 +250,22 @@
 
             <template id="cardTemplate">
               <form id="booking_info">
-                <label for="name">Name</label>
+                <label for="name">
+                  <span>Name</span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
                 <input type="text" name="name" id="name" required />
 
-                <label for="last_name">Lastname</label>
+                <label for="last_name">
+                  <span>Lastname</span>
+                  <strong><abbr title="required">*</abbr></strong>
+                </label>
                 <input type="text" name="last_name" id="last_name" required />
 
-                <label for="email">Email</label>
+                <label for="email"
+                  ><span>Email</span
+                  ><strong><abbr title="required">*</abbr></strong>
+                </label>
                 <input type="email" name="email" id="email" required />
               </form>
             </template>
@@ -264,7 +273,7 @@
               <fieldset>
                 <legend>Fill out below for each ticket holder</legend>
                 <div id="cardContainer"></div>
-                <button type="submit">Submit</button>
+                <button type="button">Submit</button>
               </fieldset>
             </section>
 
