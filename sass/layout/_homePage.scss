@@ -137,10 +137,40 @@
         }
       }
     }
+
+    .active_left {
+      transform: translateX(-100vw);
+      transition: all 1s ease-in;
+    }
+
+    .active_left_desktop {
+      transform: translateX(-100vw);
+      transition: all 1s ease-in;
+    }
+
+    .active_up {
+      transform: translateY(-100vh);
+      transition: all 1s ease-in;
+    }
+
+    .active {
+      transform: translate(-100vw, -100vh);
+      transition: all 1s ease-in;
+    }
+
+    .ticket_up {
+      transform: translateY(-200vh);
+      transition: all 1s ease-in;
+    }
+
+    .ticket_up_2 {
+      transform: translate(-100vw, -200vh);
+      transition: all 1s ease-in;
+    }
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 800px) {
   #animation_background {
     #index {
       #frontpage {
@@ -240,6 +270,7 @@
             top: 0;
             left: 0;
             height: 200vh;
+
             display: grid;
             grid-template-columns: 50vw 50vw 100vw;
             grid-template-rows: 10vh 90vh 10vh 90vh 100vh;
@@ -277,6 +308,15 @@
               grid-row: 5/6;
             }
           }
+        }
+        .active_program {
+          transform: translate(-50vw, -100vh);
+          transition: all 1s ease-in;
+        }
+
+        .active_ticket {
+          transform: translate(-100vw, -100vh);
+          transition: all 1s ease-in;
         }
       }
     }
