@@ -1,4 +1,9 @@
-import { loadSpots, reserveTickets } from "./database";
+import {
+  finalizeOrder,
+  loadSpots,
+  postToDatabase,
+  reserveTickets,
+} from "./database";
 
 let qty = document.querySelector(".v-counter .count");
 
@@ -316,12 +321,17 @@ function paymentForm() {
     }
 
     // 5. if any input is empty show the alert of that input
-    let input = document.querySelectorAll("input");
-    for (let i = 0; i < input.length; i++) {
-      if (input[i].value === "") {
-        input[i].nextElementSibling.style.opacity = "1";
-      }
-    }
-    finalizeTickets();
+    // let input = document.querySelectorAll("input");
+    // for (let i = 0; i < input.length; i++) {
+    //   if (input[i].value === "") {
+    //     input[i].nextElementSibling.style.opacity = "1";
+    //   }
+    // }
+    showFormFlow4();
   });
+}
+
+async function showFormFlow4() {
+  await finalizeOrder(bookingInfo);
+  postToDatabase(bookingInfo);
 }

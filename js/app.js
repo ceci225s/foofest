@@ -1,28 +1,19 @@
 "use strict";
 import "./sass/style.scss";
 
-let lineup = [];
-let bandJson;
+import { loadScheduleJson } from "./database";
+import { displayLineup } from "./program";
+
 let scheduleJson;
 
 window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
-  await loadBandJson();
   await loadScheduleJson();
+  displayLineup();
 }
 
 //------------------------ FETCH ALL DATA
-
-//Fetch bands
-async function loadBandJson() {
-  const bands = await fetch("https://foo-techno-fest.herokuapp.com/bands", {
-    method: "GET",
-  });
-  bandJson = await bands.json();
-
-  displayLineup();
-}
 
 //Fetch schedule
 async function loadScheduleJson() {
@@ -82,21 +73,4 @@ function renderSchedule(day) {
         '<div class="time_slot"></div>';
     }
   }
-}
-
-function displayLineup() {
-  let temp = document.querySelector(".artist");
-  let cont = document.querySelector(".elementcontainer");
-
-  bandJson.forEach((artist) => {
-    let clone = temp.cloneNode(true).content;
-    clone.querySelector("#artist_name").innerHTML = artist.name;
-
-    clone
-      .querySelector("#artist_name")
-      .addEventListener("click", () => openArtist(artist));
-    cont.appendChild(clone);
-
-    cont.appendChild(clone);
-  });
 }

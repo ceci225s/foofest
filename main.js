@@ -1,11 +1,6 @@
 "use strict";
 import "./sass/style.scss";
-import {
-  loadBandJson,
-  loadSpots,
-  finalizeTickets,
-  postToDatabase,
-} from "./js/database";
+import { loadBandJson } from "./js/database";
 import {
   displayChosenTicket,
   showAvailableCamps,
