@@ -223,7 +223,7 @@ function showAvalibility(price) {
       document.querySelector("#flow1_next").disabled = false;
       document
         .querySelector("#flow1_next")
-        .addEventListener("click", () => nextForm(campName));
+        .addEventListener("click", () => showPersonalInfoSection(campName));
 
       bookingInfo.campingArea = campName;
       console.log(bookingInfo.campingArea);
@@ -279,55 +279,57 @@ function triggerEvent(el, type) {
   }
 }
 
-function nextForm(campName) {
+function showPersonalInfoSection(campName) {
+  // send chosen camp name to function reserveTickets to get ID
   reserveTickets(campName);
-  startCountdown();
+  // startCountdown();
   document.querySelector("#ticket_flow1").classList.add("ticket_up");
   document.querySelector("#ticket_flow2").classList.add("active_up");
 
   let cardTemplate = document.querySelector("#cardTemplate");
   let cardContainer = document.querySelector("#cardContainer");
-  // let cloneCard = card.cloneNode(true);
+
   let ticketqty = qty.value;
-  console.log(ticketqty);
+  // show name form x ticket qty
   for (let i = 0; i < ticketqty; i++) {
     console.log(i);
     let klon = cardTemplate.cloneNode(true).content;
     cardContainer.appendChild(klon);
   }
+
+  const form = document.querySelector("#ticket_flow2 button");
+  form.addEventListener("click", handleSubmit);
 }
 
-function startCountdown() {
-  document.getElementById("timer").innerHTML = "05" + ":" + "00";
+// function startCountdown() {
+//   document.getElementById("timer").innerHTML = "05" + ":" + "00";
 
-  let presentTime = document.getElementById("timer").innerHTML;
-  let timeArray = presentTime.split(/[:]+/);
-  let m = timeArray[0];
-  let s = checkSecond(timeArray[1] - 1);
-  if (s == 59) {
-    m = m - 1;
-  }
-  if (m < 0) {
-    return;
-  }
+//   let presentTime = document.getElementById("timer").innerHTML;
+//   let timeArray = presentTime.split(/[:]+/);
+//   let m = timeArray[0];
+//   let s = checkSecond(timeArray[1] - 1);
+//   if (s == 59) {
+//     m = m - 1;
+//   }
+//   if (m < 0) {
+//     return;
+//   }
 
-  document.getElementById("timer").innerHTML = m + ":" + s;
-  // console.log(m);
-  setTimeout(startCountdown, 1000);
-}
+//   document.getElementById("timer").innerHTML = m + ":" + s;
+//   // console.log(m);
+//   setTimeout(startCountdown, 1000);
+// }
 
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {
-    sec = "0" + sec;
-  } // add zero in front of numbers < 10
-  if (sec < 0) {
-    sec = "59";
-  }
-  return sec;
-}
+// function checkSecond(sec) {
+//   if (sec < 10 && sec >= 0) {
+//     sec = "0" + sec;
+//   } // add zero in front of numbers < 10
+//   if (sec < 0) {
+//     sec = "59";
+//   }
+//   return sec;
+// }
 function handleSubmit(e) {
-  console.log("hej");
-
   const formFields = document.querySelectorAll("#booking_info");
   let nameArr = [];
   formFields.forEach((e) => {
@@ -343,17 +345,168 @@ function handleSubmit(e) {
 
   lastForm();
 }
-const form = document.querySelector("#ticket_flow2 button");
-form.addEventListener("click", handleSubmit);
 
 function lastForm() {
   console.log("hej");
   console.log(bookingInfo);
   document.querySelector("#ticket_flow2").classList.add("ticket_up");
-  document.querySelector(".summery").classList.add("active_up");
 
-  document
-    .querySelector("#ticket_flow3")
-    .scrollIntoView({ behavior: "smooth" });
-  document.querySelector("#ticket_flow3").classList.add("active_up");
+  // document
+  //   .querySelector("#ticket_flow3")
+  //   .scrollIntoView({ behavior: "smooth" });
+  document.querySelector("#ticket_flow3").classList.add("ticket_up");
 }
+
+// ---------------------------------payment flow-------------------------
+const paymentForm = document.querySelector(".form");
+const name = document.getElementById("name");
+const number = document.getElementById("number");
+const date = document.getElementById("date");
+const cvv = document.getElementById("cvv");
+
+/*  SHOW ERROR  */
+function showError(element, error) {
+  if (error === true) {
+    element.style.opacity = "1";
+  } else {
+    element.style.opacity = "0";
+  }
+}
+
+/*  CHANGE THE FORMAT NAME  */
+name.addEventListener("input", function () {
+  let alert1 = document.getElementById("alert-1");
+  let error = this.value === "";
+  showError(alert1, error);
+});
+
+/*  CHANGE THE FORMAT CARD NUMBER*/
+number.addEventListener("input", function (e) {
+  this.value = numberAutoFormat();
+
+  //show error when is different of 16 numbers and 3 white space
+  let error = this.value.length !== 19;
+  let alert2 = document.getElementById("alert-2");
+  showError(alert2, error);
+});
+
+function numberAutoFormat() {
+  let valueNumber = number.value;
+  // if white space change to ''. If is not a number between 0-9 change to ''
+  let v = valueNumber.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+
+  // the value got min of 4 digits and max of 16
+  let matches = v.match(/\d{4,16}/g);
+  let match = (matches && matches[0]) || "";
+  let parts = [];
+
+  for (let i = 0; i < match.length; i += 4) {
+    // after 4 digits add a new element to the Array
+    // e.g. "4510023" -> [4510, 023]
+    parts.push(match.substring(i, i + 4));
+  }
+
+  if (parts.length) {
+    // add a white space after 4 digits
+    return parts.join(" ");
+  } else {
+    return valueNumber;
+  }
+}
+
+/*  CHANGE THE FORMAT DATE  */
+date.addEventListener("input", function (e) {
+  this.value = dateAutoFormat();
+
+  // show error if is not a valid date
+  let alert3 = document.getElementById("alert-3");
+  showError(alert3, isNotDate(this));
+
+  let dateNumber = date.value.match(/\d{2,4}/g);
+});
+
+function isNotDate(element) {
+  let actualDate = new Date();
+  let month = actualDate.getMonth() + 1; // start january 0 we need to add + 1
+  let year = Number(actualDate.getFullYear().toString().substr(-2)); // 2022 -> 22
+  let dateNumber = element.value.match(/\d{2,4}/g);
+  let monthNumber = Number(dateNumber[0]);
+  let yearNumber = Number(dateNumber[1]);
+
+  if (
+    element.value === "" ||
+    monthNumber < 1 ||
+    monthNumber > 12 ||
+    yearNumber < year ||
+    (monthNumber <= month && yearNumber === year)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function dateAutoFormat() {
+  let dateValue = date.value;
+  // if white space -> change to ''. If is not a number between 0-9 -> change to ''
+  let v = dateValue.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+
+  // min of 2 digits and max of 4
+  let matches = v.match(/\d{2,4}/g);
+  let match = (matches && matches[0]) || "";
+  let parts = [];
+
+  for (let i = 0; i < match.length; i += 2) {
+    // after 4 digits add a new element to the Array
+    // e.g. "4510023" -> [4510, 023]
+    parts.push(match.substring(i, i + 2));
+  }
+
+  if (parts.length) {
+    // add a white space after 4 digits
+    return parts.join("/");
+  } else {
+    return dateValue;
+  }
+}
+
+/*  CHANGE THE FORMAT CVV  */
+cvv.addEventListener("input", function (e) {
+  let alert4 = document.getElementById("alert-4");
+  let error = this.value.length < 3;
+  showError(alert4, error);
+});
+
+/* CHECK IF KEY PRESSED IS A NUMBER (input of card number, date and cvv) */
+function isNumeric(event) {
+  if ((event.keyCode < 48 || event.keyCode > 57) && event.keyCode > 31) {
+    return false;
+  }
+}
+
+/*  VALIDATION FORM WHEN PRESS THE BUTTON   */
+paymentForm.addEventListener("submit", function (e) {
+  // 1. if there is not any name
+  // 2. if the length of the number card is not valid (16 numbers and 3 white space)
+  // 3. if is not a valid date (4 number and "/" or is not a valid date)
+  // 4. if is not a valid cvv
+
+  if (
+    name.value === "" ||
+    number.value.length !== 19 ||
+    date.value.length !== 5 ||
+    isNotDate(date) === true ||
+    cvv.value.length < 3
+  ) {
+    e.preventDefault();
+  }
+
+  // 5. if any input is empty show the alert of that input
+  let input = document.querySelectorAll("input");
+  for (let i = 0; i < input.length; i++) {
+    if (input[i].value === "") {
+      input[i].nextElementSibling.style.opacity = "1";
+    }
+  }
+  finalizeTickets();
+});

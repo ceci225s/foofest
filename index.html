@@ -172,7 +172,6 @@
                         value="Svartheim"
                       />
                       <label for="svarteheim">Svarteheim</label>
-                      <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_nilfheim">
                       <input
@@ -182,7 +181,6 @@
                         value="Nilfheim"
                       />
                       <label for="nilfheim">Nilfheim</label>
-                      <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_helheim">
                       <input
@@ -192,7 +190,6 @@
                         value="Helheim"
                       />
                       <label for="helheim">Helheim</label>
-                      <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_muspelheim">
                       <input
@@ -202,7 +199,6 @@
                         value="Muspelheim"
                       />
                       <label for="muspelheim">Muspelheim</label>
-                      <p>Available spots:<span class="availability"></span></p>
                     </div>
                     <div class="camp_alfheim">
                       <input
@@ -212,7 +208,6 @@
                         value="Alfheim"
                       />
                       <label for="alfheim">Alfheim</label>
-                      <p>Available spots:<span class="availability"></span></p>
                     </div>
                   </div>
                 </div>
@@ -278,7 +273,156 @@
             </section>
 
             <section id="ticket_flow3">
-              <h2>ORDER SUMMERY</h2>
+              <div>
+                <form id="billing_address">
+                  <label for="address">Address</label>
+                  <input type="text" placeholder="" id="address" />
+
+                  <label for="city">City</label>
+                  <input type="text" placeholder="" id="city" />
+
+                  <label for="zip">Zip code</label>
+                  <input type="text" placeholder="" id="zip" />
+
+                  <label for="country">Country</label>
+                  <input type="text" placeholder="" id="country" />
+                </form>
+
+                <hr />
+
+                <form id="personal_information">
+                  <label for="fullname">Full name</label>
+                  <input type="text" placeholder="" id="fullname" />
+
+                  <label for="email">Email</label>
+                  <input type="text" placeholder="" id="email" />
+                </form>
+
+                <hr />
+
+                <form class="form">
+                  <div class="form__name form__detail">
+                    <label for="name">Cardholder Name</label>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <input
+                      type="text"
+                      placeholder="Jane Doe"
+                      id="name"
+                      maxlength="24"
+                    />
+                    <div class="alert" id="alert-1">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                          fill="#FF6A96"
+                        />
+                      </svg>
+                      Full name required
+                    </div>
+                  </div>
+
+                  <div class="form__number form__detail">
+                    <label for="number">Card Number</label>
+                    <ion-icon name="card-outline"></ion-icon>
+                    <input
+                      type="text"
+                      placeholder="0000 0000 0000 0000"
+                      id="number"
+                      onkeypress="return isNumeric(event)"
+                    />
+                    <div class="alert" id="alert-2">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                          fill="#FF6A96"
+                        />
+                      </svg>
+                      Invalid card number
+                    </div>
+                  </div>
+
+                  <div class="form__expiry form__detail">
+                    <label for="date">Exp Date</label>
+                    <ion-icon name="calendar-outline"></ion-icon>
+                    <input
+                      type="text"
+                      placeholder="MM/YY"
+                      id="date"
+                      onkeypress="return isNumeric(event)"
+                    />
+                    <div class="alert" id="alert-3">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                          fill="#FF6A96"
+                        />
+                      </svg>
+                      Invalid date
+                    </div>
+                  </div>
+
+                  <div class="form__cvv form__detail">
+                    <label for="cvv"
+                      >CVV
+                      <ion-icon
+                        name="information-circle"
+                        class="info"
+                      ></ion-icon
+                    ></label>
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input
+                      type="password"
+                      placeholder="000"
+                      id="cvv"
+                      maxlength="3"
+                      onkeypress="return isNumeric(event)"
+                    />
+                    <div class="alert" id="alert-4">
+                      <svg
+                        width="12"
+                        height="12"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                          fill="#FF6A96"
+                        />
+                      </svg>
+                      Invalid CVV
+                    </div>
+                  </div>
+
+                  <button type="submit" class="form__btn">Confirm</button>
+                </form>
+              </div>
             </section>
           </section>
         </section>
