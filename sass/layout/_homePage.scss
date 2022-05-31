@@ -302,21 +302,22 @@
               right: 0;
               height: 90vh;
               z-index: 100;
-            #ticket_flow3 {
-              grid-column: 3/4;
-              grid-row: 5/6;
+              #ticket_flow3 {
+                grid-column: 3/4;
+                grid-row: 5/6;
+              }
             }
           }
         }
-      }
-      .active_program {
-        transform: translate(-50vw, -100vh);
-        transition: all 1s ease-in;
-      }
+        .active_program {
+          transform: translate(-50vw, -100vh);
+          transition: all 1s ease-in;
+        }
 
-      .active_ticket {
-        transform: translate(-100vw, -100vh);
-        transition: all 1s ease-in;
+        .active_ticket {
+          transform: translate(-100vw, -100vh);
+          transition: all 1s ease-in;
+        }
       }
     }
   }
