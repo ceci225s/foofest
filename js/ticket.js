@@ -127,6 +127,7 @@ async function showFormFlow2() {
   document.querySelector("#ticket_flow1").classList.add("ticket_up");
   document.querySelector("#ticket_flow2").classList.add("active_up");
   showForms();
+  document.getElementById("timer").innerHTML = "00" + ":" + "10";
 }
 
 function showForms() {
@@ -148,6 +149,41 @@ async function getId() {
   // send chosen camp name to function reserveTickets to get ID
   bookingInfo.id = await reserveTickets(bookingInfo);
   console.log(bookingInfo.id);
+  startCountdown();
+}
+
+function startCountdown() {
+  let presentTime = document.getElementById("timer").innerHTML;
+  let timeArray = presentTime.split(/[:]+/);
+  let m = timeArray[0];
+  let s = checkSecond(timeArray[1] - 1);
+  if (s == 59) {
+    m = m - 1;
+  }
+  if (m < 0) {
+    return;
+  }
+
+  document.getElementById("timer").innerHTML = m + ":" + s;
+  console.log(m, s);
+  setTimeout(startCountdown, 1000);
+  if (m == "00" && s == "00") {
+    if (confirm("Your reservation time is up. Pls start over") == true) {
+      console.log("hej");
+    } else {
+      console.log("bye");
+    }
+  }
+}
+
+function checkSecond(sec) {
+  if (sec < 10 && sec >= 0) {
+    sec = "0" + sec;
+  } // add zero in front of numbers < 10
+  if (sec < 0) {
+    sec = "59";
+  }
+  return sec;
 }
 
 function submitNames(e) {

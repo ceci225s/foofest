@@ -40,7 +40,7 @@ export async function reserveTickets(bookingInfo) {
     .then((response) => response.json())
     .then((data) => {
       bookingInfo.id = data.id;
-      console.log(data.id);
+      // console.log(data);
     })
     .catch((err) => console.error(err));
   return bookingInfo.id;
@@ -87,6 +87,6 @@ export function postToDatabase(bookingInfo) {
       },
     });
     let data = await bookingData.json();
-    console.log(data);
+    // console.log(data);
   }
 }
