@@ -7,11 +7,12 @@ header {
   background-color: black;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   gap: 3rem;
 
   a {
     font-size: 1rem;
+    margin-left: 2rem;
   }
   #app_cta {
     font-weight: 500;
