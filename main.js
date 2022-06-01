@@ -11,20 +11,20 @@ import { displayLineup } from "./js/program";
 window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
-  await loadBandJson();
-  document
-    .querySelector("#menu_program")
-    .addEventListener("click", showProgramSection);
+  let bandJson = await loadBandJson();
   document
     .querySelector("#menu_ticket")
     .addEventListener("click", showTicketSection);
+  document
+    .querySelector("#menu_program")
+    .addEventListener("click", () => showProgramSection(bandJson));
 }
 
-function showProgramSection() {
+function showProgramSection(bandJson) {
   // MOVE LINEUP SECTION UP
   document.querySelector("#program").classList.add("active_up");
   document.querySelector("#frontpage").classList.add("active_up");
-  displayLineup();
+  displayLineup(bandJson);
 }
 
 function showTicketSection() {

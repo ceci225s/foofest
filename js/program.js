@@ -1,7 +1,6 @@
-import { loadBandJson } from "./database";
 //------------------------ SHOW BANDS
 
-export function displayLineup() {
+export function displayLineup(bandJson) {
   let temp = document.querySelector(".artist");
   let cont = document.querySelector(".elementcontainer");
 
@@ -20,8 +19,8 @@ export function displayLineup() {
 
 function openArtist(artist) {
   // MOVE LINEUP SECTION TO THE RIGHT
-  document.querySelector(".wrapper").classList.add("active_left");
-  document.querySelector("#program").classList.add("active_program");
+  document.querySelector("#program").classList.remove("active_up");
+  document.querySelector(".section_wrapper").classList.add("active");
 
   // SHOW ARTIST INFO
   document.querySelector("#info .name").textContent = artist.name;

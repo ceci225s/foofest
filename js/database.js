@@ -6,6 +6,7 @@ export async function loadBandJson() {
     method: "GET",
   });
   let bandJson = await bands.json();
+  return bandJson;
 }
 
 //------------------------ APP
@@ -85,5 +86,7 @@ export function postToDatabase(bookingInfo) {
         "cache-control": "no-cache",
       },
     });
+    let data = await bookingData.json();
+    console.log(data);
   }
 }
