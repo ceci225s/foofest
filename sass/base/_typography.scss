@@ -2,7 +2,7 @@ h1 {
   font-family: azo-sans-web, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 7rem;
+  font-size: 5rem;
 }
 
 h2 {
@@ -40,4 +40,30 @@ a {
 
 .elementcontainer h2 {
   cursor: pointer;
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 7rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  a {
+    font-size: 2rem;
+  }
+
+  #app_schedule a {
+    font-size: 1rem;
+  }
+
+  #app_frontpage h1 {
+    letter-spacing: 0.5rem;
+  }
 }
