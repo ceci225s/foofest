@@ -127,7 +127,7 @@ async function showFormFlow2() {
   document.querySelector("#ticket_flow1").classList.add("ticket_up");
   document.querySelector("#ticket_flow2").classList.add("active_up");
   showForms();
-  document.getElementById("timer").innerHTML = "00" + ":" + "10";
+  document.getElementById("timer").innerHTML = "05" + ":" + "00";
 }
 
 function showForms() {
