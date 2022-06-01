@@ -1,4 +1,5 @@
 import { loadSpots, reserveTickets } from "./database";
+import Validation from "vanila-js-validation";
 
 let qty = document.querySelector(".v-counter .count");
 
@@ -31,9 +32,7 @@ export async function showAvailableCamps(price, type) {
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of freeCampSpots) {
     if (obj.available < qty.value) {
-      document
-        .querySelector(`.camp_${obj.area.toLowerCase()}`)
-        .classList.add("hide");
+      document.querySelector(`.camp_${obj.area.toLowerCase()}`).classList.add("hide");
     }
   }
 }
@@ -47,9 +46,7 @@ function chooseCampArea() {
       bookingInfo.campingArea = radios[i].value;
       //   when camp is chosen, enable the button
       document.querySelector("#flow1_next").disabled = false;
-      document
-        .querySelector("#flow1_next")
-        .addEventListener("click", () => showFormFlow2());
+      document.querySelector("#flow1_next").addEventListener("click", () => showFormFlow2());
     };
   }
 }
@@ -75,12 +72,8 @@ export function qtyChange(price, type) {
 
   // Attach the handlers to each plus-minus thing
   for (let i = 0; i < plusMinusWidgets.length; i++) {
-    plusMinusWidgets[i]
-      .querySelector(".minusBtn")
-      .addEventListener("click", clickHandler);
-    plusMinusWidgets[i]
-      .querySelector(".plusBtn")
-      .addEventListener("click", clickHandler);
+    plusMinusWidgets[i].querySelector(".minusBtn").addEventListener("click", clickHandler);
+    plusMinusWidgets[i].querySelector(".plusBtn").addEventListener("click", clickHandler);
     plusMinusWidgets[i]
       .querySelector(".count")
       .addEventListener("change", () => showAvailableCamps(price, type));
@@ -134,9 +127,7 @@ function showForms() {
     cardContainer.appendChild(klon);
   }
   getId();
-  document
-    .querySelector("#ticket_flow2 button")
-    .addEventListener("click", submitNames);
+  document.querySelector("#ticket_flow2 .button").addEventListener("click", submitNames);
 }
 
 async function getId() {
@@ -149,9 +140,9 @@ function submitNames(e) {
   const formFields = document.querySelectorAll("#booking_info");
   let nameArr = [];
   formFields.forEach((e) => {
-    const names = e.querySelector("#name").value;
-    const lastname = e.querySelector("#last_name").value;
-    const email = e.querySelector("#email").value;
+    const names = e.querySelector("#multi-first-name").value;
+    const lastname = e.querySelector("#multi-last-name").value;
+    const email = e.querySelector("#multi-email").value;
 
     // push form values to array
     nameArr.push({ names, lastname, email });
