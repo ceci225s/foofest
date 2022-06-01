@@ -39,7 +39,8 @@
     </section>
 
     <header>
-      <a href="app.html">GO TO APP</a>
+      <a id="contact">CONTACT</a>
+      <a id="app_cta" href="app.html">GO TO APP</a>
     </header>
 
     <main id="index">
@@ -50,9 +51,21 @@
           <h2>AN ELECTRIC MUSIC FESTIVAL</h2>
         </div>
         <div class="front_buttons">
-          <div class="button"><a id="menu_ticket">TICKETS</a></div>
-          <div class="button"><a id="menu_program">PROGRAM</a></div>
+          <div class="button">
+            <a id="menu_ticket">TICKETS</a>
+          </div>
+          <div class="button sec_cta"><a id="menu_program">PROGRAM</a></div>
         </div>
+      </section>
+
+      <section class="wrapper" id="contact_page">
+        <h2>General information</h2>
+        <p>Telefon: (+45) xx xx xx xx</p>
+        <p>Email: infofoofest.dk</p>
+        <p>
+          Address: Foo street xx<br />
+          xxxx Foo City
+        </p>
       </section>
 
       <!-- PROGRAM -->
@@ -162,7 +175,11 @@
                 <hr />
 
                 <div class="camping_section">
-                  <p>AVAILABLE CAMPING SPOT</p>
+                  <h3>AVAILABLE CAMPING SPOT</h3>
+                  <p>
+                    Each ticket includes a camping spot. Pls choose your
+                    prefered camp (only available camp areas are shown):
+                  </p>
                   <div class="areas">
                     <div class="camp_svartheim">
                       <input
@@ -242,7 +259,7 @@
                   <p class="sum"></p>
                 </div>
               </div>
-              <div>Time left = <span id="timer"></span></div>
+              <div><span id="timer"></span></div>
             </div>
 
             <template id="cardTemplate">

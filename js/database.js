@@ -6,6 +6,7 @@ export async function loadBandJson() {
     method: "GET",
   });
   let bandJson = await bands.json();
+  return bandJson;
 }
 
 //------------------------ APP
@@ -39,7 +40,7 @@ export async function reserveTickets(bookingInfo) {
     .then((response) => response.json())
     .then((data) => {
       bookingInfo.id = data.id;
-      console.log(data.id);
+      // console.log(data);
     })
     .catch((err) => console.error(err));
   return bookingInfo.id;
@@ -47,11 +48,11 @@ export async function reserveTickets(bookingInfo) {
 
 //------------------------ TICKET RESERVATION final
 
-export function finalizeTickets() {
+export async function finalizeOrder(bookingInfo) {
   let reservationId = {
     id: bookingInfo.id,
   };
-  console.log(data.id);
+  console.log(reservationId);
 
   fetch("https://foo-techno-fest.herokuapp.com/fullfill-reservation", {
     method: "POST",
@@ -65,21 +66,27 @@ export function finalizeTickets() {
 }
 
 //------------------------ save to database
-export function postToDatabase(form_value) {
+export function postToDatabase(bookingInfo) {
   const url = "https://frontend-0eac.restdb.io/rest/foofest-booking";
   const apiKey = "6245615567937c128d7c9395";
+  console.log(bookingInfo);
 
   POST(bookingInfo, url, apiKey);
 
   async function POST(bookingInfo, url, apiKey) {
-    fetch(url, {
-      method: "POST",
+    let bookingData = await fetch(url, {
+      async: true,
+      crossDomain: true,
+      url: url,
+      method: "post",
+      body: JSON.stringify(bookingInfo),
       headers: {
         "Content-Type": "application/json",
+        "x-apikey": apiKey,
+        "cache-control": "no-cache",
       },
-      body: JSON.stringify(bookingInfo),
-    })
-      .then((response) => console.log(response))
-      .catch((err) => console.error(err));
+    });
+    let data = await bookingData.json();
+    // console.log(data);
   }
 }

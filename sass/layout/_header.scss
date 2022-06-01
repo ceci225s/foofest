@@ -8,4 +8,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  gap: 3rem;
+
+  a {
+    font-size: 1rem;
+  }
+  #app_cta {
+    font-weight: 500;
+  }
 }
