@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://use.typekit.net/rgp6dib.css" />
     <title>FooFest</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/purecss@2.1.0/build/pure-min.css"
+      integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH"
+      crossorigin="anonymous"
+    />
   </head>
   <body id="animation_background">
     <section>
@@ -73,380 +79,410 @@
 
       <!-- PROGRAM -->
       <section class="wrapper" id="program">
-        <section class="background">
-          <div id="blur"></div>
+        <section class="pheading_wrapper">
+          <h1>
+            PROGRAM <br />
+            2022
+          </h1>
+        </section>
 
-          <section class="section_wrapper">
-            <section class="heading_wrapper">
-              <h1>
-                PROGRAM <br />
-                2022
-              </h1>
-            </section>
+        <section class="artist_wrapper">
+          <!-- <div class="searchbar">
 
-            <section class="artist_wrapper">
-              <!-- <div id="searchbar">
-                <form action="" autocomplete="on">
-                  <input
-                    id="search"
-                    name="search"
-                    type="text"
-                    placeholder="Search for an artist"
-                  /><input id="search_submit" value="Rechercher" type="submit" />
-                </form>
-              </div> -->
-
-              <div class="searchbar">
-                <form method="get" action="">
-                  <div class="tb">
-                    <div class="td">
-                      <input type="text" placeholder="Search" required />
-                    </div>
-                    <div class="td" id="s-cover">
-                      <button type="submit">
-                        <div id="s-circle"></div>
-                        <span></span>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-              <div class="elementcontainer"></div>
-              <div class="lineup">
-                <template class="artist">
-                  <h2 id="artist_name"></h2>
-                </template>
-              </div>
-            </section>
-
-            <section class="box_right">
-              <section class="box" id="info">
-                <div class="card">
-                  <figure>
-                    <img src="" alt="" />
-                    <figcaption></figcaption>
-                  </figure>
-                  <p class="name"></p>
-                  <p class="members"></p>
-                  <p class="genre"></p>
-                  <p class="bio"></p>
+            <form method="get" action="">
+              <div class="tb">
+                <div class="td">
+                  <input type="text" placeholder="Search" required />
                 </div>
-              </section>
-            </section>
+                <div class="td" id="s-cover">
+                  <button type="submit">
+                    <div id="s-circle"></div>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div> -->
+
+          <div class="elementcontainer"></div>
+          <div class="lineup">
+            <template class="artist">
+              <h2 id="artist_name"></h2>
+            </template>
+          </div>
+        </section>
+
+        <section class="box_right">
+          <section class="box" id="info">
+            <div class="card">
+              <figure>
+                <img src="" alt="" />
+                <figcaption></figcaption>
+              </figure>
+              <p class="name"></p>
+              <p class="members"></p>
+              <p class="genre"></p>
+              <p class="bio"></p>
+            </div>
           </section>
         </section>
       </section>
 
       <!-- TICKET -->
       <section class="wrapper" id="ticket">
-        <section class="background">
-          <div id="blur"></div>
+        <section class="theading_wrapper">
+          <h1>
+            BUY <br />
+            TICKETS
+          </h1>
+        </section>
 
-          <section class="tsection_wrapper">
-            <section class="theading_wrapper">
-              <h1>TICKETS</h1>
-            </section>
+        <div class="camping_section">
+          <h3>AVAILABLE CAMPING SPOT</h3>
+          <p>
+            Each ticket includes a camping spot. Pls choose your prefered camp (only available camp
+            areas are shown):
+          </p>
+          <div class="areas">
+            <div class="camp_svartheim">
+              <input type="radio" id="svartheim" name="area" value="Svartheim" />
+              <label for="svarteheim">Svarteheim</label>
+            </div>
+            <div class="camp_nilfheim">
+              <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
+              <label for="nilfheim">Nilfheim</label>
+            </div>
+            <div class="camp_helheim">
+              <input type="radio" id="helheim" name="area" value="Helheim" />
+              <label for="helheim">Helheim</label>
+            </div>
+            <div class="camp_muspelheim">
+              <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
+              <label for="muspelheim">Muspelheim</label>
+            </div>
+            <div class="camp_alfheim">
+              <input type="radio" id="alfheim" name="area" value="Alfheim" />
+              <label for="alfheim">Alfheim</label>
+            </div>
+          </div>
+        </div>
 
-            <section class="tickets_wrapper">
-              <h3>TICKETS</h3>
-              <div class="ticket_buttons">
-                <button class="ticket" data-price="799" data-type="Regular">
-                  REGULAR TICKET
-                </button>
-                <button class="ticket" data-price="1299" data-type="VIP">
-                  VIP TICKETS
-                </button>
+        <section class="tbutton_wrapper">
+          <h3>TICKETS</h3>
+          <div class="ticket_buttons">
+            <div class="ticket button" data-price="799" data-type="Regular">REGULAR TICKET</div>
+            <div class="ticket button" data-price="1299" data-type="VIP">VIP TICKETS</div>
+          </div>
+        </section>
+
+        <section id="ticket_flow1">
+          <form name="payment_form">
+            <div class="ticket_section">
+              <div class="amount">
+                <h3 class="ticket_type"></h3>
+
+                <div class="v-counter">
+                  <input type="button" class="minusBtn" value="-" />
+                  <input type="text" size="25" value="1" class="count" />
+                  <input type="button" class="plusBtn" value="+" />
+                </div>
               </div>
-            </section>
+            </div>
 
-            <section id="ticket_flow1">
-              <form name="payment_form">
-                <div class="ticket_section">
-                  <h3>TICKET TYPE:</h3>
-                  <div class="amount">
-                    <p class="ticket_type"></p>
-
-                    <div class="v-counter">
-                      <input type="button" class="minusBtn" value="-" />
-                      <input type="text" size="25" value="1" class="count" />
-                      <span></span>
-                      <input type="button" class="plusBtn" value="+" />
-                    </div>
-                  </div>
+            <div class="camping_section">
+              <p>AVAILABLE CAMPING SPOT</p>
+              <div class="areas">
+                <div class="camp_svartheim">
+                  <input type="radio" id="svartheim" name="area" value="Svartheim" />
+                  <label for="svarteheim">Svarteheim</label>
                 </div>
-
-                <hr />
-
-                <div class="camping_section">
-                  <h3>AVAILABLE CAMPING SPOT</h3>
-                  <p>
-                    Each ticket includes a camping spot. Pls choose your
-                    prefered camp (only available camp areas are shown):
-                  </p>
-                  <div class="areas">
-                    <div class="camp_svartheim">
-                      <input
-                        type="radio"
-                        id="svartheim"
-                        name="area"
-                        value="Svartheim"
-                      />
-                      <label for="svarteheim">Svarteheim</label>
-                    </div>
-                    <div class="camp_nilfheim">
-                      <input
-                        type="radio"
-                        id="nilfheim"
-                        name="area"
-                        value="Nilfheim"
-                      />
-                      <label for="nilfheim">Nilfheim</label>
-                    </div>
-                    <div class="camp_helheim">
-                      <input
-                        type="radio"
-                        id="helheim"
-                        name="area"
-                        value="Helheim"
-                      />
-                      <label for="helheim">Helheim</label>
-                    </div>
-                    <div class="camp_muspelheim">
-                      <input
-                        type="radio"
-                        id="muspelheim"
-                        name="area"
-                        value="Muspelheim"
-                      />
-                      <label for="muspelheim">Muspelheim</label>
-                    </div>
-                    <div class="camp_alfheim">
-                      <input
-                        type="radio"
-                        id="alfheim"
-                        name="area"
-                        value="Alfheim"
-                      />
-                      <label for="alfheim">Alfheim</label>
-                    </div>
-                  </div>
+                <div class="camp_nilfheim">
+                  <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
+                  <label for="nilfheim">Nilfheim</label>
                 </div>
-
-                <input
-                  type="button"
-                  id="flow1_next"
-                  value="NEXT"
-                  disabled="disabled"
-                />
-              </form>
-            </section>
-
-            <div class="summery">
-              <h3>SUMMERY</h3>
-              <div>
-                <div class="summery_overview">
-                  <p class="purchase">
-                    <span class="quantity"></span>X<span
-                      class="ticket_name"
-                    ></span>
-                  </p>
-                  <p class="total_price"></p>
+                <div class="camp_helheim">
+                  <input type="radio" id="helheim" name="area" value="Helheim" />
+                  <label for="helheim">Helheim</label>
                 </div>
-                <div class="summery_overview">
-                  <p><strong> FIXED BOOKING FEE</strong></p>
-                  <p>99DKK</p>
+                <div class="camp_muspelheim">
+                  <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
+                  <label for="muspelheim">Muspelheim</label>
                 </div>
-                <hr />
-                <div class="summery_overview">
-                  <p class="total">TOTAL</p>
-                  <p class="sum"></p>
+                <div class="camp_alfheim">
+                  <input type="radio" id="alfheim" name="area" value="Alfheim" />
+                  <label for="alfheim">Alfheim</label>
                 </div>
               </div>
               <div><span id="timer"></span></div>
             </div>
 
-            <template id="cardTemplate">
-              <form id="booking_info">
-                <label for="name">
-                  <span>Name</span>
-                  <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <input type="text" name="name" id="name" required />
+            <input class="button" type="button" id="flow1_next" value="NEXT" disabled="disabled" />
+          </form>
 
-                <label for="last_name">
-                  <span>Lastname</span>
-                  <strong><abbr title="required">*</abbr></strong>
-                </label>
-                <input type="text" name="last_name" id="last_name" required />
-
-                <label for="email"
-                  ><span>Email</span
-                  ><strong><abbr title="required">*</abbr></strong>
-                </label>
-                <input type="email" name="email" id="email" required />
-              </form>
-            </template>
-            <section id="ticket_flow2">
-              <fieldset>
-                <legend>Fill out below for each ticket holder</legend>
-                <div id="cardContainer"></div>
-                <button type="button">Submit</button>
-              </fieldset>
-            </section>
-
-            <section id="ticket_flow3">
-              <div>
-                <form id="billing_address">
-                  <label for="address">Address</label>
-                  <input type="text" placeholder="" id="address" />
-
-                  <label for="city">City</label>
-                  <input type="text" placeholder="" id="city" />
-
-                  <label for="zip">Zip code</label>
-                  <input type="text" placeholder="" id="zip" />
-
-                  <label for="country">Country</label>
-                  <input type="text" placeholder="" id="country" />
-                </form>
-
-                <hr />
-
-                <form id="personal_information">
-                  <label for="fullname">Full name</label>
-                  <input type="text" placeholder="" id="fullname" />
-
-                  <label for="email">Email</label>
-                  <input type="text" placeholder="" id="email" />
-                </form>
-
-                <hr />
-
-                <form class="form">
-                  <div class="form__name form__detail">
-                    <label for="name">Cardholder Name</label>
-                    <ion-icon name="person-outline"></ion-icon>
-                    <input
-                      type="text"
-                      placeholder="Jane Doe"
-                      id="name"
-                      maxlength="24"
-                    />
-                    <div class="alert" id="alert-1">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
-                          fill="#FF6A96"
-                        />
-                      </svg>
-                      Full name required
-                    </div>
-                  </div>
-
-                  <div class="form__number form__detail">
-                    <label for="number">Card Number</label>
-                    <ion-icon name="card-outline"></ion-icon>
-                    <input
-                      type="text"
-                      placeholder="0000 0000 0000 0000"
-                      id="number"
-                      onkeypress="return isNumeric(event)"
-                    />
-                    <div class="alert" id="alert-2">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
-                          fill="#FF6A96"
-                        />
-                      </svg>
-                      Invalid card number
-                    </div>
-                  </div>
-
-                  <div class="form__expiry form__detail">
-                    <label for="date">Exp Date</label>
-                    <ion-icon name="calendar-outline"></ion-icon>
-                    <input
-                      type="text"
-                      placeholder="MM/YY"
-                      id="date"
-                      onkeypress="return isNumeric(event)"
-                    />
-                    <div class="alert" id="alert-3">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
-                          fill="#FF6A96"
-                        />
-                      </svg>
-                      Invalid date
-                    </div>
-                  </div>
-
-                  <div class="form__cvv form__detail">
-                    <label for="cvv"
-                      >CVV
-                      <ion-icon
-                        name="information-circle"
-                        class="info"
-                      ></ion-icon
-                    ></label>
-                    <ion-icon name="lock-closed-outline"></ion-icon>
-                    <input
-                      type="password"
-                      placeholder="000"
-                      id="cvv"
-                      maxlength="3"
-                      onkeypress="return isNumeric(event)"
-                    />
-                    <div class="alert" id="alert-4">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
-                          fill="#FF6A96"
-                        />
-                      </svg>
-                      Invalid CVV
-                    </div>
-                  </div>
-
-                  <button type="submit" class="form__btn">Confirm</button>
-                </form>
+          <!-- <form class="pure-form pure-form-aligned">
+            <fieldset>
+              <div class="pure-control-group">
+                <label for="aligned-name">Username</label>
+                <input type="text" id="aligned-name" placeholder="Username" />
+                <span class="pure-form-message-inline">This is a required field.</span>
               </div>
-            </section>
-          </section>
+              <div class="pure-control-group">
+                <label for="aligned-password">Password</label>
+                <input type="password" id="aligned-password" placeholder="Password" />
+              </div>
+              <div class="pure-control-group">
+                <label for="aligned-email">Email Address</label>
+                <input type="email" id="aligned-email" placeholder="Email Address" />
+              </div>
+              <div class="pure-control-group">
+                <label for="aligned-foo">Supercalifragilistic Label</label>
+                <input type="text" id="aligned-foo" placeholder="Enter something here..." />
+              </div>
+              <div class="pure-controls">
+                <label for="aligned-cb" class="pure-checkbox">
+                  <input type="checkbox" id="aligned-cb" /> I&#x27;ve read the terms and conditions
+                </label>
+                <button type="submit" class="pure-button pure-button-primary">Submit</button>
+              </div>
+            </fieldset>
+          </form> -->
+        </section>
+
+        <div class="summery">
+          <h3>YOUR PURCHASE</h3>
+          <div>
+            <div class="summery_overview">
+              <p class="purchase">
+                <span class="quantity"></span>X<span class="ticket_name"></span>
+              </p>
+              <p class="total_price"></p>
+            </div>
+            <div class="summery_overview">
+              <p><strong> FIXED BOOKING FEE</strong></p>
+              <p>99DKK</p>
+            </div>
+            <hr />
+            <div class="summery_overview">
+              <p class="total">TOTAL</p>
+              <p class="sum"></p>
+            </div>
+          </div>
+          <div>Time left = <span id="timer"></span></div>
+        </div>
+
+        <!-- <template id="cardTemplate">
+          <form id="booking_info">
+            <label for="name">
+              <span>Name</span>
+              <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="name" id="name" required />
+
+            <label for="last_name">
+              <span>Lastname</span>
+              <strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="text" name="last_name" id="last_name" required />
+
+            <label for="email"
+              ><span>Email</span><strong><abbr title="required">*</abbr></strong>
+            </label>
+            <input type="email" name="email" id="email" required />
+          </form>
+        </template> -->
+
+        <template id="cardTemplate">
+          <form class="pure-form pure-form-stacked" id="booking_info">
+            <fieldset>
+              <div class="pure-g">
+                <div class="pure-u-1 pure-u-md-1-3">
+                  <label for="multi-first-name">First Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="multi-first-name"
+                    class="pure-u-23-24"
+                    required=""
+                  />
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                  <label for="multi-last-name">Last Name</label>
+                  <input
+                    type="text"
+                    name="last_name"
+                    id="multi-last-name"
+                    class="pure-u-23-24"
+                    required=""
+                  />
+                </div>
+                <div class="pure-u-1 pure-u-md-1-3">
+                  <label for="multi-email">E-Mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="multi-email"
+                    class="pure-u-23-24"
+                    required=""
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </template>
+
+        <section id="ticket_flow2">
+          <fieldset>
+            <legend>Fill out below for each ticket holder</legend>
+            <div id="cardContainer"></div>
+            <label for="multi-terms" class="pure-checkbox">
+              <input type="checkbox" id="multi-terms" /> I&#x27;ve read the terms and conditions
+            </label>
+            <div class="button">Submit</div>
+          </fieldset>
+        </section>
+
+        <section id="ticket_flow3">
+          <div>
+            <form id="billing_address">
+              <label for="address">Address</label>
+              <input type="text" placeholder="" id="address" />
+
+              <label for="city">City</label>
+              <input type="text" placeholder="" id="city" />
+
+              <label for="zip">Zip code</label>
+              <input type="text" placeholder="" id="zip" />
+
+              <label for="country">Country</label>
+              <input type="text" placeholder="" id="country" />
+            </form>
+
+            <hr />
+
+            <form id="personal_information">
+              <label for="fullname">Full name</label>
+              <input type="text" placeholder="" id="fullname" />
+
+              <label for="email">Email</label>
+              <input type="text" placeholder="" id="email" />
+            </form>
+
+            <hr />
+
+            <form class="form">
+              <div class="form__name form__detail">
+                <label for="name">Cardholder Name</label>
+                <ion-icon name="person-outline"></ion-icon>
+                <input type="text" placeholder="Jane Doe" id="name" maxlength="24" />
+                <div class="alert" id="alert-1">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                      fill="#FF6A96"
+                    />
+                  </svg>
+                  Full name required
+                </div>
+              </div>
+
+              <div class="form__number form__detail">
+                <label for="number">Card Number</label>
+                <ion-icon name="card-outline"></ion-icon>
+                <input
+                  type="text"
+                  placeholder="0000 0000 0000 0000"
+                  id="number"
+                  onkeypress="return isNumeric(event)"
+                />
+                <div class="alert" id="alert-2">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                      fill="#FF6A96"
+                    />
+                  </svg>
+                  Invalid card number
+                </div>
+              </div>
+
+              <div class="form__expiry form__detail">
+                <label for="date">Exp Date</label>
+                <ion-icon name="calendar-outline"></ion-icon>
+                <input
+                  type="text"
+                  placeholder="MM/YY"
+                  id="date"
+                  onkeypress="return isNumeric(event)"
+                />
+                <div class="alert" id="alert-3">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                      fill="#FF6A96"
+                    />
+                  </svg>
+                  Invalid date
+                </div>
+              </div>
+
+              <div class="form__cvv form__detail">
+                <label for="cvv"
+                  >CVV <ion-icon name="information-circle" class="info"></ion-icon
+                ></label>
+                <ion-icon name="lock-closed-outline"></ion-icon>
+                <input
+                  type="password"
+                  placeholder="000"
+                  id="cvv"
+                  maxlength="3"
+                  onkeypress="return isNumeric(event)"
+                />
+                <div class="alert" id="alert-4">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M11.3163 9.00362C11.8593 10.0175 11.1335 11.25 9.99343 11.25H2.00657C0.866539 11.25 0.140732 10.0175 0.683711 9.00362L4.67714 1.54691C5.24618 0.484362 6.75381 0.484362 7.32286 1.54691L11.3163 9.00362ZM5.06238 4.49805C5.02858 3.95721 5.4581 3.5 6 3.5C6.5419 3.5 6.97142 3.95721 6.93762 4.49805L6.79678 6.75146C6.77049 7.17221 6.42157 7.5 6 7.5C5.57843 7.5 5.22951 7.17221 5.20322 6.75146L5.06238 4.49805ZM6 8C5.44772 8 5 8.44772 5 9C5 9.55229 5.44772 10 6 10C6.55228 10 7 9.55229 7 9C7 8.44772 6.55228 8 6 8Z"
+                      fill="#FF6A96"
+                    />
+                  </svg>
+                  Invalid CVV
+                </div>
+              </div>
+
+              <button type="submit" class="form__btn">Confirm</button>
+            </form>
+          </div>
         </section>
       </section>
     </main>

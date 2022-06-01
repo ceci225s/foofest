@@ -1,15 +1,14 @@
 #animation_background {
   #index {
+    position: relative;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
 
     .wrapper {
       position: absolute;
-      top: 0;
       width: 100vw;
       height: 100vh;
-      overflow: hidden;
     }
 
     #frontpage {
@@ -19,6 +18,7 @@
       margin-top: 10vh;
       justify-content: center;
       height: 90vh;
+      overflow: hidden;
 
       .front_buttons {
         display: flex;
@@ -29,112 +29,192 @@
     #program {
       top: 100vh;
       width: 200vw;
+      height: 90vh;
+      margin-top: 10vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: saturate(180%) blur(10px);
+      display: grid;
+      grid-template-columns: 100vw 100vw;
 
-      .background {
-        position: relative;
-        width: 200vw;
-        height: 100vh;
-        overflow: hidden;
+      .pheading_wrapper {
+        visibility: collapse;
+      }
 
-        #blur {
-          width: 200vw;
-          height: 110vh;
-          overflow: hidden;
-          background: rgba(0, 0, 0, 0.8);
-          backdrop-filter: saturate(180%) blur(10px);
+      .artist_wrapper {
+        grid-column: 1/2;
+        display: grid;
+        grid-template-rows: 10% 90%;
+
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        .searchbar {
+          grid-row: 1/2;
         }
 
-        .section_wrapper {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100vh;
-
-          overflow: hidden;
-
-          display: grid;
-          grid-template-columns: 100vw 100vw;
-          grid-template-rows: 10vh 90vh;
-
-          .heading_wrapper {
-            display: none;
-          }
-
-          .artist_wrapper {
-            grid-column: 1/2;
-            grid-row: 2/3;
-            display: grid;
-            grid-template-rows: 10% 90%;
-
-            overflow-x: hidden;
-            overflow-y: scroll;
-
-            .searchbar {
-              grid-row: 1/2;
-            }
-
-            .elementcontainer {
-              grid-row: 2/3;
-              overflow-y: scroll;
-            }
-          }
-
-          .box_right {
-            grid-column: 3/4;
-            grid-row: 2/3;
-          }
+        .elementcontainer {
+          grid-row: 2/3;
+          overflow-y: scroll;
         }
+      }
+
+      .box_right {
+        grid-column: 2/3;
       }
     }
 
     #ticket {
-      position: absolute;
-      top: 100%;
+      top: 100vh;
       width: 200vw;
+      height: 90vh;
+      margin-top: 10vh;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: saturate(180%) blur(10px);
+      display: grid;
+      grid-template-columns: 100vw 100vw;
+      grid-template-rows: 100vh 100vh 100vh;
 
-      .background {
-        position: relative;
-        width: 200vw;
-        height: 200vh;
-        overflow: hidden;
+      .theading_wrapper {
+        visibility: collapse;
+      }
 
-        #blur {
-          width: 200vw;
-          height: 210vh;
-          overflow: hidden;
-          background: rgba(0, 0, 0, 0.8);
-          backdrop-filter: saturate(180%) blur(10px);
+      .tbutton_wrapper {
+        grid-column: 1/2;
+        grid-row: 1/2;
+        height: 90vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          cursor: pointer;
+        }
+      }
+
+      .summery {
+        position: absolute;
+        left: 100vw;
+        z-index: 100;
+        height: 25vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+
+        div {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      #ticket_flow1 {
+        grid-column: 2/3;
+        grid-row: 1/2;
+        width: 100vw;
+        height: 60vh;
+        margin-top: 30vh;
+        display: flex;
+        justify-content: center;
+
+        overflow-y: scroll;
+
+        .ticket_section {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5rem;
+          align-items: center;
+
+          .amount {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+          }
+
+          .v-counter {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+
+            .plusBtn,
+            .minusBtn {
+              background-color: #ff006a;
+              border-radius: 50%;
+              border: none;
+              height: 2.5rem;
+              width: 2.5rem;
+              color: white;
+            }
+
+            .tal {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border: 1px solid white;
+              border-radius: 3rem;
+            }
+          }
         }
 
-        .tsection_wrapper {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 200vh;
+        .camping_section {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-bottom: 2rem;
 
-          display: grid;
-          grid-template-columns: 100vw 100vw;
-          grid-template-rows: 10vh 90vh 10vh 90vh;
-
-          .theading_wrapper {
-            display: none;
-          }
-
-          .tickets_wrapper {
-            grid-column: 1/2;
-            grid-row: 2/3;
-          }
-
-          #ticket_flow1 {
-            grid-column: 2/3;
-            grid-row: 2/3;
-          }
-
-          #ticket_flow2 {
-            grid-column: 2/3;
-            grid-row: 4/5;
+          .areas {
+            gap: 0.5rem;
+            display: flex;
+            flex-direction: column;
           }
         }
+
+        .button {
+          border: none;
+        }
+      }
+
+      #ticket_flow2 {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        width: 100vw;
+        height: 60vh;
+        margin-top: 25vh;
+        padding-top: 3rem;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        fieldset {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 3rem;
+          border: 0;
+          height: fit-content;
+
+          #cardContainer {
+            display: flex;
+            flex-direction: column;
+
+            #booking_info {
+              height: fit-content;
+              width: 98vw;
+            }
+          }
+        }
+      }
+
+      #ticket_flow3 {
+        grid-column: 3/4;
+        grid-row: 3/4;
+        width: 100vw;
+        height: 60vh;
+        margin-top: 25vh;
+        overflow-y: scroll;
       }
     }
 
@@ -182,150 +262,132 @@
 @media (min-width: 1000px) {
   #animation_background {
     #index {
-      #frontpage {
-        margin-left: 4rem;
-
-        .front_buttons {
-          flex-direction: row;
-          gap: 5rem;
-        }
-      }
-
       #program {
-        left: 0;
-        width: 150vw;
+        display: grid;
+        grid-template-columns: 50vw 50vw 50vw;
 
-        .background {
-          width: 150vw;
-          height: 100vh;
+        .pheading_wrapper {
+          grid-column: 1/2;
+          background-color: black;
+          visibility: visible;
+          display: flex;
+          align-items: center;
+          padding-left: 5rem;
+        }
 
-          .section_wrapper {
-            display: grid;
-            grid-template-columns: 50vw 50vw 50vw;
-            grid-template-rows: 10vh 90vh;
+        .artist_wrapper {
+          grid-column: 2/3;
+          display: grid;
+          grid-template-rows: 10% 90%;
 
-            .heading_wrapper {
-              background-color: black;
-              grid-column: 1/2;
-              grid-row: 2/3;
-              justify-content: center;
-              align-items: center;
-              display: grid;
-              justify-content: center;
-            }
+          overflow-x: hidden;
+          overflow-y: scroll;
 
-            .artist_wrapper {
-              grid-column: 2/3;
-              grid-row: 2/3;
-              display: grid;
-              grid-template-rows: 10vh 80vh;
-
-              .elementcontainer {
-                grid-row: 2/3;
-                display: grid;
-                flex-direction: column;
-                overflow-y: scroll;
-                gap: 1.5rem;
-              }
-            }
-
-            .box_right {
-              grid-column: 3/4;
-              grid-row: 2/3;
-
-              .card {
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-
-                figure {
-                  background: linear-gradient(#2104d9, #ff006a);
-
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    opacity: 50%;
-                  }
-                }
-
-                .name {
-                  font-size: 2rem;
-                }
-              }
-            }
+          .searchbar {
+            grid-row: 1/2;
           }
+
+          .elementcontainer {
+            grid-row: 2/3;
+            overflow-y: scroll;
+          }
+        }
+
+        .box_right {
+          grid-column: 3/4;
         }
       }
 
       #ticket {
-        left: 0;
+        top: 100vh;
         width: 200vw;
+        height: 90vh;
+        margin-top: 10vh;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: saturate(180%) blur(10px);
 
-        .background {
-          width: 250vw;
-          height: 200vh;
-          overflow: hidden;
+        display: grid;
+        grid-template-columns: 50vw 50vw 100vw;
+        grid-template-rows: 100vh 100vh 100vh;
 
-          #blur {
-            width: 250vw;
-            height: 210vh;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: saturate(180%) blur(10px);
-          }
-
-          .tsection_wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 200vh;
-
-            display: grid;
-            grid-template-columns: 50vw 50vw 100vw;
-            grid-template-rows: 10vh 90vh 10vh 90vh 100vh;
-
-            .theading_wrapper {
-              grid-column: 1/2;
-              grid-row: 2/3;
-            }
-
-            .tickets_wrapper {
-              grid-column: 2/3;
-              grid-row: 2/3;
-            }
-
-            #ticket_flow1 {
-              grid-column: 3/4;
-              grid-row: 2/3;
-            }
-
-            #ticket_flow2 {
-              grid-column: 3/4;
-              grid-row: 4/5;
-            }
-
-            .summery {
-              position: absolute;
-              background-color: blue;
-              top: 10vh;
-              right: 0;
-              height: 90vh;
-              z-index: 100;
-            }
-            #ticket_flow3 {
-              grid-column: 3/4;
-              grid-row: 5/6;
-            }
-          }
-        }
-        .active_program {
-          transform: translate(-50vw, -100vh);
-          transition: all 1s ease-in;
+        .theading_wrapper {
+          grid-column: 1/2;
+          grid-row: 1/2;
+          background-color: black;
+          height: 90vh;
+          visibility: visible;
+          display: flex;
+          align-items: center;
+          padding-left: 5rem;
         }
 
-        .active_ticket {
-          transform: translate(-100vw, -100vh);
-          transition: all 1s ease-in;
+        .tbutton_wrapper {
+          grid-column: 2/3;
+          grid-row: 1/2;
+          height: 90vh;
+          width: 50vw;
+        }
+
+        .summery {
+          position: absolute;
+          left: 170vw;
+          background-color: red;
+          z-index: 100;
+          height: 90vh;
+          width: 30vw;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 3rem;
+        }
+
+        #ticket_flow1 {
+          grid-column: 3/4;
+          grid-row: 1/2;
+          width: 70vw;
+          height: 90vh;
+          margin-top: 0;
+
+          .v-counter {
+            display: flex;
+            justify-content: space-between;
+
+            gap: 2rem;
+
+            .minusBtn,
+            .plusBtn {
+              border-radius: 100%;
+              width: 5rem;
+              height: 5rem;
+              background-color: white;
+              color: black;
+              padding: 0;
+            }
+
+            .count {
+              border: 1px solid white;
+              border-radius: 3rem;
+            }
+          }
+
+          .camping_section {
+          }
+        }
+
+        #ticket_flow2 {
+          grid-column: 3/4;
+          grid-row: 2/3;
+          width: 70vw;
+          margin-top: 0;
+          padding-bottom: 3rem;
+        }
+
+        #ticket_flow3 {
+          grid-column: 3/4;
+          grid-row: 3/4;
+          width: 70vw;
+          height: 90vh;
+          margin-top: 0;
         }
       }
       #contact_page {

@@ -1,3 +1,5 @@
+import { loadBandJson } from "./database";
+
 //------------------------ SHOW BANDS
 
 export function displayLineup(bandJson) {
@@ -8,9 +10,7 @@ export function displayLineup(bandJson) {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
 
-    clone
-      .querySelector("#artist_name")
-      .addEventListener("click", () => openArtist(artist));
+    clone.querySelector("#artist_name").addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
   });
 }
