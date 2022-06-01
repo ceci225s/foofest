@@ -26,14 +26,25 @@
       }
     }
     #contact_page {
-      background-color: rgba(0, 0, 0, 0.8);
+      height: 90vh;
       width: 100vw;
-      height: 100vh;
-      padding: 3rem;
+      left: -100%;
+      margin: 5rem;
       display: flex;
-      gap: 3rem;
-      line-height: 2rem;
-      overflow: scroll;
+      flex-direction: column;
+
+      #test {
+        background-color: rgba(0, 0, 0, 0.8);
+        width: 80vw;
+        padding: 3rem;
+        display: flex;
+        gap: 3rem;
+        line-height: 2rem;
+        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+      }
 
       #news_letter_signup {
         display: flex;
@@ -372,13 +383,6 @@
           transform: translate(-100vw, -100vh);
           transition: all 1s ease-in;
         }
-      }
-      #contact_page {
-        left: -100%;
-        margin: 5rem;
-        display: flex;
-        flex-direction: column;
-        width: 70vw;
       }
     }
   }
