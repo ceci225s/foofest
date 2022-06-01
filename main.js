@@ -12,12 +12,18 @@ window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
   let bandJson = await loadBandJson();
+  document.querySelector("#contact").addEventListener("click", showContactPage);
   document
     .querySelector("#menu_ticket")
     .addEventListener("click", showTicketSection);
   document
     .querySelector("#menu_program")
     .addEventListener("click", () => showProgramSection(bandJson));
+}
+
+function showContactPage() {
+  document.querySelector("#frontpage").classList.add("active_right_desktop");
+  document.querySelector("#contact_page").classList.add("active_right_desktop");
 }
 
 function showProgramSection(bandJson) {

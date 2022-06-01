@@ -147,6 +147,10 @@
       transform: translateX(-100vw);
       transition: all 1s ease-in;
     }
+    .active_right_desktop {
+      transform: translateX(100vw);
+      transition: all 1s ease-in;
+    }
 
     .active_up {
       transform: translateY(-100vh);
@@ -155,6 +159,11 @@
 
     .active {
       transform: translate(-100vw, -100vh);
+      transition: all 1s ease-in;
+    }
+
+    .active_down {
+      transform: translate(100vw, 100vh);
       transition: all 1s ease-in;
     }
 
@@ -318,6 +327,9 @@
           transform: translate(-100vw, -100vh);
           transition: all 1s ease-in;
         }
+      }
+      #contact_page {
+        left: -100%;
       }
     }
   }

@@ -1,8 +1,7 @@
 "use strict";
 import "./sass/style.scss";
 
-import { loadScheduleJson } from "./database";
-import { displayLineup } from "./program";
+import { displayLineup } from "./js/program";
 
 let scheduleJson;
 
