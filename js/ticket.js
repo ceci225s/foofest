@@ -5,7 +5,9 @@ import {
   reserveTickets,
 } from "./database";
 
-let qty = document.querySelector(".v-counter .count");
+let qty;
+let price;
+console.log(qty);
 
 let bookingInfo = {
   personalInfo: [],
@@ -15,18 +17,44 @@ let bookingInfo = {
   ticketQuantity: "",
 };
 
-// SHOW PURCHASE
-export function displayChosenTicket(price) {
+export function showFormFlow1(price, type) {
+  document.querySelector("#ticket").classList.remove("active_up");
+  document.querySelector("#ticket").classList.add("active");
+  document.querySelector(".v-counter .count").textContent = qty;
+
+  price = price;
+  qty = 1;
+  bookingInfo.ticketType = type;
+  displayChosenTicket(price, type);
+  showAvailableCamps(price, type);
+}
+
+let plusMinusWidgets = document.querySelectorAll(".v-counter");
+for (let i = 0; i < plusMinusWidgets.length; i++) {
+  plusMinusWidgets[i]
+    .querySelector(".minusBtn")
+    .addEventListener("click", clickHandler);
+  plusMinusWidgets[i]
+    .querySelector(".plusBtn")
+    .addEventListener("click", clickHandler);
+  plusMinusWidgets[i]
+    .querySelector(".count")
+    .addEventListener("change", () =>
+      showAvailableCamps(price, bookingInfo.ticketType)
+    );
+}
+
+// SHOW chosen ticket type
+function displayChosenTicket(price, type) {
   if (price == "799") {
-    document.querySelector(".ticket_type").textContent = "REGULAR ticket";
+    document.querySelector(".ticket_type").textContent = type + " " + "ticket";
   } else {
-    document.querySelector(".ticket_type").textContent = "VIP ticket";
+    document.querySelector(".ticket_type").textContent = type + " " + "ticket";
   }
 }
 // check for availability - if not enough spots, hide camp
-export async function showAvailableCamps(price, type) {
-  bookingInfo.ticketType = type;
-  bookingInfo.ticketQuantity = qty.value;
+async function showAvailableCamps(price, type) {
+  bookingInfo.ticketQuantity = qty;
   // update summery
   renderSummery(price, type);
   chooseCampArea();
@@ -35,7 +63,7 @@ export async function showAvailableCamps(price, type) {
   const freeCampSpots = await loadSpots();
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of freeCampSpots) {
-    if (obj.available < qty.value) {
+    if (obj.available < qty) {
       document
         .querySelector(`.camp_${obj.area.toLowerCase()}`)
         .classList.add("hide");
@@ -63,63 +91,46 @@ function chooseCampArea() {
 
 function renderSummery(price, type) {
   // SHOW HOW MANY TICKETS
-  document.querySelector(".quantity").textContent = qty.value;
+  document.querySelector(".quantity").textContent = qty;
   // SHOW THE PRICE
   document.querySelector(".ticket_name").textContent = type;
   // SHOW PRICE X QUANTITY
-  document.querySelector(".total_price").textContent = qty.value * price + ",-";
+  document.querySelector(".total_price").textContent = qty * price + ",-";
   // SHOW TOTAL PRICE INCL FEE
-  document.querySelector(".sum").textContent = qty.value * price + 99 + ",-";
+  document.querySelector(".sum").textContent = qty * price + 99 + ",-";
 }
 
 // quantity input field
 // Following code is from : https://codepen.io/vijaywaskrishna/pen/poRmdgB
 
-export function qtyChange(price, type) {
-  let plusMinusWidgets = document.querySelectorAll(".v-counter");
-
-  // Attach the handlers to each plus-minus thing
-  for (let i = 0; i < plusMinusWidgets.length; i++) {
-    plusMinusWidgets[i]
-      .querySelector(".minusBtn")
-      .addEventListener("click", clickHandler);
-    plusMinusWidgets[i]
-      .querySelector(".plusBtn")
-      .addEventListener("click", clickHandler);
-    plusMinusWidgets[i]
-      .querySelector(".count")
-      .addEventListener("change", () => showAvailableCamps(price, type));
-  }
-}
-
-// both plus and minus use the same function, but value is set by the class of the button
 function clickHandler(event) {
   // reference to the count input field
+
   let countEl = event.target.parentNode.querySelector(".count");
   if (event.target.className.match(/\bminusBtn\b/)) {
-    countEl.value = Number(countEl.value) - 1;
+    if (countEl >= 1) {
+      countEl.value = Number(countEl.value) - 1;
+    }
   } else if (event.target.className.match(/\bplusBtn\b/)) {
     countEl.value = Number(countEl.value) + 1;
   }
-  // When we programmatically change the value, we need to manually trigger
-  //  the change event.
-  triggerEvent(countEl, "change");
+  showAvailableCamps();
+  // triggerEvent(countEl, "change");
 }
 
-// triggerEvent() -- function to trigger an HTMLEvent on a given element. similar to jquery's trigger(), simply a convenience function. Not the point of this exercise.
-function triggerEvent(el, type) {
-  if ("createEvent" in document) {
-    // modern browsers, IE9+
-    let e = document.createEvent("HTMLEvents");
-    e.initEvent(type, false, true);
-    el.dispatchEvent(e);
-  } else {
-    // IE 8
-    var e = document.createEventObject();
-    e.eventType = type;
-    el.fireEvent("on" + e.eventType, e);
-  }
-}
+// function triggerEvent(el, type) {
+//   if ("createEvent" in document) {
+//     // modern browsers, IE9+
+//     let e = document.createEvent("HTMLEvents");
+//     e.initEvent(type, false, true);
+//     el.dispatchEvent(e);
+//   } else {
+//     // IE 8
+//     var e = document.createEventObject();
+//     e.eventType = type;
+//     el.fireEvent("on" + e.eventType, e);
+//   }
+// }
 
 // ___________________________FORM FLOW 2 ___________________________///
 
