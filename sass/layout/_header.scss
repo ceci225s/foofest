@@ -9,6 +9,11 @@ header {
   justify-content: space-between;
   gap: 3rem;
 
+  img {
+    width: 3rem;
+    margin: 1rem;
+  }
+
   div {
     display: flex;
     flex-direction: column;
@@ -17,4 +22,11 @@ header {
 }
 
 @media (min-width: 1000px) {
+  header {
+    div {
+      flex-direction: row;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
 }

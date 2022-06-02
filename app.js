@@ -10,7 +10,9 @@ window.addEventListener("DOMContentLoaded", start);
 async function start() {
   await loadScheduleJson();
   displayLineup();
+
   document.querySelector("#menu_schedule").addEventListener("click", showScheduleSection);
+  document.querySelector("#menu_program").addEventListener("click", showProgramSection);
 }
 
 //------------------------ FETCH ALL DATA
@@ -70,8 +72,12 @@ function renderSchedule(day) {
 }
 
 function showScheduleSection() {
-  console.log("hej");
+  console.log("schedule");
   // MOVE TICKET SECTION UP
   document.querySelector("#app_schedule").classList.add("active_up");
   document.querySelector("#app_frontpage").classList.add("active_up");
+}
+
+function showProgramSection() {
+  console.log("program");
 }
