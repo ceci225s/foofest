@@ -4,17 +4,17 @@ header {
   width: 100vw;
   height: 10vh;
   z-index: 100;
-  background-color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3rem;
 
-  a {
-    font-size: 1rem;
-    margin-left: 2rem;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
-  #app_cta {
-    font-weight: 500;
-  }
+}
+
+@media (min-width: 1000px) {
 }

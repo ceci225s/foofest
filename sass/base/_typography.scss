@@ -1,6 +1,6 @@
 h1 {
   font-family: azo-sans-web, sans-serif;
-  font-weight: 100;
+  font-weight: 700;
   font-style: normal;
   font-size: 5rem;
 }
@@ -37,6 +37,17 @@ a {
   letter-spacing: 0.5rem;
   text-decoration: none;
   cursor: pointer;
+}
+
+#app_cta {
+  font-weight: 500;
+}
+
+header {
+  a {
+    font-size: 1rem;
+    margin-left: 2rem;
+  }
 }
 
 #app_schedule a {

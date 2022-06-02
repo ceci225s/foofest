@@ -14,8 +14,9 @@
     #frontpage {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 5rem;
-      margin-top: 10vh;
+      margin-top: 5vh;
       justify-content: center;
       height: 90vh;
       overflow: hidden;
@@ -23,6 +24,7 @@
       .front_buttons {
         display: flex;
         flex-direction: column;
+        gap: 3rem;
       }
     }
 
@@ -102,22 +104,34 @@
       grid-template-columns: 100vw 100vw;
 
       .pheading_wrapper {
-        visibility: collapse;
+        display: none;
       }
 
       .artist_wrapper {
+        position: relative;
         grid-column: 1/2;
+        height: 90vh;
+        width: 100vw;
         overflow-x: hidden;
         overflow-y: scroll;
 
         .elementcontainer {
-          grid-row: 2/3;
           overflow-y: scroll;
+          height: 90vh;
         }
       }
 
       .box_right {
+        position: relative;
         grid-column: 2/3;
+        height: 90vh;
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        .box {
+          width: 100vw;
+        }
       }
     }
 
@@ -385,14 +399,10 @@
     }
 
     .active_left {
-      transform: translateX(-50vw);
+      transform: translate(-100vw, -100vh);
       transition: all 1s ease-in;
     }
 
-    .active_left_desktop {
-      transform: translateX(-100vw);
-      transition: all 1s ease-in;
-    }
     .active_right_desktop {
       transform: translateX(100vw);
       transition: all 1s ease-in;
@@ -428,6 +438,19 @@
 @media (min-width: 1000px) {
   #animation_background {
     #index {
+      #frontpage {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-left: 5rem;
+
+        .front_buttons {
+          display: flex;
+          flex-direction: row;
+          gap: 3rem;
+        }
+      }
+
       #program {
         display: grid;
         grid-template-columns: 50vw 50vw 50vw;
@@ -443,24 +466,12 @@
 
         .artist_wrapper {
           grid-column: 2/3;
-          display: grid;
-          grid-template-rows: 10% 90%;
-
-          overflow-x: hidden;
-          overflow-y: scroll;
-
-          .searchbar {
-            grid-row: 1/2;
-          }
-
-          .elementcontainer {
-            grid-row: 2/3;
-            overflow-y: scroll;
-          }
+          width: 50vw;
         }
 
         .box_right {
           grid-column: 3/4;
+          width: 50vw;
         }
       }
 
@@ -571,6 +582,11 @@
           height: 90vh;
           margin-top: 0;
         }
+      }
+
+      .active_left {
+        transform: translate(-50vw, -100vh);
+        transition: all 1s ease-in;
       }
     }
   }
