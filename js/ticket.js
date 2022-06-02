@@ -1,4 +1,9 @@
-import { finalizeOrder, loadSpots, postToDatabase, reserveTickets } from "./database";
+import {
+  finalizeOrder,
+  loadSpots,
+  postToDatabase,
+  reserveTickets,
+} from "./database";
 import Validation from "vanila-js-validation";
 
 let qty = document.querySelector(".v-counter .count");
@@ -29,10 +34,13 @@ export async function showAvailableCamps(price, type) {
 
   // get availability from
   const freeCampSpots = await loadSpots();
+
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of freeCampSpots) {
     if (obj.available < qty.value) {
-      document.querySelector(`.camp_${obj.area.toLowerCase()}`).classList.add("hide");
+      document
+        .querySelector(`.camp_${obj.area.toLowerCase()}`)
+        .classList.add("hide");
     }
   }
 }
@@ -47,7 +55,9 @@ function chooseCampArea() {
       document.querySelector("#show_camp").innerHTML = radios[i].value;
       //   when camp is chosen, enable the button
       document.querySelector("#flow1_next").disabled = false;
-      document.querySelector("#flow1_next").addEventListener("click", () => showFormFlow2());
+      document
+        .querySelector("#flow1_next")
+        .addEventListener("click", () => showFormFlow2());
     };
   }
 }
@@ -73,8 +83,12 @@ export function qtyChange(price, type) {
 
   // Attach the handlers to each plus-minus thing
   for (let i = 0; i < plusMinusWidgets.length; i++) {
-    plusMinusWidgets[i].querySelector(".minusBtn").addEventListener("click", clickHandler);
-    plusMinusWidgets[i].querySelector(".plusBtn").addEventListener("click", clickHandler);
+    plusMinusWidgets[i]
+      .querySelector(".minusBtn")
+      .addEventListener("click", clickHandler);
+    plusMinusWidgets[i]
+      .querySelector(".plusBtn")
+      .addEventListener("click", clickHandler);
     plusMinusWidgets[i]
       .querySelector(".count")
       .addEventListener("change", () => showAvailableCamps(price, type));
@@ -129,7 +143,9 @@ function showForms() {
     cardContainer.appendChild(klon);
   }
   getId();
-  document.querySelector("#ticket_flow2 .button").addEventListener("click", submitNames);
+  document
+    .querySelector("#ticket_flow2 .button")
+    .addEventListener("click", submitNames);
 }
 
 async function getId() {
@@ -354,7 +370,9 @@ function paymentForm() {
   //   // showFormFlow4();
   // });
 
-  document.querySelector("#ticket_flow3 .button").addEventListener("click", showFormFlow4);
+  document
+    .querySelector("#ticket_flow3 .button")
+    .addEventListener("click", showFormFlow4);
 }
 
 function showFormFlow4() {
