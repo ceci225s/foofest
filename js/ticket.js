@@ -5,6 +5,7 @@ import {
   reserveTickets,
 } from "./database";
 import Validation from "vanila-js-validation";
+import party from "party-js";
 
 let qty = document.querySelector(".v-counter .count");
 

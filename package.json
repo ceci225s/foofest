@@ -14,6 +14,7 @@
   "dependencies": {
     "bulma": "^0.9.4",
     "card": "^2.5.4",
+    "party-js": "^2.1.2",
     "vanila-js-validation": "^1.0.8"
   }
 }
