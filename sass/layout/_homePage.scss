@@ -521,20 +521,14 @@
   #animation_background {
     #index {
       #frontpage {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
         margin-left: 5rem;
 
         .front_buttons {
-          display: flex;
           flex-direction: row;
-          gap: 3rem;
         }
       }
 
       #program {
-        display: grid;
         grid-template-columns: 50vw 50vw 50vw;
 
         .pheading_wrapper {
@@ -565,7 +559,6 @@
       }
 
       #ticket {
-        display: grid;
         grid-template-columns: 50vw 50vw 100vw;
         grid-template-rows: 100vh 100vh 100vh;
 
@@ -582,7 +575,6 @@
 
         .tbutton_wrapper {
           grid-column: 2/3;
-          grid-row: 1/2;
           height: 90vh;
           width: 50vw;
         }
@@ -617,7 +609,6 @@
 
         #ticket_flow2 {
           grid-column: 3/4;
-          grid-row: 2/3;
           width: 70vw;
 
           .t_wrapper {
@@ -643,7 +634,6 @@
 
         #ticket_flow3 {
           grid-column: 3/4;
-          grid-row: 2/3;
           width: 70vw;
 
           .t_wrapper {
