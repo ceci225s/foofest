@@ -352,6 +352,7 @@
           overflow-y: scroll;
           overflow-x: hidden;
           height: 90vh;
+
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -454,6 +455,7 @@
           overflow-y: scroll;
           overflow-x: hidden;
           height: 90vh;
+          width: 70vw;
 
           #status {
             display: flex;
@@ -526,8 +528,6 @@
   #animation_background {
     #index {
       #frontpage {
-        margin-left: 5rem;
-
         .front_buttons {
           flex-direction: row;
         }

@@ -131,6 +131,7 @@ async function showFormFlow2() {
   document.querySelector("#ticket_flow2").classList.add("active_up");
   showForms();
   document.getElementById("timer").innerHTML = "05" + ":" + "00";
+  document.querySelector("#status p").classList.remove("hide");
 }
 
 function showForms() {
