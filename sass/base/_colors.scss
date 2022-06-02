@@ -1,6 +1,6 @@
-$black: #06005a;
-$blue: #1bf2f2;
-$pink: #ef1df2;
+$black: #000000;
+$blue: #0000cd;
+$pink: #ff006a;
 $white: #fcf9f9;
 
 body {
@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  background-color: $white;
+  background-color: $black;
 }
 
 h1,
@@ -25,57 +25,16 @@ a {
   color: $white;
 }
 
-#lineup {
-  h2 {
-    color: black;
-    -webkit-text-stroke: 1px $pink;
-    text-shadow: 0px 0px 7px $pink;
-  }
-
-  h3 {
-    color: $white;
-  }
-
-  a {
-    color: $white;
-  }
-
-  #info {
-    h2 {
-      color: $white;
-      -webkit-text-stroke: 0;
-      text-shadow: none;
-    }
-  }
-}
-
-#ticket {
-  h2 {
-    color: black;
-    -webkit-text-stroke: 1px $blue;
-    text-shadow: 0px 0px 7px $blue;
-  }
-}
-
-#schedule {
-  h2 {
-    color: black;
-    -webkit-text-stroke: 1px $blue;
-    text-shadow: 0px 0px 7px $blue;
-  }
-}
-
 #animation_background {
   #front_wrapper div,
   #middle_wrapper div,
   #back_wrapper div {
-    background: linear-gradient(#170397, #2104d9);
-    box-shadow: 0px 0px 20px 0px #ff006a, inset 0px -20px 60px #d9043d,
-      inset 0px -50px 60px #a6036d, inset 0px -100px 60px #7c038c,
-      inset 0px -150px 60px #5503a6;
+    background: linear-gradient(#170397, $blue);
+    box-shadow: 0px 0px 20px 0px #ff006a, inset 0px -20px 60px #d9043d, inset 0px -50px 60px #a6036d,
+      inset 0px -100px 60px #7c038c, inset 0px -150px 60px #5503a6;
   }
 }
 
 .summery {
-  background: linear-gradient(#0000cd, #ff006a);
+  background: linear-gradient($blue, $pink);
 }

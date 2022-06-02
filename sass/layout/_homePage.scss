@@ -128,11 +128,12 @@
       backdrop-filter: saturate(180%) blur(10px);
       display: grid;
       grid-template-columns: 100vw 100vw;
-      grid-template-rows: 100vh 100vh 100vh;
+      grid-template-rows: 100vh 100vh 100vh 100vh;
 
       .status {
         display: flex;
         gap: 2rem;
+        padding: 1rem;
         justify-content: center;
         align-items: center;
         background-color: #ff006a;
@@ -314,6 +315,29 @@
           gap: 1rem;
         }
       }
+
+      #ticket_flow4 {
+        grid-column: 2/3;
+        grid-row: 4/5;
+        width: 100vw;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: #ff006a;
+
+        .purchase_result {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+
+          div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+        }
+      }
     }
 
     .active_left {
@@ -333,6 +357,16 @@
     .active_up {
       transform: translateY(-100vh);
       transition: all 1s ease-in;
+    }
+
+    .active_up2 {
+      transform: translateY(-200vh);
+      transition: all 2s ease-in;
+    }
+
+    .active_up3 {
+      transform: translateY(-300vh);
+      transition: all 3s ease-in;
     }
 
     .active {
