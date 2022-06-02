@@ -377,7 +377,9 @@ function showFormFlow4() {
   document.querySelector("#ticket_flow4").classList.add("active_up3");
 
   // let email = document.querySelector("#multi-email").innerHTML;
-  // document.querySelector("");
+  // document.querySelector(
+  //   "#card_info"
+  // ).action = `https://formsubmit.co/your@email.com/${email}`;
 
   renderConfirmation();
   finalizeFlow();
