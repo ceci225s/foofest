@@ -171,6 +171,11 @@
 
       .summery {
         visibility: collapse;
+
+        .summery_overview {
+          display: flex;
+          justify-content: space-between;
+        }
       }
 
       #ticket_flow1 {
