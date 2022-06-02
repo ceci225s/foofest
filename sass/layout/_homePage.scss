@@ -477,42 +477,42 @@
 
     .active_left {
       transform: translate(-100vw, -100vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .active_right_desktop {
       transform: translateX(100vw);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .active_up {
       transform: translateY(-100vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .active_up1 {
       transform: translateY(-200vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .active {
       transform: translate(-100vw, -100vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .active_down {
       transform: translate(100vw, 100vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .ticket_up {
       transform: translateY(-200vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
 
     .ticket_up_2 {
       transform: translate(-100vw, -200vh);
-      transition: all 1s ease-in;
+      transition: all 0.5s ease-in;
     }
   }
 }
@@ -682,7 +682,7 @@
 
       .active_left {
         transform: translate(-50vw, -100vh);
-        transition: all 1s ease-in;
+        transition: all 0.5s ease-in;
       }
     }
   }
