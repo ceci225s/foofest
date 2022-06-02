@@ -128,24 +128,8 @@
         </section>
 
         <section class="artist_wrapper">
-          <!-- <div class="searchbar">
-
-            <form method="get" action="">
-              <div class="tb">
-                <div class="td">
-                  <input type="text" placeholder="Search" required />
-                </div>
-                <div class="td" id="s-cover">
-                  <button type="submit">
-                    <div id="s-circle"></div>
-                    <span></span>
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div> -->
-
           <div class="elementcontainer"></div>
+
           <div class="lineup">
             <template class="artist">
               <h2 id="artist_name"></h2>
@@ -179,61 +163,72 @@
         </section>
 
         <section class="tbutton_wrapper">
-          <h3>TICKETS</h3>
-          <div class="ticket_buttons">
-            <div class="ticket button" data-price="799" data-type="Regular">REGULAR TICKET</div>
-            <div class="ticket button" data-price="1299" data-type="VIP">VIP TICKETS</div>
+          <div>
+            <h2>REGULAR TICKET</h2>
+            <div class="ticket button" data-price="799" data-type="Regular">799 DKK</div>
+          </div>
+          <div>
+            <h2>VIP TICKET</h2>
+            <div class="ticket button" data-price="1299" data-type="VIP">1299 DKK</div>
           </div>
         </section>
 
         <section id="ticket_flow1">
-          <div class="status">
-            <h2>STEP 1 OUT OF 4</h2>
-          </div>
-
-          <div class="heading">
-            <p>TICKET TYPE</p>
-            <h3 class="ticket_type"></h3>
-          </div>
-
-          <form class="form_wrapper" name="payment_form">
-            <div class="ticket_section">
-              <div class="v-counter">
-                <input type="button" class="minusBtn" value="-" />
-                <input type="text" size="25" value="1" class="count" readonly="" />
-                <input type="button" class="plusBtn" value="+" />
-              </div>
+          <section class="t_wrapper">
+            <div class="status">
+              <h2>STEP 1 OUT OF 4</h2>
             </div>
 
-            <div class="camping_section">
-              <p>AVAILABLE CAMPING SPOT</p>
-              <div class="areas">
-                <div class="camp_svartheim">
-                  <input type="radio" id="svartheim" name="area" value="Svartheim" />
-                  <label for="svarteheim">Svarteheim</label>
-                </div>
-                <div class="camp_nilfheim">
-                  <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
-                  <label for="nilfheim">Nilfheim</label>
-                </div>
-                <div class="camp_helheim">
-                  <input type="radio" id="helheim" name="area" value="Helheim" />
-                  <label for="helheim">Helheim</label>
-                </div>
-                <div class="camp_muspelheim">
-                  <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
-                  <label for="muspelheim">Muspelheim</label>
-                </div>
-                <div class="camp_alfheim">
-                  <input type="radio" id="alfheim" name="area" value="Alfheim" />
-                  <label for="alfheim">Alfheim</label>
-                </div>
-              </div>
-              <div><span id="timer"></span></div>
+            <div class="heading">
+              <p>TICKET TYPE</p>
+              <h3 class="ticket_type"></h3>
             </div>
 
-            <input class="button" type="button" id="flow1_next" value="NEXT" disabled="disabled" />
-          </form>
+            <form class="form_wrapper" name="payment_form">
+              <div class="camping_section">
+                <p>AVAILABLE CAMPING SPOT</p>
+                <div class="areas">
+                  <div class="camp_svartheim">
+                    <input type="radio" id="svartheim" name="area" value="Svartheim" />
+                    <label for="svarteheim">Svarteheim</label>
+                  </div>
+                  <div class="camp_nilfheim">
+                    <input type="radio" id="nilfheim" name="area" value="Nilfheim" />
+                    <label for="nilfheim">Nilfheim</label>
+                  </div>
+                  <div class="camp_helheim">
+                    <input type="radio" id="helheim" name="area" value="Helheim" />
+                    <label for="helheim">Helheim</label>
+                  </div>
+                  <div class="camp_muspelheim">
+                    <input type="radio" id="muspelheim" name="area" value="Muspelheim" />
+                    <label for="muspelheim">Muspelheim</label>
+                  </div>
+                  <div class="camp_alfheim">
+                    <input type="radio" id="alfheim" name="area" value="Alfheim" />
+                    <label for="alfheim">Alfheim</label>
+                  </div>
+                </div>
+                <div><span id="timer"></span></div>
+              </div>
+
+              <div class="ticket_section">
+                <div class="v-counter">
+                  <input type="button" class="minusBtn" value="-" />
+                  <input type="text" size="25" value="1" class="count" readonly="" />
+                  <input type="button" class="plusBtn" value="+" />
+                </div>
+              </div>
+
+              <input
+                class="button"
+                type="button"
+                id="flow1_next"
+                value="NEXT"
+                disabled="disabled"
+              />
+            </form>
+          </section>
         </section>
 
         <div class="summery">
@@ -287,7 +282,10 @@
             </div>
 
             <div class="flow2_wrapper">
-              <legend>Fill out below for each ticket holder</legend>
+              <h3>
+                Fill out below for each <br />
+                ticket holder
+              </h3>
 
               <div id="cardContainer"></div>
               <div class="button">Submit</div>
@@ -449,18 +447,20 @@
         </section>
 
         <section id="ticket_flow4">
-          <div class="status">
-            <h2>
-              CONGRATULATIONS! <br />
-              YOU HAVE FINISHED YOUR ORDER
-            </h2>
-          </div>
+          <section class="t_wrapper">
+            <div class="status">
+              <h2>
+                CONGRATULATIONS! <br />
+                YOU HAVE FINISHED YOUR ORDER
+              </h2>
+            </div>
 
-          <div id="final">
-            <h2>YOUR PURCHASE</h2>
+            <div id="final">
+              <h2>YOUR PURCHASE</h2>
 
-            <div class="purchase_result"></div>
-          </div>
+              <div class="purchase_result"></div>
+            </div>
+          </section>
         </section>
       </section>
     </main>

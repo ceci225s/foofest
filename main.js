@@ -32,7 +32,7 @@ function showTicketSection() {
   document.querySelector("#ticket").classList.add("active_up");
   document.querySelector("#frontpage").classList.add("active_up");
 
-  document.querySelector(".ticket_buttons").addEventListener("click", (event) => {
+  document.querySelector(".ticket").addEventListener("click", (event) => {
     showFormFlow1(event.target.dataset.price, event.target.dataset.type);
     // bookingInfo.ticketType = event.target.dataset.type;
   });

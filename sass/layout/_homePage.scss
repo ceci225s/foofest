@@ -25,63 +25,72 @@
         flex-direction: column;
       }
     }
+
     #contact_page {
       height: 90vh;
       width: 100vw;
       left: -100%;
-      margin: 5rem;
+      margin-top: 10vh;
       display: flex;
       flex-direction: column;
+      align-items: center;
+      align-items: center;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: saturate(180%) blur(10px);
 
       #test {
-        background-color: rgba(0, 0, 0, 0.8);
-        width: 80vw;
-        padding: 3rem;
+        width: 100vw;
         display: flex;
         gap: 3rem;
-        line-height: 2rem;
         overflow: scroll;
-        display: flex;
         flex-direction: column;
-        height: 90vh;
-      }
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
 
-      #news_letter_signup {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+        div {
+          margin-top: 2rem;
+          grid-column: 2/3;
+        }
 
-      #new_letter_email {
-        border-right: solid white;
-        background-color: transparent;
-        width: 25vw;
-        height: 8vh;
-        margin: 0;
-        padding: 0;
-      }
+        #news_letter_signup {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
 
-      input {
-        background-color: transparent;
-        border: none;
-        height: 8vh;
-        width: 25vw;
-      }
-      button {
-        border-radius: 0;
-        height: 8vh;
-        background-color: transparent;
+        #new_letter_email {
+          border-right: solid white;
+          background-color: transparent;
+          width: 25vw;
+          height: 8vh;
+          margin: 0;
+          padding: 0;
+        }
 
-        margin: 0;
-        padding: 0;
-      }
-      #news_letter_input {
-        margin: 1.5rem 0;
-        width: 40vw;
-        border: solid white;
-        display: flex;
+        input {
+          background-color: transparent;
+          border: none;
+          height: 8vh;
+          width: 25vw;
+        }
+        button {
+          border-radius: 0;
+          height: 8vh;
+          background-color: transparent;
+
+          margin: 0;
+          padding: 0;
+        }
+        #news_letter_input {
+          margin: 1.5rem 0;
+          width: 40vw;
+          border: solid white;
+          display: flex;
+        }
       }
     }
+
     #program {
       top: 100vh;
       width: 200vw;
@@ -98,15 +107,8 @@
 
       .artist_wrapper {
         grid-column: 1/2;
-        display: grid;
-        grid-template-rows: 10% 90%;
-
         overflow-x: hidden;
         overflow-y: scroll;
-
-        .searchbar {
-          grid-row: 1/2;
-        }
 
         .elementcontainer {
           grid-row: 2/3;
@@ -130,17 +132,6 @@
       grid-template-columns: 100vw 100vw;
       grid-template-rows: 100vh 100vh 100vh 100vh;
 
-      .status {
-        display: flex;
-        gap: 2rem;
-        padding: 1rem;
-        justify-content: center;
-        align-items: center;
-        background-color: #ff006a;
-        width: 100vw;
-        height: 15vh;
-      }
-
       .theading_wrapper {
         visibility: collapse;
       }
@@ -149,7 +140,7 @@
         grid-column: 1/2;
         grid-row: 1/2;
         height: 100vh;
-        width: 90vw;
+        width: 100vw;
         display: flex;
         justify-content: center;
         flex-direction: column;
@@ -159,8 +150,7 @@
         div {
           display: flex;
           flex-direction: column;
-          gap: 3rem;
-          cursor: pointer;
+          align-items: center;
         }
       }
 
@@ -176,6 +166,16 @@
         display: flex;
         align-items: center;
         flex-direction: column;
+
+        .status {
+          display: flex;
+          gap: 2rem;
+          justify-content: center;
+          align-items: center;
+          background-color: #ff006a;
+          width: 100vw;
+          height: 15vh;
+        }
 
         .heading {
           display: flex;
@@ -252,96 +252,140 @@
       }
 
       #ticket_flow2 {
-        grid-column: 2/3;
-        grid-row: 2/3;
+        position: relative;
         width: 100vw;
         height: 90vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
+        grid-column: 2/3;
+        grid-row: 2/3;
 
-        .flow2_wrapper {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-          gap: 5rem;
-          margin-top: 3rem;
-        }
+        .t_wrapper {
+          position: relative;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 90vh;
 
-        #cardContainer {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          width: 100vw;
-          gap: 3rem;
+          .status {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff006a;
+            width: 100vw;
+            height: 15vh;
+          }
 
-          fieldset {
-            border: 0;
-            height: fit-content;
-            width: 90vw;
+          .flow2_wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 5rem;
+            margin-top: 3rem;
 
-            span {
-              display: grid;
-              justify-content: end;
-            }
+            #cardContainer {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              width: 100vw;
+              gap: 3rem;
 
-            input {
-              color: white;
-              width: 90vw;
-              background-color: transparent;
-              border: none;
-              border-bottom: 1px solid white;
-              box-shadow: none;
-              border-radius: 0;
+              fieldset {
+                border: 0;
+                height: fit-content;
+                width: 80vw;
+
+                span {
+                  display: grid;
+                  justify-content: end;
+                }
+
+                input {
+                  color: white;
+                  width: 90vw;
+                  background-color: transparent;
+                  border: none;
+                  border-bottom: 1px solid white;
+                  box-shadow: none;
+                  border-radius: 0;
+                }
+              }
             }
           }
         }
       }
 
       #ticket_flow3 {
-        grid-column: 2/3;
-        grid-row: 3/4;
+        position: relative;
         width: 100vw;
         height: 90vh;
-        overflow-y: scroll;
-        display: flex;
-        flex-direction: column;
-        gap: 20rem;
+        grid-column: 2/3;
+        grid-row: 2/3;
 
-        #billing_address {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+        .t_wrapper {
+          position: relative;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 90vh;
+
+          .status {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff006a;
+            width: 100vw;
+            height: 15vh;
+          }
+
+          #billing_address {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+          }
         }
       }
 
       #ticket_flow4 {
-        grid-column: 2/3;
-        grid-row: 4/5;
+        position: relative;
         width: 100vw;
         height: 90vh;
-        display: flex;
-        align-items: center;
-        flex-direction: column;
-        background-color: #ff006a;
+        grid-column: 2/3;
+        grid-row: 2/3;
 
-        .purchase_result {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
+        .t_wrapper {
+          position: relative;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          height: 90vh;
 
-          div {
+          .status {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background-color: #ff006a;
+            width: 100vw;
+            height: 15vh;
+          }
+
+          .purchase_result {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            gap: 1rem;
+
+            div {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+            }
           }
         }
       }
     }
 
     .active_left {
-      transform: translateX(-100vw);
+      transform: translateX(-50vw);
       transition: all 1s ease-in;
     }
 
@@ -357,16 +401,6 @@
     .active_up {
       transform: translateY(-100vh);
       transition: all 1s ease-in;
-    }
-
-    .active_up2 {
-      transform: translateY(-200vh);
-      transition: all 2s ease-in;
-    }
-
-    .active_up3 {
-      transform: translateY(-300vh);
-      transition: all 3s ease-in;
     }
 
     .active {
@@ -427,6 +461,13 @@
 
         .box_right {
           grid-column: 3/4;
+        }
+      }
+
+      #contact_page {
+        #test {
+          display: grid;
+          grid-template-columns: 15vw auto 15vw;
         }
       }
 

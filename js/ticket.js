@@ -192,7 +192,7 @@ function submitNames(e) {
 function showFormFlow3() {
   console.log(bookingInfo);
   document.querySelector("#ticket_flow2").classList.add("ticket_up");
-  document.querySelector("#ticket_flow3").classList.add("active_up2");
+  document.querySelector("#ticket_flow3").classList.add("active_up");
 
   paymentForm();
 }
@@ -358,7 +358,7 @@ function showFormFlow4() {
   console.log("hej");
 
   document.querySelector("#ticket_flow3").classList.add("ticket_up");
-  document.querySelector("#ticket_flow4").classList.add("active_up3");
+  document.querySelector("#ticket_flow4").classList.add("active_up");
 }
 
 // async function showFormFlow4() {
