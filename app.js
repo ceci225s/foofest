@@ -10,18 +10,16 @@ window.addEventListener("DOMContentLoaded", start);
 async function start() {
   await loadScheduleJson();
   displayLineup();
+  document.querySelector("#menu_schedule").addEventListener("click", showScheduleSection);
 }
 
 //------------------------ FETCH ALL DATA
 
 //Fetch schedule
 async function loadScheduleJson() {
-  const schedule = await fetch(
-    "https://foo-techno-fest.herokuapp.com/schedule",
-    {
-      method: "GET",
-    }
-  );
+  const schedule = await fetch("https://foo-techno-fest.herokuapp.com/schedule", {
+    method: "GET",
+  });
   scheduleJson = await schedule.json();
   console.log(scheduleJson);
 
@@ -52,24 +50,28 @@ function renderSchedule(day) {
           ${scheduleJson.Jotunheim[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".jotunheim").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".jotunheim").innerHTML += '<div class="time_slot"></div>';
     }
     if (scheduleJson.Vanaheim[day].find((s) => s.start == timeString)) {
       document.querySelector(".vanaheim").innerHTML += `<div class="time_slot">
           ${scheduleJson.Vanaheim[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".vanaheim").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".vanaheim").innerHTML += '<div class="time_slot"></div>';
     }
     if (scheduleJson.Midgard[day].find((s) => s.start == timeString)) {
       document.querySelector(".midgard").innerHTML += `<div class="time_slot">
           ${scheduleJson.Midgard[day].find((s) => s.start == timeString).act}
         </div>`;
     } else {
-      document.querySelector(".midgard").innerHTML +=
-        '<div class="time_slot"></div>';
+      document.querySelector(".midgard").innerHTML += '<div class="time_slot"></div>';
     }
   }
+}
+
+function showScheduleSection() {
+  console.log("hej");
+  // MOVE TICKET SECTION UP
+  document.querySelector("#app_schedule").classList.add("active_up");
+  document.querySelector("#app_frontpage").classList.add("active_up");
 }

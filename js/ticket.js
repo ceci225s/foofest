@@ -13,9 +13,9 @@ let bookingInfo = {
 // SHOW PURCHASE
 export function displayChosenTicket(price) {
   if (price == "799") {
-    document.querySelector(".ticket_type").textContent = "REGULAR ticket";
+    document.querySelector(".ticket_type").textContent = "REGULAR";
   } else {
-    document.querySelector(".ticket_type").textContent = "VIP ticket";
+    document.querySelector(".ticket_type").textContent = "VIP";
   }
 }
 // check for availability - if not enough spots, hide camp

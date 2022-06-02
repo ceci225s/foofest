@@ -12,6 +12,7 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "bulma": "^0.9.4",
     "vanila-js-validation": "^1.0.8"
   }
 }
