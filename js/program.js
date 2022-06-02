@@ -1,5 +1,3 @@
-import { loadBandJson } from "./database";
-
 //------------------------ SHOW BANDS
 
 export function displayLineup(bandJson) {
