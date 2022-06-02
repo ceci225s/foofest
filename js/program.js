@@ -10,7 +10,9 @@ export function displayLineup(bandJson) {
     let clone = temp.cloneNode(true).content;
     clone.querySelector("#artist_name").innerHTML = artist.name;
 
-    clone.querySelector("#artist_name").addEventListener("click", () => openArtist(artist));
+    clone
+      .querySelector("#artist_name")
+      .addEventListener("click", () => openArtist(artist));
     cont.appendChild(clone);
   });
 }
@@ -20,7 +22,6 @@ export function displayLineup(bandJson) {
 function openArtist(artist) {
   // MOVE LINEUP SECTION TO THE RIGHT
   document.querySelector("#program").classList.remove("active_up");
-  document.querySelector(".section_wrapper").classList.add("active");
 
   // SHOW ARTIST INFO
   document.querySelector("#info .name").textContent = artist.name;
