@@ -38,6 +38,9 @@ export async function showAvailableCamps(price, type) {
 
   // for each camp, if availability is below ticket qty then hide option
   for (let obj of freeCampSpots) {
+    document
+      .querySelector(`.camp_${obj.area.toLowerCase()}`)
+      .classList.remove("hide");
     if (obj.available < qty.value) {
       document
         .querySelector(`.camp_${obj.area.toLowerCase()}`)
@@ -93,6 +96,7 @@ export function qtyChange(price, type) {
     plusMinusWidgets[i]
       .querySelector(".count")
       .addEventListener("change", () => showAvailableCamps(price, type));
+    console.log("hej");
   }
 }
 
