@@ -43,6 +43,7 @@ function chooseCampArea() {
     // when area is chosen then enable Next button and call function nextForm
     radios[i].onclick = function () {
       bookingInfo.campingArea = radios[i].value;
+      document.querySelector("#show_camp").innerHTML = radios[i].value;
       //   when camp is chosen, enable the button
       document.querySelector("#flow1_next").disabled = false;
       document.querySelector("#flow1_next").addEventListener("click", () => showFormFlow2());
@@ -355,13 +356,25 @@ function paymentForm() {
 }
 
 function showFormFlow4() {
-  console.log("hej");
-
   document.querySelector("#ticket_flow3").classList.add("ticket_up");
   document.querySelector("#ticket_flow4").classList.add("active_up");
+
+  // let email = document.querySelector("#multi-email").innerHTML;
+  // document.querySelector(
+  //   "#card_info"
+  // ).action = `https://formsubmit.co/your@email.com/${email}`;
+
+  renderConfirmation();
+  finalizeFlow();
 }
 
-// async function showFormFlow4() {
-//   await finalizeOrder(bookingInfo);
-//   postToDatabase(bookingInfo);
-// }
+async function finalizeFlow() {
+  await finalizeOrder(bookingInfo);
+  postToDatabase(bookingInfo);
+}
+
+function renderConfirmation() {
+  let summery = document.querySelector(".summery").innerHTML;
+
+  document.querySelector(".purchase_result").innerHTML = summery;
+}

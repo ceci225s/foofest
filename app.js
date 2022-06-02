@@ -1,5 +1,6 @@
 "use strict";
 import "./sass/style.scss";
+import { loadBandJson } from "./js/database";
 
 import { displayLineup } from "./js/program";
 
@@ -9,10 +10,11 @@ window.addEventListener("DOMContentLoaded", start);
 
 async function start() {
   await loadScheduleJson();
-  displayLineup();
 
   document.querySelector("#menu_schedule").addEventListener("click", showScheduleSection);
   document.querySelector("#menu_program").addEventListener("click", showProgramSection);
+  let bandJson = await loadBandJson();
+  displayLineup(bandJson);
 }
 
 //------------------------ FETCH ALL DATA
