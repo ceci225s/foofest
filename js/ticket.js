@@ -96,7 +96,6 @@ export function qtyChange(price, type) {
     plusMinusWidgets[i]
       .querySelector(".count")
       .addEventListener("change", () => showAvailableCamps(price, type));
-    console.log("hej");
   }
 }
 
@@ -105,7 +104,9 @@ function clickHandler(event) {
   // reference to the count input field
   let countEl = event.target.parentNode.querySelector(".count");
   if (event.target.className.match(/\bminusBtn\b/)) {
-    countEl.value = Number(countEl.value) - 1;
+    if (qty.value > 0) {
+      countEl.value = Number(countEl.value) - 1;
+    }
   } else if (event.target.className.match(/\bplusBtn\b/)) {
     countEl.value = Number(countEl.value) + 1;
   }
