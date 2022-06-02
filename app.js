@@ -82,4 +82,6 @@ function showScheduleSection() {
 
 function showProgramSection() {
   console.log("program");
+  document.querySelector("#app_program").classList.add("active_up");
+  document.querySelector("#app_frontpage").classList.add("active_up");
 }

@@ -44,7 +44,8 @@
         width: 100vw;
         display: flex;
         gap: 3rem;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
         flex-direction: column;
         height: 100vh;
         display: grid;
@@ -144,7 +145,7 @@
       backdrop-filter: saturate(180%) blur(10px);
       display: grid;
       grid-template-columns: 100vw 100vw;
-      grid-template-rows: 100vh 100vh 100vh 100vh;
+      grid-template-rows: 100vh 100vh;
 
       .theading_wrapper {
         visibility: collapse;
@@ -181,7 +182,7 @@
         align-items: center;
         flex-direction: column;
 
-        .status {
+        #status {
           display: flex;
           gap: 2rem;
           justify-content: center;
@@ -278,7 +279,7 @@
           overflow-x: hidden;
           height: 90vh;
 
-          .status {
+          #status {
             display: flex;
             gap: 2rem;
             justify-content: center;
@@ -309,14 +310,19 @@
                 height: fit-content;
                 width: 80vw;
 
+                div {
+                  margin-bottom: 0.5rem;
+                }
+
                 span {
                   display: grid;
                   justify-content: end;
+                  margin-top: 0.5rem;
                 }
 
                 input {
                   color: white;
-                  width: 90vw;
+                  width: 80vw;
                   background-color: transparent;
                   border: none;
                   border-bottom: 1px solid white;
@@ -341,8 +347,11 @@
           overflow-y: scroll;
           overflow-x: hidden;
           height: 90vh;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
 
-          .status {
+          #status {
             display: flex;
             gap: 2rem;
             justify-content: center;
@@ -352,10 +361,78 @@
             height: 15vh;
           }
 
-          #billing_address {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+          .flow3_wrapper {
+            margin-top: 3rem;
+
+            .form_one {
+              display: flex;
+              flex-direction: column;
+              margin-top: 3rem;
+              align-items: center;
+
+              .form {
+                fieldset {
+                  border: 0;
+                  height: fit-content;
+                  width: 80vw;
+
+                  div {
+                    margin-bottom: 0.5rem;
+                  }
+
+                  span {
+                    display: grid;
+                    justify-content: end;
+                    margin-top: 0.5rem;
+                  }
+
+                  input {
+                    color: white;
+                    width: 80vw;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    box-shadow: none;
+                    border-radius: 0;
+                  }
+                }
+              }
+            }
+
+            .form_two {
+              display: flex;
+              flex-direction: column;
+              margin-top: 3rem;
+              align-items: center;
+
+              .form {
+                fieldset {
+                  border: 0;
+                  height: fit-content;
+                  width: 80vw;
+
+                  div {
+                    margin-bottom: 0.5rem;
+                  }
+
+                  span {
+                    display: grid;
+                    justify-content: end;
+                    margin-top: 0.5rem;
+                  }
+
+                  input {
+                    color: white;
+                    width: 80vw;
+                    background-color: transparent;
+                    border: none;
+                    border-bottom: 1px solid white;
+                    box-shadow: none;
+                    border-radius: 0;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -373,7 +450,7 @@
           overflow-x: hidden;
           height: 90vh;
 
-          .status {
+          #status {
             display: flex;
             gap: 2rem;
             justify-content: center;
@@ -410,6 +487,11 @@
 
     .active_up {
       transform: translateY(-100vh);
+      transition: all 1s ease-in;
+    }
+
+    .active_up1 {
+      transform: translateY(-200vh);
       transition: all 1s ease-in;
     }
 
@@ -483,21 +565,9 @@
       }
 
       #ticket {
-        top: 100vh;
-        width: 200vw;
-        height: 90vh;
-        margin-top: 10vh;
-        background: rgba(0, 0, 0, 0.8);
-        backdrop-filter: saturate(180%) blur(10px);
-
         display: grid;
         grid-template-columns: 50vw 50vw 100vw;
         grid-template-rows: 100vh 100vh 100vh;
-
-        .status {
-          width: 70vw;
-          height: 30vh;
-        }
 
         .theading_wrapper {
           grid-column: 1/2;
@@ -535,41 +605,37 @@
           grid-column: 3/4;
           grid-row: 1/2;
           width: 70vw;
-          height: 90vh;
+
+          #status {
+            width: 70vw;
+          }
+
+          .heading {
+            margin-bottom: 2rem;
+          }
         }
 
         #ticket_flow2 {
           grid-column: 3/4;
           grid-row: 2/3;
           width: 70vw;
-          height: 90vh;
-          margin-top: 0;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
 
-          .flow2_wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            gap: 5rem;
-            margin-top: 3rem;
-          }
+          .t_wrapper {
+            #status {
+              width: 70vw;
+            }
 
-          #cardContainer {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 70vw;
-            gap: 3rem;
+            .flow2_wrapper {
+              #cardContainer {
+                width: 70vw;
 
-            fieldset {
-              width: 50vw;
+                fieldset {
+                  width: 40vw;
 
-              input {
-                width: 50vw;
+                  input {
+                    width: 40vw;
+                  }
+                }
               }
             }
           }
@@ -577,10 +643,40 @@
 
         #ticket_flow3 {
           grid-column: 3/4;
-          grid-row: 3/4;
+          grid-row: 2/3;
           width: 70vw;
-          height: 90vh;
-          margin-top: 0;
+
+          .t_wrapper {
+            #status {
+              width: 70vw;
+            }
+
+            .flow3_wrapper {
+              margin-top: 3rem;
+
+              .form_one {
+                .form {
+                  fieldset {
+                    width: 40vw;
+
+                    input {
+                      width: 40vw;
+                    }
+                  }
+                }
+              }
+
+              .form_two {
+                fieldset {
+                  width: 40vw;
+
+                  input {
+                    width: 40vw;
+                  }
+                }
+              }
+            }
+          }
         }
       }
 
