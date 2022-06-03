@@ -253,7 +253,10 @@ function showFormFlow3() {
   document
     .querySelector("#ticket_flow3 .button")
     .addEventListener("click", (e) => {
-      party.confetti(e.target, { count: party.variation.range(50, 200) });
+      party.confetti(e.target, {
+        count: party.variation.range(50, 200),
+        size: party.variation.range(0.8, 2),
+      });
       showFormFlow4();
     });
 }

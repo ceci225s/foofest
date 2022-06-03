@@ -468,32 +468,41 @@
         height: 90vh;
         grid-column: 2/3;
         grid-row: 2/3;
-        text-align: center;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .summery_overview {
           display: flex;
+          flex-direction: row;
+
+          justify-content: space-between;
+          width: 30vw;
         }
 
-        hr {
+        #status {
           display: none;
         }
-
         .t_wrapper {
           position: relative;
           overflow-y: scroll;
           overflow-x: hidden;
-          height: 90vh;
-          width: 100vw;
+          height: 70vh;
+          width: 30vw;
+          align-items: center;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
 
           .purchase_result {
             display: flex;
             flex-direction: column;
             gap: 1rem;
 
-            div {
-              display: flex;
+            #summery_box {
               flex-direction: column;
-              align-items: center;
             }
           }
         }
