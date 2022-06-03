@@ -136,7 +136,6 @@
         overflow-y: scroll;
 
         .elementcontainer {
-          overflow-y: scroll;
           height: 90vh;
         }
       }
@@ -150,7 +149,23 @@
         overflow-y: scroll;
 
         .box {
-          width: 100vw;
+          // width: 100vw;
+          .card {
+            figure {
+              img {
+                width: 100vw;
+              }
+            }
+
+            .name {
+              margin-top: 2rem;
+            }
+
+            .genre {
+              margin-top: 3rem;
+              margin-bottom: 1rem;
+            }
+          }
         }
       }
     }
@@ -580,6 +595,17 @@
         .box_right {
           grid-column: 3/4;
           width: 50vw;
+
+          .box {
+            // width: 100vw;
+            .card {
+              figure {
+                img {
+                  width: 50vw;
+                }
+              }
+            }
+          }
         }
       }
 
