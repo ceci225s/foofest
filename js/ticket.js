@@ -252,10 +252,13 @@ function showFormFlow3() {
 
   document
     .querySelector("#ticket_flow3 .button")
-    .addEventListener("click", showFormFlow4);
+    .addEventListener("click", (e) => {
+      party.confetti(e.target, { count: party.variation.range(50, 200) });
+      showFormFlow4();
+    });
 }
 
-function showFormFlow4() {
+function showFormFlow4(e) {
   document.querySelector("#ticket_flow3").classList.add("ticket_up");
   document.querySelector("#ticket_flow4").classList.add("active_up");
   document.querySelector(".summery").classList.add("active_up");
