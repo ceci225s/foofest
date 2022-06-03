@@ -224,7 +224,6 @@ function checkSecond(sec) {
 }
 
 function stopTime() {
-  console.log("hej");
   clearTimeout(time);
 }
 
