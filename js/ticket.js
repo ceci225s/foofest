@@ -208,11 +208,8 @@ function startCountdown() {
   console.log(m, s);
   setTimeout(startCountdown, 1000);
   if (m == "0" && s == "00") {
-    if (confirm("Your reservation time is up. Pls start over") == true) {
-      window.location.href = "index.html";
-    } else {
-      console.log("bye");
-    }
+    // let popup = document.querySelector("#popup");
+    // popup.style.display = "block";
   }
 }
 

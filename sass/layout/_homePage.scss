@@ -5,6 +5,23 @@
     height: 100vh;
     overflow: hidden;
 
+    #popup {
+      display: none;
+      background: rgba(0, 0, 0, 0.8);
+      top: 50vw;
+      height: 50vh;
+      position: absolute;
+      background: blue;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100vw;
+      border-radius: 50px;
+      text-align: center;
+      line-height: 3rem;
+    }
+
     .wrapper {
       position: absolute;
       width: 100vw;
