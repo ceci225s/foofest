@@ -8,7 +8,7 @@ import Validator from "vanillajs-validation";
 import party from "party-js";
 
 let qty = document.querySelector(".v-counter .count");
-
+let time;
 let bookingInfo = {
   personalInfo: [],
   id: "",
@@ -206,7 +206,7 @@ function startCountdown() {
 
   document.getElementById("timer").innerHTML = m + ":" + s;
   console.log(m, s);
-  setTimeout(startCountdown, 1000);
+  time = setTimeout(startCountdown, 1000);
   if (m == "00" && s == "00") {
     let popup = document.querySelector("#popup");
     popup.classList.remove("hide");
@@ -221,6 +221,11 @@ function checkSecond(sec) {
     sec = "59";
   }
   return sec;
+}
+
+function stopTime() {
+  console.log("hej");
+  clearTimeout(time);
 }
 
 function submitNames(e) {
@@ -255,6 +260,7 @@ function showFormFlow4() {
   document.querySelector("#ticket_flow3").classList.add("ticket_up");
   document.querySelector("#ticket_flow4").classList.add("active_up");
   document.querySelector(".summery").classList.add("active_up");
+  stopTime();
 
   renderConfirmation();
   finalizeFlow();
@@ -269,5 +275,4 @@ function renderConfirmation() {
   let summery = document.querySelector(".summery").innerHTML;
 
   document.querySelector(".purchase_result").innerHTML = summery;
-  clearTimeout(startCountdown);
 }
