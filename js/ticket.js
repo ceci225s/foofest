@@ -136,8 +136,9 @@ async function showFormFlow2() {
   document.querySelector("#ticket_flow1").classList.add("ticket_up");
   document.querySelector("#ticket_flow2").classList.add("active_up");
   showForms();
-  document.getElementById("timer").innerHTML = "05" + ":" + "00";
+  document.getElementById("timer").innerHTML = "00" + ":" + "10";
   document.querySelector("#status p").classList.remove("hide");
+  startCountdown();
 }
 
 function showForms() {
@@ -189,7 +190,6 @@ async function getId() {
   // send chosen camp name to function reserveTickets to get ID
   bookingInfo.id = await reserveTickets(bookingInfo);
   console.log(bookingInfo.id);
-  startCountdown();
 }
 
 function startCountdown() {
@@ -207,9 +207,9 @@ function startCountdown() {
   document.getElementById("timer").innerHTML = m + ":" + s;
   console.log(m, s);
   setTimeout(startCountdown, 1000);
-  if (m == "0" && s == "00") {
-    // let popup = document.querySelector("#popup");
-    // popup.style.display = "block";
+  if (m == "00" && s == "00") {
+    let popup = document.querySelector("#popup");
+    popup.classList.remove("hide");
   }
 }
 
@@ -269,4 +269,5 @@ function renderConfirmation() {
   let summery = document.querySelector(".summery").innerHTML;
 
   document.querySelector(".purchase_result").innerHTML = summery;
+  clearTimeout(startCountdown);
 }
