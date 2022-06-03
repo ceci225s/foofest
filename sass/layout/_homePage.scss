@@ -21,6 +21,10 @@
       height: 90vh;
       overflow: hidden;
 
+      div {
+        text-align: center;
+      }
+
       .front_buttons {
         display: flex;
         flex-direction: column;
@@ -447,25 +451,24 @@
         position: relative;
         width: 100vw;
         height: 90vh;
-        grid-column: 3/3;
+        grid-column: 2/3;
         grid-row: 2/3;
+        text-align: center;
+
+        .summery_overview {
+          display: flex;
+        }
+
+        hr {
+          display: none;
+        }
 
         .t_wrapper {
           position: relative;
           overflow-y: scroll;
           overflow-x: hidden;
           height: 90vh;
-          width: 70vw;
-
-          #status {
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
-            align-items: center;
-            background-color: #ff006a;
-            width: 100vw;
-            height: 15vh;
-          }
+          width: 100vw;
 
           .purchase_result {
             display: flex;
@@ -638,6 +641,10 @@
           }
         }
 
+        #ticket_flow4 {
+          grid-column: 3/3;
+        }
+
         #ticket_flow3 {
           grid-column: 3/4;
           width: 70vw;
@@ -663,11 +670,13 @@
               }
 
               .form_two {
-                fieldset {
-                  width: 40vw;
-
-                  input {
+                .form {
+                  fieldset {
                     width: 40vw;
+
+                    input {
+                      width: 40vw;
+                    }
                   }
                 }
               }
